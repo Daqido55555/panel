@@ -22,13 +22,18 @@ export default () => {
     const [token, setToken] = useState('');
 
     const { clearFlashes, addFlash } = useFlash();
-    const { enabled: recaptchaEnabled, siteKey } = useStoreState((state) => state.settings.data!.recaptcha);
+    const { enabled: recaptchaEnabled, siteKey } = useStoreState(
+        (state) => state.settings.data!.recaptcha,
+    );
 
     useEffect(() => {
         clearFlashes();
-    }, []);
+    }, [clearFlashes]);
 
-    const handleSubmission = ({ email }: Values, { setSubmitting, resetForm }: FormikHelpers<Values>) => {
+    const handleSubmission = (
+        { email }: Values,
+        { setSubmitting, resetForm }: FormikHelpers<Values>,
+    ) => {
         clearFlashes();
 
         // If there is no token in the state yet, request the token and then abort this submit request
@@ -83,7 +88,12 @@ export default () => {
                         type={'email'}
                     />
                     <div css={tw`mt-6`}>
-                        <Button type={'submit'} size={'xlarge'} disabled={isSubmitting} isLoading={isSubmitting}>
+                        <Button
+                            type={'submit'}
+                            size={'xlarge'}
+                            disabled={isSubmitting}
+                            isLoading={isSubmitting}
+                        >
                             Send Email
                         </Button>
                     </div>

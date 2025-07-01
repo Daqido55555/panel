@@ -53,7 +53,7 @@ const NewDirectoryDialog = asDialog({
         return () => {
             clearAndAddHttpError();
         };
-    }, []);
+    }, [clearAndAddHttpError]);
 
     const submit = ({ directoryName }: Values, { setSubmitting }: FormikHelpers<Values>) => {
         createDirectory(uuid, directory, directoryName)
@@ -71,13 +71,23 @@ const NewDirectoryDialog = asDialog({
                 <>
                     <FlashMessageRender key={'files:directory-modal'} />
                     <Form css={tw`m-0`}>
-                        <Field autoFocus id={'directoryName'} name={'directoryName'} label={'Name'} />
+                        <Field
+                            autoFocus
+                            id={'directoryName'}
+                            name={'directoryName'}
+                            label={'Name'}
+                        />
                         <p css={tw`mt-2 text-sm md:text-base break-all`}>
-                            <span css={tw`text-neutral-200`}>This directory will be created as&nbsp;</span>
+                            <span css={tw`text-neutral-200`}>
+                                This directory will be created as&nbsp;
+                            </span>
                             <Code>
                                 /home/container/
                                 <span css={tw`text-cyan-200`}>
-                                    {join(directory, values.directoryName).replace(/^(\.\.\/|\/)+/, '')}
+                                    {join(directory, values.directoryName).replace(
+                                        /^(\.\.\/|\/)+/,
+                                        '',
+                                    )}
                                 </span>
                             </Code>
                         </p>

@@ -31,8 +31,12 @@ export default ({ database, className }: Props) => {
     const [visible, setVisible] = useState(false);
     const [connectionVisible, setConnectionVisible] = useState(false);
 
-    const appendDatabase = ServerContext.useStoreActions((actions) => actions.databases.appendDatabase);
-    const removeDatabase = ServerContext.useStoreActions((actions) => actions.databases.removeDatabase);
+    const appendDatabase = ServerContext.useStoreActions(
+        (actions) => actions.databases.appendDatabase,
+    );
+    const removeDatabase = ServerContext.useStoreActions(
+        (actions) => actions.databases.removeDatabase,
+    );
 
     const jdbcConnectionString = `jdbc:mysql://${database.username}${
         database.password ? `:${encodeURIComponent(database.password)}` : ''
@@ -41,10 +45,16 @@ export default ({ database, className }: Props) => {
     const schema = object().shape({
         confirm: string()
             .required('The database name must be provided.')
-            .oneOf([database.name.split('_', 2)[1], database.name], 'The database name must be provided.'),
+            .oneOf(
+                [database.name.split('_', 2)[1], database.name],
+                'The database name must be provided.',
+            ),
     });
 
-    const submit = (values: { confirm: string }, { setSubmitting }: FormikHelpers<{ confirm: string }>) => {
+    const submit = (
+        values: { confirm: string },
+        { setSubmitting }: FormikHelpers<{ confirm: string }>,
+    ) => {
         clearFlashes();
         deleteServerDatabase(uuid, database.id)
             .then(() => {
@@ -60,7 +70,12 @@ export default ({ database, className }: Props) => {
 
     return (
         <>
-            <Formik onSubmit={submit} initialValues={{ confirm: '' }} validationSchema={schema} isInitialValid={false}>
+            <Formik
+                onSubmit={submit}
+                initialValues={{ confirm: '' }}
+                validationSchema={schema}
+                isInitialValid={false}
+            >
                 {({ isSubmitting, isValid, resetForm }) => (
                     <Modal
                         visible={visible}
@@ -74,8 +89,9 @@ export default ({ database, className }: Props) => {
                         <FlashMessageRender byKey={'database:delete'} css={tw`mb-6`} />
                         <h2 css={tw`text-2xl mb-6`}>Confirm database deletion</h2>
                         <p css={tw`text-sm`}>
-                            Deleting a database is a permanent action, it cannot be undone. This will permanently delete
-                            the <strong>{database.name}</strong> database and remove all associated data.
+                            Deleting a database is a permanent action, it cannot be undone. This
+                            will permanently delete the <strong>{database.name}</strong> database
+                            and remove all associated data.
                         </p>
                         <Form css={tw`m-0 mt-6`}>
                             <Field
@@ -86,7 +102,12 @@ export default ({ database, className }: Props) => {
                                 description={'Enter the database name to confirm deletion.'}
                             />
                             <div css={tw`mt-6 text-right`}>
-                                <Button type={'button'} isSecondary css={tw`mr-2`} onClick={() => setVisible(false)}>
+                                <Button
+                                    type={'button'}
+                                    isSecondary
+                                    css={tw`mr-2`}
+                                    onClick={() => setVisible(false)}
+                                >
                                     Cancel
                                 </Button>
                                 <Button type={'submit'} color={'red'} disabled={!isValid}>
@@ -156,7 +177,9 @@ export default ({ database, className }: Props) => {
                 </div>
                 <div css={tw`ml-8 text-center hidden md:block`}>
                     <p css={tw`text-sm`}>{database.allowConnectionsFrom}</p>
-                    <p css={tw`mt-1 text-2xs text-neutral-500 uppercase select-none`}>Connections from</p>
+                    <p css={tw`mt-1 text-2xs text-neutral-500 uppercase select-none`}>
+                        Connections from
+                    </p>
                 </div>
                 <div css={tw`ml-8 text-center hidden md:block`}>
                     <CopyOnClick text={database.username}>

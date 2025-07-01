@@ -63,7 +63,9 @@ export const rawDataToServerSchedule = (data: any): Schedule => ({
     createdAt: new Date(data.created_at),
     updatedAt: new Date(data.updated_at),
 
-    tasks: (data.relationships?.tasks?.data || []).map((row: any) => rawDataToServerTask(row.attributes)),
+    tasks: (data.relationships?.tasks?.data || []).map((row: any) =>
+        rawDataToServerTask(row.attributes),
+    ),
 });
 
 export default async (uuid: string): Promise<Schedule[]> => {

@@ -21,7 +21,11 @@ export default () => {
                         {routes.account
                             .filter((route) => !!route.name)
                             .map(({ path, name, exact = false }) => (
-                                <NavLink key={path} to={`/account/${path}`.replace('//', '/')} exact={exact}>
+                                <NavLink
+                                    key={path}
+                                    to={`/account/${path}`.replace('//', '/')}
+                                    exact={exact}
+                                >
                                     {name}
                                 </NavLink>
                             ))}

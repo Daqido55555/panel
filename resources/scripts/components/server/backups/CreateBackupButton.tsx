@@ -32,7 +32,9 @@ const ModalContent = ({ ...props }: RequiredModalProps) => {
                 <Field
                     name={'name'}
                     label={'Backup name'}
-                    description={'If provided, the name that should be used to reference this backup.'}
+                    description={
+                        'If provided, the name that should be used to reference this backup.'
+                    }
                 />
                 <div css={tw`mt-6`}>
                     <FormikFieldWrapper
@@ -49,11 +51,15 @@ const ModalContent = ({ ...props }: RequiredModalProps) => {
                     </FormikFieldWrapper>
                 </div>
                 <Can action={'backup.delete'}>
-                    <div css={tw`mt-6 bg-neutral-700 border border-neutral-800 shadow-inner p-4 rounded`}>
+                    <div
+                        css={tw`mt-6 bg-neutral-700 border border-neutral-800 shadow-inner p-4 rounded`}
+                    >
                         <FormikSwitch
                             name={'isLocked'}
                             label={'Locked'}
-                            description={'Prevents this backup from being deleted until explicitly unlocked.'}
+                            description={
+                                'Prevents this backup from being deleted until explicitly unlocked.'
+                            }
                         />
                     </div>
                 </Can>
@@ -75,15 +81,19 @@ export default () => {
 
     useEffect(() => {
         clearFlashes('backups:create');
-    }, [visible]);
+    }, [visible, clearFlashes]);
 
     const submit = (values: Values, { setSubmitting }: FormikHelpers<Values>) => {
         clearFlashes('backups:create');
         createServerBackup(uuid, values)
             .then((backup) => {
                 mutate(
-                    (data) => ({ ...data, items: data.items.concat(backup), backupCount: data.backupCount + 1 }),
-                    false
+                    (data) => ({
+                        ...data,
+                        items: data.items.concat(backup),
+                        backupCount: data.backupCount + 1,
+                    }),
+                    false,
                 );
                 setVisible(false);
             })

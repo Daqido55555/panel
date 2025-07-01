@@ -16,11 +16,13 @@ interface State {
     propOverrides: Partial<SettableModalProps>;
 }
 
-type ExtendedComponentType<T> = (C: React.ComponentType<T>) => React.ComponentType<T & AsModalProps>;
+type ExtendedComponentType<T> = (
+    C: React.ComponentType<T>,
+) => React.ComponentType<T & AsModalProps>;
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 function asModal<P extends {}>(
-    modalProps?: SettableModalProps | ((props: P) => SettableModalProps)
+    modalProps?: SettableModalProps | ((props: P) => SettableModalProps),
 ): ExtendedComponentType<P> {
     return function (Component) {
         return class extends React.PureComponent<P & AsModalProps, State> {
@@ -53,7 +55,10 @@ function asModal<P extends {}>(
                 } else if (!prevProps.visible && this.props.visible) {
                     this.setState({ render: true, visible: true });
                 }
-                if (!this.state.render && !isEqual(prevState.propOverrides, this.state.propOverrides)) {
+                if (
+                    !this.state.render &&
+                    !isEqual(prevState.propOverrides, this.state.propOverrides)
+                ) {
                     this.setState({ propOverrides: {} });
                 }
             }
@@ -62,7 +67,11 @@ function asModal<P extends {}>(
 
             setPropOverrides: ModalContextValues['setPropOverrides'] = (value) =>
                 this.setState((state) => ({
-                    propOverrides: !value ? {} : typeof value === 'function' ? value(state.propOverrides) : value,
+                    propOverrides: !value
+                        ? {}
+                        : typeof value === 'function'
+                        ? value(state.propOverrides)
+                        : value,
                 }));
 
             /**

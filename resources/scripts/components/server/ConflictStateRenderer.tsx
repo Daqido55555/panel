@@ -7,12 +7,16 @@ import ServerRestoreSvg from '@/assets/images/server_restore.svg';
 
 export default () => {
     const status = ServerContext.useStoreState((state) => state.server.data?.status || null);
-    const isTransferring = ServerContext.useStoreState((state) => state.server.data?.isTransferring || false);
+    const isTransferring = ServerContext.useStoreState(
+        (state) => state.server.data?.isTransferring || false,
+    );
     const isNodeUnderMaintenance = ServerContext.useStoreState(
-        (state) => state.server.data?.isNodeUnderMaintenance || false
+        (state) => state.server.data?.isNodeUnderMaintenance || false,
     );
 
-    return status === 'installing' || status === 'install_failed' || status === 'reinstall_failed' ? (
+    return status === 'installing' ||
+        status === 'install_failed' ||
+        status === 'reinstall_failed' ? (
         <ScreenBlock
             title={'Running Installer'}
             image={ServerInstallSvg}

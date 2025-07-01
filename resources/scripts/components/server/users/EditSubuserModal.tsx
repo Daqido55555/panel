@@ -30,9 +30,11 @@ interface Values {
 const EditSubuserModal = ({ subuser }: Props) => {
     const ref = useRef<HTMLHeadingElement>(null);
     const uuid = ServerContext.useStoreState((state) => state.server.data!.uuid);
-    const appendSubuser = ServerContext.useStoreActions((actions) => actions.subusers.appendSubuser);
+    const appendSubuser = ServerContext.useStoreActions(
+        (actions) => actions.subusers.appendSubuser,
+    );
     const { clearFlashes, clearAndAddHttpError } = useStoreActions(
-        (actions: Actions<ApplicationStore>) => actions.flashes
+        (actions: Actions<ApplicationStore>) => actions.flashes,
     );
     const { dismiss, setPropOverrides } = useContext(ModalContext);
 
@@ -46,7 +48,7 @@ const EditSubuserModal = ({ subuser }: Props) => {
     // The permissions that can be modified by this user.
     const editablePermissions = useDeepCompareMemo(() => {
         const cleaned = Object.keys(permissions).map((key) =>
-            Object.keys(permissions[key].keys).map((pkey) => `${key}.${pkey}`)
+            Object.keys(permissions[key].keys).map((pkey) => `${key}.${pkey}`),
         );
 
         const list: string[] = ([] as string[]).concat.apply([], Object.values(cleaned));
@@ -82,7 +84,7 @@ const EditSubuserModal = ({ subuser }: Props) => {
         () => () => {
             clearFlashes('user:edit');
         },
-        []
+        [clearFlashes],
     );
 
     return (
@@ -119,8 +121,8 @@ const EditSubuserModal = ({ subuser }: Props) => {
                 {!isRootAdmin && loggedInPermissions[0] !== '*' && (
                     <div css={tw`mt-4 pl-4 py-2 border-l-4 border-cyan-400`}>
                         <p css={tw`text-sm text-neutral-300`}>
-                            Only permissions which your account is currently assigned may be selected when creating or
-                            modifying other users.
+                            Only permissions which your account is currently assigned may be
+                            selected when creating or modifying other users.
                         </p>
                     </div>
                 )}
@@ -143,15 +145,22 @@ const EditSubuserModal = ({ subuser }: Props) => {
                                 key={`permission_${key}`}
                                 title={key}
                                 isEditable={canEditUser}
-                                permissions={Object.keys(permissions[key].keys).map((pkey) => `${key}.${pkey}`)}
+                                permissions={Object.keys(permissions[key].keys).map(
+                                    (pkey) => `${key}.${pkey}`,
+                                )}
                                 css={index > 0 ? tw`mt-4` : undefined}
                             >
-                                <p css={tw`text-sm text-neutral-400 mb-4`}>{permissions[key].description}</p>
+                                <p css={tw`text-sm text-neutral-400 mb-4`}>
+                                    {permissions[key].description}
+                                </p>
                                 {Object.keys(permissions[key].keys).map((pkey) => (
                                     <PermissionRow
                                         key={`permission_${key}.${pkey}`}
                                         permission={`${key}.${pkey}`}
-                                        disabled={!canEditUser || editablePermissions.indexOf(`${key}.${pkey}`) < 0}
+                                        disabled={
+                                            !canEditUser ||
+                                            editablePermissions.indexOf(`${key}.${pkey}`) < 0
+                                        }
                                     />
                                 ))}
                             </PermissionTitleBox>

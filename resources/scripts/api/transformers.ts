@@ -48,7 +48,12 @@ export const rawDataToFileObject = (data: FractalResponseData): FileObject => ({
     isEditable: function () {
         if (this.isArchiveType() || !this.isFile) return false;
 
-        const matches = ['application/jar', 'application/octet-stream', 'inode/directory', /^image\/(?!svg\+xml)/];
+        const matches = [
+            'application/jar',
+            'application/octet-stream',
+            'inode/directory',
+            /^image\/(?!svg\+xml)/,
+        ];
 
         return matches.every((m) => !this.mimetype.match(m));
     },
@@ -66,7 +71,9 @@ export const rawDataToServerBackup = ({ attributes }: FractalResponseData): Serv
     completedAt: attributes.completed_at ? new Date(attributes.completed_at) : null,
 });
 
-export const rawDataToServerEggVariable = ({ attributes }: FractalResponseData): ServerEggVariable => ({
+export const rawDataToServerEggVariable = ({
+    attributes,
+}: FractalResponseData): ServerEggVariable => ({
     name: attributes.name,
     description: attributes.description,
     envVariable: attributes.env_variable,

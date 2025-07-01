@@ -14,8 +14,12 @@ export default () => {
     const [error, setError] = useState<'connecting' | string>('');
     const { connected, instance } = ServerContext.useStoreState((state) => state.socket);
     const uuid = ServerContext.useStoreState((state) => state.server.data?.uuid);
-    const setServerStatus = ServerContext.useStoreActions((actions) => actions.status.setServerStatus);
-    const { setInstance, setConnectionState } = ServerContext.useStoreActions((actions) => actions.socket);
+    const setServerStatus = ServerContext.useStoreActions(
+        (actions) => actions.status.setServerStatus,
+    );
+    const { setInstance, setConnectionState } = ServerContext.useStoreActions(
+        (actions) => actions.socket,
+    );
 
     const updateToken = (uuid: string, socket: Websocket) => {
         if (updatingToken) return;
@@ -54,7 +58,7 @@ export default () => {
                 updateToken(uuid, socket);
             } else {
                 setError(
-                    'There was an error validating the credentials provided for the websocket. Please refresh the page.'
+                    'There was an error validating the credentials provided for the websocket. Please refresh the page.',
                 );
             }
         });
@@ -86,13 +90,13 @@ export default () => {
 
     useEffect(() => {
         connected && setError('');
-    }, [connected]);
+    }, [connected, setError]);
 
     useEffect(() => {
         return () => {
             instance && instance.close();
         };
-    }, [instance]);
+    }, [instance, close]);
 
     useEffect(() => {
         // If there is already an instance or there is no server, just exit out of this process
@@ -102,7 +106,7 @@ export default () => {
         }
 
         connect(uuid);
-    }, [uuid]);
+    }, [uuid, instance, connect]);
 
     return error ? (
         <CSSTransition timeout={150} in appear classNames={'fade'}>
@@ -112,7 +116,8 @@ export default () => {
                         <>
                             <Spinner size={'small'} />
                             <p css={tw`ml-2 text-sm text-red-100`}>
-                                We&apos;re having some trouble connecting to your server, please wait...
+                                We&apos;re having some trouble connecting to your server, please
+                                wait...
                             </p>
                         </>
                     ) : (

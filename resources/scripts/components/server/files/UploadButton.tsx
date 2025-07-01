@@ -33,9 +33,8 @@ export default ({ className }: WithClassname) => {
 
     const uuid = ServerContext.useStoreState((state) => state.server.data!.uuid);
     const directory = ServerContext.useStoreState((state) => state.files.directory);
-    const { clearFileUploads, removeFileUpload, pushFileUpload, setUploadProgress } = ServerContext.useStoreActions(
-        (actions) => actions.files
-    );
+    const { clearFileUploads, removeFileUpload, pushFileUpload, setUploadProgress } =
+        ServerContext.useStoreActions((actions) => actions.files);
 
     useEventListener(
         'dragenter',
@@ -46,7 +45,7 @@ export default ({ className }: WithClassname) => {
                 visible.value = true;
             }
         },
-        { capture: true }
+        { capture: true },
     );
 
     useEventListener('dragexit', () => (visible.value = false), { capture: true });
@@ -55,7 +54,7 @@ export default ({ className }: WithClassname) => {
 
     useEffect(() => {
         return () => timeouts.value.forEach(clearTimeout);
-    }, []);
+    }, [timeouts, value, forEach, clearTimeout]);
 
     const onUploadProgress = (data: ProgressEvent, name: string) => {
         setUploadProgress({ name, loaded: data.loaded });
@@ -86,9 +85,11 @@ export default ({ className }: WithClassname) => {
                                 headers: { 'Content-Type': 'multipart/form-data' },
                                 params: { directory },
                                 onUploadProgress: (data) => onUploadProgress(data, file.name),
-                            }
+                            },
                         )
-                        .then(() => timeouts.value.push(setTimeout(() => removeFileUpload(file.name), 500)))
+                        .then(() =>
+                            timeouts.value.push(setTimeout(() => removeFileUpload(file.name), 500)),
+                        ),
                 );
         });
 
@@ -103,7 +104,13 @@ export default ({ className }: WithClassname) => {
     return (
         <>
             <Portal>
-                <Fade appear in={visible.value} timeout={75} key={'upload_modal_mask'} unmountOnExit>
+                <Fade
+                    appear
+                    in={visible.value}
+                    timeout={75}
+                    key={'upload_modal_mask'}
+                    unmountOnExit
+                >
                     <ModalMask
                         onClick={() => (visible.value = false)}
                         onDragOver={(e) => e.preventDefault()}
@@ -117,14 +124,22 @@ export default ({ className }: WithClassname) => {
                             onFileSubmission(e.dataTransfer.files);
                         }}
                     >
-                        <div className={'w-full flex items-center justify-center pointer-events-none'}>
+                        <div
+                            className={
+                                'w-full flex items-center justify-center pointer-events-none'
+                            }
+                        >
                             <div
                                 className={
                                     'flex items-center space-x-4 bg-black w-full ring-4 ring-blue-200 ring-opacity-60 rounded p-6 mx-10 max-w-sm'
                                 }
                             >
                                 <CloudUploadIcon className={'w-10 h-10 flex-shrink-0'} />
-                                <p className={'font-header flex-1 text-lg text-neutral-100 text-center'}>
+                                <p
+                                    className={
+                                        'font-header flex-1 text-lg text-neutral-100 text-center'
+                                    }
+                                >
                                     Drag and drop files to upload.
                                 </p>
                             </div>
@@ -146,7 +161,10 @@ export default ({ className }: WithClassname) => {
                 }}
                 multiple
             />
-            <Button className={className} onClick={() => fileUploadInput.current && fileUploadInput.current.click()}>
+            <Button
+                className={className}
+                onClick={() => fileUploadInput.current && fileUploadInput.current.click()}
+            >
                 Upload
             </Button>
         </>

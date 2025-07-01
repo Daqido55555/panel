@@ -15,7 +15,9 @@ import { useDeepMemoize } from '@/plugins/useDeepMemoize';
 
 export default () => {
     const uuid = ServerContext.useStoreState((state) => state.server.data!.uuid);
-    const databaseLimit = ServerContext.useStoreState((state) => state.server.data!.featureLimits.databases);
+    const databaseLimit = ServerContext.useStoreState(
+        (state) => state.server.data!.featureLimits.databases,
+    );
 
     const { addError, clearFlashes } = useFlash();
     const [loading, setLoading] = useState(true);
@@ -34,7 +36,23 @@ export default () => {
                 addError({ key: 'databases', message: httpErrorToHuman(error) });
             })
             .then(() => setLoading(false));
-    }, []);
+    }, [
+        setLoading,
+        databases,
+        length,
+        clearFlashes,
+        getServerDatabases,
+        uuid,
+        then,
+        setDatabases,
+        catch,
+        error,
+        console,
+        addError,
+        key,
+        message,
+        httpErrorToHuman
+    ]);
 
     return (
         <ServerContentBlock title={'Databases'}>
@@ -63,8 +81,8 @@ export default () => {
                             <div css={tw`mt-6 flex items-center justify-end`}>
                                 {databaseLimit > 0 && databases.length > 0 && (
                                     <p css={tw`text-sm text-neutral-300 mb-4 sm:mr-6 sm:mb-0`}>
-                                        {databases.length} of {databaseLimit} databases have been allocated to this
-                                        server.
+                                        {databases.length} of {databaseLimit} databases have been
+                                        allocated to this server.
                                     </p>
                                 )}
                                 {databaseLimit > 0 && databaseLimit !== databases.length && (

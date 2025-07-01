@@ -11,7 +11,9 @@ const RunScheduleButton = ({ schedule }: { schedule: Schedule }) => {
     const { clearFlashes, clearAndAddHttpError } = useFlash();
 
     const id = ServerContext.useStoreState((state) => state.server.data!.id);
-    const appendSchedule = ServerContext.useStoreActions((actions) => actions.schedules.appendSchedule);
+    const appendSchedule = ServerContext.useStoreActions(
+        (actions) => actions.schedules.appendSchedule,
+    );
 
     const onTriggerExecute = useCallback(() => {
         clearFlashes('schedule');
@@ -26,7 +28,21 @@ const RunScheduleButton = ({ schedule }: { schedule: Schedule }) => {
                 clearAndAddHttpError({ error, key: 'schedules' });
             })
             .then(() => setLoading(false));
-    }, []);
+    }, [
+        clearFlashes,
+        setLoading,
+        triggerScheduleExecution,
+        id,
+        schedule,
+        then,
+        appendSchedule,
+        isProcessing,
+        catch,
+        error,
+        console,
+        clearAndAddHttpError,
+        key
+    ]);
 
     return (
         <>

@@ -19,7 +19,9 @@ export const rawDataToApiKey = (data: any): ApiKey => ({
 export default (): Promise<ApiKey[]> => {
     return new Promise((resolve, reject) => {
         http.get('/api/client/account/api-keys')
-            .then(({ data }) => resolve((data.data || []).map((d: any) => rawDataToApiKey(d.attributes))))
+            .then(({ data }) =>
+                resolve((data.data || []).map((d: any) => rawDataToApiKey(d.attributes))),
+            )
             .catch(reject);
     });
 };

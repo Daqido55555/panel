@@ -24,11 +24,13 @@ const MassActionsBar = () => {
     const directory = ServerContext.useStoreState((state) => state.files.directory);
 
     const selectedFiles = ServerContext.useStoreState((state) => state.files.selectedFiles);
-    const setSelectedFiles = ServerContext.useStoreActions((actions) => actions.files.setSelectedFiles);
+    const setSelectedFiles = ServerContext.useStoreActions(
+        (actions) => actions.files.setSelectedFiles,
+    );
 
     useEffect(() => {
         if (!loading) setLoadingMessage('');
-    }, [loading]);
+    }, [loading, setLoadingMessage]);
 
     const onClickCompress = () => {
         setLoading(true);
@@ -62,7 +64,9 @@ const MassActionsBar = () => {
 
     return (
         <>
-            <div css={tw`pointer-events-none fixed bottom-0 z-20 left-0 right-0 flex justify-center`}>
+            <div
+                css={tw`pointer-events-none fixed bottom-0 z-20 left-0 right-0 flex justify-center`}
+            >
                 <SpinnerOverlay visible={loading} size={'large'} fixed>
                     {loadingMessage}
                 </SpinnerOverlay>
@@ -75,8 +79,10 @@ const MassActionsBar = () => {
                 >
                     <p className={'mb-2'}>
                         Are you sure you want to delete&nbsp;
-                        <span className={'font-semibold text-gray-50'}>{selectedFiles.length} files</span>? This is a
-                        permanent action and the files cannot be recovered.
+                        <span className={'font-semibold text-gray-50'}>
+                            {selectedFiles.length} files
+                        </span>
+                        ? This is a permanent action and the files cannot be recovered.
                     </p>
                     {selectedFiles.slice(0, 15).map((file) => (
                         <li key={file}>{file}</li>
@@ -93,12 +99,21 @@ const MassActionsBar = () => {
                     />
                 )}
                 <Portal>
-                    <div className={'pointer-events-none fixed bottom-0 mb-6 flex justify-center w-full z-50'}>
+                    <div
+                        className={
+                            'pointer-events-none fixed bottom-0 mb-6 flex justify-center w-full z-50'
+                        }
+                    >
                         <Fade timeout={75} in={selectedFiles.length > 0} unmountOnExit>
-                            <div css={tw`flex items-center space-x-4 pointer-events-auto rounded p-4 bg-black/50`}>
+                            <div
+                                css={tw`flex items-center space-x-4 pointer-events-auto rounded p-4 bg-black/50`}
+                            >
                                 <Button onClick={() => setShowMove(true)}>Move</Button>
                                 <Button onClick={onClickCompress}>Archive</Button>
-                                <Button.Danger variant={Button.Variants.Secondary} onClick={() => setShowConfirm(true)}>
+                                <Button.Danger
+                                    variant={Button.Variants.Secondary}
+                                    onClick={() => setShowConfirm(true)}
+                                >
                                     Delete
                                 </Button.Danger>
                             </div>

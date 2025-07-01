@@ -23,7 +23,17 @@ export default ({ renderLeft, withinFileEditor, isNewFile }: Props) => {
             const name = path.split('/').pop() || null;
             setFile(name);
         }
-    }, [withinFileEditor, isNewFile, hash]);
+    }, [
+        withinFileEditor,
+        isNewFile,
+        hash,
+        path,
+        hashToPath,
+        name,
+        split,
+        pop,
+        setFile
+    ]);
 
     const breadcrumbs = (): { name: string; path?: string }[] =>
         directory
@@ -39,8 +49,12 @@ export default ({ renderLeft, withinFileEditor, isNewFile }: Props) => {
 
     return (
         <div css={tw`flex flex-grow-0 items-center text-sm text-neutral-500 overflow-x-hidden`}>
-            {renderLeft || <div css={tw`w-12`} />}/<span css={tw`px-1 text-neutral-300`}>home</span>/
-            <NavLink to={`/server/${id}/files`} css={tw`px-1 text-neutral-200 no-underline hover:text-neutral-100`}>
+            {renderLeft || <div css={tw`w-12`} />}/<span css={tw`px-1 text-neutral-300`}>home</span>
+            /
+            <NavLink
+                to={`/server/${id}/files`}
+                css={tw`px-1 text-neutral-200 no-underline hover:text-neutral-100`}
+            >
                 container
             </NavLink>
             /
@@ -59,7 +73,7 @@ export default ({ renderLeft, withinFileEditor, isNewFile }: Props) => {
                     <span key={index} css={tw`px-1 text-neutral-300`}>
                         {crumb.name}
                     </span>
-                )
+                ),
             )}
             {file && (
                 <React.Fragment>

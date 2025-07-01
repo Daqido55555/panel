@@ -83,12 +83,30 @@ const Modal: React.FC<ModalProps> = ({
         return () => {
             window.removeEventListener('keydown', handler);
         };
-    }, [isDismissable, closeOnEscape, render]);
+    }, [
+        isDismissable,
+        closeOnEscape,
+        render,
+        handler,
+        e,
+        KeyboardEvent,
+        key,
+        setRender,
+        window,
+        addEventListener,
+        removeEventListener
+    ]);
 
-    useEffect(() => setRender(visible), [visible]);
+    useEffect(() => setRender(visible), [visible, setRender]);
 
     return (
-        <Fade in={render} timeout={150} appear={appear || true} unmountOnExit onExited={() => onDismissed()}>
+        <Fade
+            in={render}
+            timeout={150}
+            appear={appear || true}
+            unmountOnExit
+            onExited={() => onDismissed()}
+        >
             <ModalMask
                 onClick={(e) => e.stopPropagation()}
                 onContextMenu={(e) => e.stopPropagation()}

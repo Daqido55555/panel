@@ -21,7 +21,11 @@ const EulaModalFeature = () => {
         if (!connected || !instance || status === 'running') return;
 
         const listener = (line: string) => {
-            if (line.toLowerCase().indexOf('you need to agree to the eula in order to run the server') >= 0) {
+            if (
+                line
+                    .toLowerCase()
+                    .indexOf('you need to agree to the eula in order to run the server') >= 0
+            ) {
                 setVisible(true);
             }
         };
@@ -31,7 +35,20 @@ const EulaModalFeature = () => {
         return () => {
             instance.removeListener(SocketEvent.CONSOLE_OUTPUT, listener);
         };
-    }, [connected, instance, status]);
+    }, [
+        connected,
+        instance,
+        status,
+        listener,
+        line,
+        toLowerCase,
+        indexOf,
+        setVisible,
+        addListener,
+        SocketEvent,
+        CONSOLE_OUTPUT,
+        removeListener
+    ]);
 
     const onAcceptEULA = () => {
         setLoading(true);
@@ -55,7 +72,7 @@ const EulaModalFeature = () => {
 
     useEffect(() => {
         clearFlashes('feature:eula');
-    }, []);
+    }, [clearFlashes]);
 
     return (
         <Modal
@@ -72,14 +89,18 @@ const EulaModalFeature = () => {
                     target={'_blank'}
                     css={tw`text-primary-300 underline transition-colors duration-150 hover:text-primary-400`}
                     rel={'noreferrer noopener'}
-                    href='https://www.minecraft.net/eula'
+                    href="https://www.minecraft.net/eula"
                 >
                     Minecraft&reg; EULA
                 </a>
                 .
             </p>
             <div css={tw`mt-8 sm:flex items-center justify-end`}>
-                <Button isSecondary onClick={() => setVisible(false)} css={tw`w-full sm:w-auto border-transparent`}>
+                <Button
+                    isSecondary
+                    onClick={() => setVisible(false)}
+                    css={tw`w-full sm:w-auto border-transparent`}
+                >
                     Cancel
                 </Button>
                 <Button onClick={onAcceptEULA} css={tw`mt-4 sm:mt-0 sm:ml-4 w-full sm:w-auto`}>

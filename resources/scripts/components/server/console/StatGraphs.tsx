@@ -25,7 +25,9 @@ export default () => {
                 y: {
                     ticks: {
                         callback(value) {
-                            return bytesToString(typeof value === 'string' ? parseInt(value, 10) : value);
+                            return bytesToString(
+                                typeof value === 'string' ? parseInt(value, 10) : value,
+                            );
                         },
                     },
                 },
@@ -36,7 +38,10 @@ export default () => {
                 ...opts,
                 label: !index ? 'Network In' : 'Network Out',
                 borderColor: !index ? theme('colors.cyan.400') : theme('colors.yellow.400'),
-                backgroundColor: hexToRgba(!index ? theme('colors.cyan.700') : theme('colors.yellow.700'), 0.5),
+                backgroundColor: hexToRgba(
+                    !index ? theme('colors.cyan.700') : theme('colors.yellow.700'),
+                    0.5,
+                ),
             };
         },
     });
@@ -47,7 +52,7 @@ export default () => {
             memory.clear();
             network.clear();
         }
-    }, [status]);
+    }, [status, cpu, clear, memory, network]);
 
     useWebsocketEvent(SocketEvent.STATS, (data: string) => {
         let values: any = {};
@@ -59,8 +64,12 @@ export default () => {
         cpu.push(values.cpu_absolute);
         memory.push(Math.floor(values.memory_bytes / 1024 / 1024));
         network.push([
-            previous.current.tx < 0 ? 0 : Math.max(0, values.network.tx_bytes - previous.current.tx),
-            previous.current.rx < 0 ? 0 : Math.max(0, values.network.rx_bytes - previous.current.rx),
+            previous.current.tx < 0
+                ? 0
+                : Math.max(0, values.network.tx_bytes - previous.current.tx),
+            previous.current.rx < 0
+                ? 0
+                : Math.max(0, values.network.rx_bytes - previous.current.rx),
         ]);
 
         previous.current = { tx: values.network.tx_bytes, rx: values.network.rx_bytes };

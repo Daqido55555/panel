@@ -21,9 +21,13 @@ const schema = Yup.object().shape({
 
 export default () => {
     const user = useStoreState((state: State<ApplicationStore>) => state.user.data);
-    const updateEmail = useStoreActions((state: Actions<ApplicationStore>) => state.user.updateUserEmail);
+    const updateEmail = useStoreActions(
+        (state: Actions<ApplicationStore>) => state.user.updateUserEmail,
+    );
 
-    const { clearFlashes, addFlash } = useStoreActions((actions: Actions<ApplicationStore>) => actions.flashes);
+    const { clearFlashes, addFlash } = useStoreActions(
+        (actions: Actions<ApplicationStore>) => actions.flashes,
+    );
 
     const submit = (values: Values, { resetForm, setSubmitting }: FormikHelpers<Values>) => {
         clearFlashes('account:email');
@@ -34,7 +38,7 @@ export default () => {
                     type: 'success',
                     key: 'account:email',
                     message: 'Your primary email has been updated.',
-                })
+                }),
             )
             .catch((error) =>
                 addFlash({
@@ -42,7 +46,7 @@ export default () => {
                     key: 'account:email',
                     title: 'Error',
                     message: httpErrorToHuman(error),
-                })
+                }),
             )
             .then(() => {
                 resetForm();
@@ -51,7 +55,11 @@ export default () => {
     };
 
     return (
-        <Formik onSubmit={submit} validationSchema={schema} initialValues={{ email: user!.email, password: '' }}>
+        <Formik
+            onSubmit={submit}
+            validationSchema={schema}
+            initialValues={{ email: user!.email, password: '' }}
+        >
             {({ isSubmitting, isValid }) => (
                 <React.Fragment>
                     <SpinnerOverlay size={'large'} visible={isSubmitting} />

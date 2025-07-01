@@ -35,14 +35,16 @@ const EditScheduleModal = ({ schedule }: Props) => {
     const { dismiss } = useContext(ModalContext);
 
     const uuid = ServerContext.useStoreState((state) => state.server.data!.uuid);
-    const appendSchedule = ServerContext.useStoreActions((actions) => actions.schedules.appendSchedule);
+    const appendSchedule = ServerContext.useStoreActions(
+        (actions) => actions.schedules.appendSchedule,
+    );
     const [showCheatsheet, setShowCheetsheet] = useState(false);
 
     useEffect(() => {
         return () => {
             clearFlashes('schedule:edit');
         };
-    }, []);
+    }, [clearFlashes]);
 
     const submit = (values: Values, { setSubmitting }: FormikHelpers<Values>) => {
         clearFlashes('schedule:edit');
@@ -90,7 +92,9 @@ const EditScheduleModal = ({ schedule }: Props) => {
         >
             {({ isSubmitting }) => (
                 <Form>
-                    <h3 css={tw`text-2xl mb-6`}>{schedule ? 'Edit schedule' : 'Create new schedule'}</h3>
+                    <h3 css={tw`text-2xl mb-6`}>
+                        {schedule ? 'Edit schedule' : 'Create new schedule'}
+                    </h3>
                     <FlashMessageRender byKey={'schedule:edit'} css={tw`mb-6`} />
                     <Field
                         name={'name'}
@@ -105,10 +109,13 @@ const EditScheduleModal = ({ schedule }: Props) => {
                         <Field name={'dayOfWeek'} label={'Day of week'} />
                     </div>
                     <p css={tw`text-neutral-400 text-xs mt-2`}>
-                        The schedule system supports the use of Cronjob syntax when defining when tasks should begin
-                        running. Use the fields above to specify when these tasks should begin running.
+                        The schedule system supports the use of Cronjob syntax when defining when
+                        tasks should begin running. Use the fields above to specify when these tasks
+                        should begin running.
                     </p>
-                    <div css={tw`mt-6 bg-neutral-700 border border-neutral-800 shadow-inner p-4 rounded`}>
+                    <div
+                        css={tw`mt-6 bg-neutral-700 border border-neutral-800 shadow-inner p-4 rounded`}
+                    >
                         <Switch
                             name={'show_cheatsheet'}
                             description={'Show the cron cheatsheet for some examples.'}
@@ -122,14 +129,20 @@ const EditScheduleModal = ({ schedule }: Props) => {
                             </div>
                         )}
                     </div>
-                    <div css={tw`mt-6 bg-neutral-700 border border-neutral-800 shadow-inner p-4 rounded`}>
+                    <div
+                        css={tw`mt-6 bg-neutral-700 border border-neutral-800 shadow-inner p-4 rounded`}
+                    >
                         <FormikSwitch
                             name={'onlyWhenOnline'}
-                            description={'Only execute this schedule when the server is in a running state.'}
+                            description={
+                                'Only execute this schedule when the server is in a running state.'
+                            }
                             label={'Only When Server Is Online'}
                         />
                     </div>
-                    <div css={tw`mt-6 bg-neutral-700 border border-neutral-800 shadow-inner p-4 rounded`}>
+                    <div
+                        css={tw`mt-6 bg-neutral-700 border border-neutral-800 shadow-inner p-4 rounded`}
+                    >
                         <FormikSwitch
                             name={'enabled'}
                             description={'This schedule will be executed automatically if enabled.'}
@@ -137,7 +150,11 @@ const EditScheduleModal = ({ schedule }: Props) => {
                         />
                     </div>
                     <div css={tw`mt-6 text-right`}>
-                        <Button className={'w-full sm:w-auto'} type={'submit'} disabled={isSubmitting}>
+                        <Button
+                            className={'w-full sm:w-auto'}
+                            type={'submit'}
+                            disabled={isSubmitting}
+                        >
                             {schedule ? 'Save changes' : 'Create schedule'}
                         </Button>
                     </div>

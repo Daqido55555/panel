@@ -18,7 +18,7 @@ const DisableTOTPDialog = () => {
 
     useEffect(() => {
         setProps((state) => ({ ...state, preventExternalClose: submitting }));
-    }, [submitting]);
+    }, [submitting, setProps, state, preventExternalClose]);
 
     const submit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -57,7 +57,11 @@ const DisableTOTPDialog = () => {
                     disabled={password.length > 0}
                     content={'You must enter your account password to continue.'}
                 >
-                    <Button.Danger type={'submit'} form={'disable-totp-form'} disabled={submitting || !password.length}>
+                    <Button.Danger
+                        type={'submit'}
+                        form={'disable-totp-form'}
+                        disabled={submitting || !password.length}
+                    >
                         Disable
                     </Button.Danger>
                 </Tooltip>

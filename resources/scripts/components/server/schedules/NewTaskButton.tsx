@@ -12,7 +12,11 @@ export default ({ schedule }: Props) => {
 
     return (
         <>
-            <TaskDetailsModal schedule={schedule} visible={visible} onModalDismissed={() => setVisible(false)} />
+            <TaskDetailsModal
+                schedule={schedule}
+                visible={visible}
+                onModalDismissed={() => setVisible(false)}
+            />
             <Button onClick={() => setVisible(true)} className={'flex-1'}>
                 New Task
             </Button>

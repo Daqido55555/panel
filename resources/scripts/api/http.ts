@@ -31,7 +31,7 @@ http.interceptors.response.use(
         store.getActions().progress.setComplete();
 
         throw error;
-    }
+    },
 );
 
 export default http;
@@ -71,7 +71,10 @@ export interface FractalResponseData {
     object: string;
     attributes: {
         [k: string]: any;
-        relationships?: Record<string, FractalResponseData | FractalResponseList | null | undefined>;
+        relationships?: Record<
+            string,
+            FractalResponseData | FractalResponseList | null | undefined
+        >;
     };
 }
 
@@ -119,7 +122,10 @@ export function getPaginationSet(data: any): PaginationDataSet {
 
 type QueryBuilderFilterValue = string | number | boolean | null;
 
-export interface QueryBuilderParams<FilterKeys extends string = string, SortKeys extends string = string> {
+export interface QueryBuilderParams<
+    FilterKeys extends string = string,
+    SortKeys extends string = string,
+> {
     page?: number;
     filters?: {
         [K in FilterKeys]?: QueryBuilderFilterValue | Readonly<QueryBuilderFilterValue[]>;

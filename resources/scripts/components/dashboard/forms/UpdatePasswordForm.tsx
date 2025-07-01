@@ -24,13 +24,15 @@ const schema = Yup.object().shape({
         'Password confirmation does not match the password you entered.',
         function (value) {
             return value === this.parent.password;
-        }
+        },
     ),
 });
 
 export default () => {
     const user = useStoreState((state: State<ApplicationStore>) => state.user.data);
-    const { clearFlashes, addFlash } = useStoreActions((actions: Actions<ApplicationStore>) => actions.flashes);
+    const { clearFlashes, addFlash } = useStoreActions(
+        (actions: Actions<ApplicationStore>) => actions.flashes,
+    );
 
     if (!user) {
         return null;
@@ -49,7 +51,7 @@ export default () => {
                     type: 'error',
                     title: 'Error',
                     message: httpErrorToHuman(error),
-                })
+                }),
             )
             .then(() => setSubmitting(false));
     };

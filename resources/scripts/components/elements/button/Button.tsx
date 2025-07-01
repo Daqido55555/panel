@@ -17,24 +17,24 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                         [styles.small]: size === Options.Size.Small,
                         [styles.large]: size === Options.Size.Large,
                     },
-                    className
+                    className,
                 )}
                 {...rest}
             >
                 {children}
             </button>
         );
-    }
+    },
 );
 
 const TextButton = forwardRef<HTMLButtonElement, ButtonProps>(({ className, ...props }, ref) => (
     // @ts-expect-error not sure how to get this correct
-    <Button ref={ref} className={classNames(styles.text, className)} {...props} />
+    (<Button ref={ref} className={classNames(styles.text, className)} {...props} />)
 ));
 
 const DangerButton = forwardRef<HTMLButtonElement, ButtonProps>(({ className, ...props }, ref) => (
     // @ts-expect-error not sure how to get this correct
-    <Button ref={ref} className={classNames(styles.danger, className)} {...props} />
+    (<Button ref={ref} className={classNames(styles.danger, className)} {...props} />)
 ));
 
 const _Button = Object.assign(Button, {

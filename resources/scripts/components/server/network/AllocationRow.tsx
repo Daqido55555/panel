@@ -37,7 +37,7 @@ const AllocationRow = ({ allocation }: Props) => {
 
     const onNotesChanged = useCallback((id: number, notes: string) => {
         mutate((data) => data?.map((a) => (a.id === id ? { ...a, notes } : a)), false);
-    }, []);
+    }, [id, notes, mutate, data, map, a]);
 
     const setAllocationNotes = debounce((notes: string) => {
         setLoading(true);
@@ -96,7 +96,11 @@ const AllocationRow = ({ allocation }: Props) => {
             </div>
             <div className={'flex justify-end space-x-4 mt-4 w-full md:mt-0 md:w-48'}>
                 {allocation.isDefault ? (
-                    <Button size={Button.Sizes.Small} className={'!text-gray-50 !bg-blue-600'} disabled>
+                    <Button
+                        size={Button.Sizes.Small}
+                        className={'!text-gray-50 !bg-blue-600'}
+                        disabled
+                    >
                         Primary
                     </Button>
                 ) : (

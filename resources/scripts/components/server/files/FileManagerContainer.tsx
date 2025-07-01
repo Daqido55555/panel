@@ -27,7 +27,9 @@ const sortFiles = (files: FileObject[]): FileObject[] => {
     const sortedFiles: FileObject[] = files
         .sort((a, b) => a.name.localeCompare(b.name))
         .sort((a, b) => (a.isFile === b.isFile ? 0 : a.isFile ? 1 : -1));
-    return sortedFiles.filter((file, index) => index === 0 || file.name !== sortedFiles[index - 1].name);
+    return sortedFiles.filter(
+        (file, index) => index === 0 || file.name !== sortedFiles[index - 1].name,
+    );
 };
 
 export default () => {
@@ -38,18 +40,22 @@ export default () => {
     const clearFlashes = useStoreActions((actions) => actions.flashes.clearFlashes);
     const setDirectory = ServerContext.useStoreActions((actions) => actions.files.setDirectory);
 
-    const setSelectedFiles = ServerContext.useStoreActions((actions) => actions.files.setSelectedFiles);
-    const selectedFilesLength = ServerContext.useStoreState((state) => state.files.selectedFiles.length);
+    const setSelectedFiles = ServerContext.useStoreActions(
+        (actions) => actions.files.setSelectedFiles,
+    );
+    const selectedFilesLength = ServerContext.useStoreState(
+        (state) => state.files.selectedFiles.length,
+    );
 
     useEffect(() => {
         clearFlashes('files');
         setSelectedFiles([]);
         setDirectory(hashToPath(hash));
-    }, [hash]);
+    }, [hash, clearFlashes, setSelectedFiles, setDirectory, hashToPath]);
 
     useEffect(() => {
         mutate();
-    }, [directory]);
+    }, [directory, mutate]);
 
     const onSelectAllClick = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSelectedFiles(e.currentTarget.checked ? files?.map((file) => file.name) || [] : []);
@@ -68,7 +74,10 @@ export default () => {
                             <FileActionCheckbox
                                 type={'checkbox'}
                                 css={tw`mx-4`}
-                                checked={selectedFilesLength === (files?.length === 0 ? -1 : files?.length)}
+                                checked={
+                                    selectedFilesLength ===
+                                    (files?.length === 0 ? -1 : files?.length)
+                                }
                                 onChange={onSelectAllClick}
                             />
                         }
@@ -90,15 +99,17 @@ export default () => {
             ) : (
                 <>
                     {!files.length ? (
-                        <p css={tw`text-sm text-neutral-400 text-center`}>This directory seems to be empty.</p>
+                        <p css={tw`text-sm text-neutral-400 text-center`}>
+                            This directory seems to be empty.
+                        </p>
                     ) : (
                         <CSSTransition classNames={'fade'} timeout={150} appear in>
                             <div>
                                 {files.length > 250 && (
                                     <div css={tw`rounded bg-yellow-400 mb-px p-3`}>
                                         <p css={tw`text-yellow-900 text-sm text-center`}>
-                                            This directory is too large to display in the browser, limiting the output
-                                            to the first 250 files.
+                                            This directory is too large to display in the browser,
+                                            limiting the output to the first 250 files.
                                         </p>
                                     </div>
                                 )}

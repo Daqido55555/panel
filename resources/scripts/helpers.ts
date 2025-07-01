@@ -1,4 +1,5 @@
-export const randomInt = (low: number, high: number) => Math.floor(Math.random() * (high - low) + low);
+export const randomInt = (low: number, high: number) =>
+    Math.floor(Math.random() * (high - low) + low);
 
 export const cleanDirectoryPath = (path: string) => path.replace(/(\/(\/*))|(^$)/g, '/');
 

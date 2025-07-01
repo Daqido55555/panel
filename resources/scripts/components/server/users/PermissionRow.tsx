@@ -40,7 +40,10 @@ const PermissionRow = ({ permission, disabled }: Props) => {
     const permissions = useStoreState((state) => state.permissions.data);
 
     return (
-        <Container htmlFor={`permission_${permission}`} className={disabled ? 'disabled' : undefined}>
+        <Container
+            htmlFor={`permission_${permission}`}
+            className={disabled ? 'disabled' : undefined}
+        >
             <div css={tw`p-2`}>
                 <Checkbox
                     id={`permission_${permission}`}

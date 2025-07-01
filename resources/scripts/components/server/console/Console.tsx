@@ -54,7 +54,7 @@ const terminalProps: ITerminalOptions = {
 export default () => {
     const TERMINAL_PRELUDE = '\u001b[1m\u001b[33mcontainer@pterodactyl~ \u001b[0m';
     const ref = useRef<HTMLDivElement>(null);
-    const terminal = useMemo(() => new Terminal({ ...terminalProps }), []);
+    const terminal = useMemo(() => new Terminal({ ...terminalProps }), [Terminal, terminalProps]);
     const fitAddon = new FitAddon();
     const searchAddon = new SearchAddon();
     const searchBar = new SearchBarAddon({ searchAddon });
@@ -63,7 +63,9 @@ export default () => {
     const { connected, instance } = ServerContext.useStoreState((state) => state.socket);
     const [canSendCommands] = usePermissions(['control.console']);
     const serverId = ServerContext.useStoreState((state) => state.server.data!.id);
-    const isTransferring = ServerContext.useStoreState((state) => state.server.data!.isTransferring);
+    const isTransferring = ServerContext.useStoreState(
+        (state) => state.server.data!.isTransferring,
+    );
     const [history, setHistory] = usePersistedState<string[]>(`${serverId}:command_history`, []);
     const [historyIndex, setHistoryIndex] = useState(-1);
     // SearchBarAddon has hardcoded z-index: 999 :(
@@ -73,7 +75,9 @@ export default () => {
     }`;
 
     const handleConsoleOutput = (line: string, prelude = false) =>
-        terminal.writeln((prelude ? TERMINAL_PRELUDE : '') + line.replace(/(?:\r\n|\r|\n)$/im, '') + '\u001b[0m');
+        terminal.writeln(
+            (prelude ? TERMINAL_PRELUDE : '') + line.replace(/(?:\r\n|\r|\n)$/im, '') + '\u001b[0m',
+        );
 
     const handleTransferStatus = (status: string) => {
         switch (status) {
@@ -86,7 +90,10 @@ export default () => {
 
     const handleDaemonErrorOutput = (line: string) =>
         terminal.writeln(
-            TERMINAL_PRELUDE + '\u001b[1m\u001b[41m' + line.replace(/(?:\r\n|\r|\n)$/im, '') + '\u001b[0m'
+            TERMINAL_PRELUDE +
+                '\u001b[1m\u001b[41m' +
+                line.replace(/(?:\r\n|\r|\n)$/im, '') +
+                '\u001b[0m',
         );
 
     const handlePowerChangeEvent = (state: string) =>
@@ -148,7 +155,34 @@ export default () => {
                 return true;
             });
         }
-    }, [terminal, connected]);
+    }, [
+        terminal,
+        connected,
+        ref,
+        current,
+        element,
+        loadAddon,
+        fitAddon,
+        searchAddon,
+        searchBar,
+        webLinksAddon,
+        scrollDownHelperAddon,
+        open,
+        fit,
+        addNewStyle,
+        zIndex,
+        attachCustomKeyEventHandler,
+        e,
+        KeyboardEvent,
+        ctrlKey,
+        metaKey,
+        key,
+        document,
+        execCommand,
+        preventDefault,
+        show,
+        hidden
+    ]);
 
     useEventListener(
         'resize',
@@ -156,7 +190,7 @@ export default () => {
             if (terminal.element) {
                 fitAddon.fit();
             }
-        }, 100)
+        }, 100),
     );
 
     useEffect(() => {
@@ -189,13 +223,46 @@ export default () => {
                 });
             }
         };
-    }, [connected, instance]);
+    }, [
+        connected,
+        instance,
+        listeners,
+        s,
+        Record,
+        SocketEvent,
+        STATUS,
+        handlePowerChangeEvent,
+        CONSOLE_OUTPUT,
+        handleConsoleOutput,
+        INSTALL_OUTPUT,
+        TRANSFER_LOGS,
+        TRANSFER_STATUS,
+        handleTransferStatus,
+        DAEMON_MESSAGE,
+        line,
+        DAEMON_ERROR,
+        handleDaemonErrorOutput,
+        isTransferring,
+        terminal,
+        clear,
+        Object,
+        keys,
+        forEach,
+        key,
+        addListener,
+        send,
+        SocketRequest,
+        SEND_LOGS,
+        removeListener
+    ]);
 
     return (
         <div className={classNames(styles.terminal, 'relative')}>
             <SpinnerOverlay visible={!connected} size={'large'} />
             <div
-                className={classNames(styles.container, styles.overflows_container, { 'rounded-b': !canSendCommands })}
+                className={classNames(styles.container, styles.overflows_container, {
+                    'rounded-b': !canSendCommands,
+                })}
             >
                 <div className={'h-full'}>
                     <div id={styles.terminal} ref={ref} />
@@ -216,7 +283,7 @@ export default () => {
                     <div
                         className={classNames(
                             'text-gray-100 peer-focus:text-gray-50 peer-focus:animate-pulse',
-                            styles.command_icon
+                            styles.command_icon,
                         )}
                     >
                         <ChevronDoubleRightIcon className={'w-4 h-4'} />

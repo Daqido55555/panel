@@ -9,7 +9,20 @@ export default ({ enabled }: { enabled: string[] }) => {
         return getObjectKeys(features)
             .filter((key) => enabled.map((v) => v.toLowerCase()).includes(key.toLowerCase()))
             .reduce((arr, key) => [...arr, [key, features[key]]], [] as ListItems);
-    }, [enabled]);
+    }, [
+        enabled,
+        getObjectKeys,
+        features,
+        filter,
+        key,
+        map,
+        v,
+        toLowerCase,
+        includes,
+        reduce,
+        arr,
+        ListItems
+    ]);
 
     return (
         <React.Suspense fallback={null}>

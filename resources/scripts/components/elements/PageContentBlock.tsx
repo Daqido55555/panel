@@ -10,12 +10,17 @@ export interface PageContentBlockProps {
     showFlashKey?: string;
 }
 
-const PageContentBlock: React.FC<PageContentBlockProps> = ({ title, showFlashKey, className, children }) => {
+const PageContentBlock: React.FC<PageContentBlockProps> = ({
+    title,
+    showFlashKey,
+    className,
+    children,
+}) => {
     useEffect(() => {
         if (title) {
             document.title = title;
         }
-    }, [title]);
+    }, [title, document]);
 
     return (
         <CSSTransition timeout={150} classNames={'fade'} appear in>

@@ -21,14 +21,19 @@ interface Values {
 export default ({ match, location }: RouteComponentProps<{ token: string }>) => {
     const [email, setEmail] = useState('');
 
-    const { clearFlashes, addFlash } = useStoreActions((actions: Actions<ApplicationStore>) => actions.flashes);
+    const { clearFlashes, addFlash } = useStoreActions(
+        (actions: Actions<ApplicationStore>) => actions.flashes,
+    );
 
     const parsed = new URLSearchParams(location.search);
     if (email.length === 0 && parsed.get('email')) {
         setEmail(parsed.get('email') || '');
     }
 
-    const submit = ({ password, passwordConfirmation }: Values, { setSubmitting }: FormikHelpers<Values>) => {
+    const submit = (
+        { password, passwordConfirmation }: Values,
+        { setSubmitting }: FormikHelpers<Values>,
+    ) => {
         clearFlashes();
         performPasswordReset(email, { token: match.params.token, password, passwordConfirmation })
             .then(() => {
@@ -76,10 +81,20 @@ export default ({ match, location }: RouteComponentProps<{ token: string }>) => 
                         />
                     </div>
                     <div css={tw`mt-6`}>
-                        <Field light label={'Confirm New Password'} name={'passwordConfirmation'} type={'password'} />
+                        <Field
+                            light
+                            label={'Confirm New Password'}
+                            name={'passwordConfirmation'}
+                            type={'password'}
+                        />
                     </div>
                     <div css={tw`mt-6`}>
-                        <Button size={'xlarge'} type={'submit'} disabled={isSubmitting} isLoading={isSubmitting}>
+                        <Button
+                            size={'xlarge'}
+                            type={'submit'}
+                            disabled={isSubmitting}
+                            isLoading={isSubmitting}
+                        >
                             Reset Password
                         </Button>
                     </div>

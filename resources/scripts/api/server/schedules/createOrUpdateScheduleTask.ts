@@ -8,7 +8,12 @@ interface Data {
     continueOnFailure: boolean;
 }
 
-export default async (uuid: string, schedule: number, task: number | undefined, data: Data): Promise<Task> => {
+export default async (
+    uuid: string,
+    schedule: number,
+    task: number | undefined,
+    data: Data,
+): Promise<Task> => {
     const { data: response } = await http.post(
         `/api/client/servers/${uuid}/schedules/${schedule}/tasks${task ? `/${task}` : ''}`,
         {
@@ -16,7 +21,7 @@ export default async (uuid: string, schedule: number, task: number | undefined, 
             payload: data.payload,
             continue_on_failure: data.continueOnFailure,
             time_offset: data.timeOffset,
-        }
+        },
     );
 
     return rawDataToServerTask(response.attributes);

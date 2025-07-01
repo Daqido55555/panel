@@ -46,8 +46,16 @@ export interface SwitchProps {
     children?: React.ReactNode;
 }
 
-const Switch = ({ name, label, description, defaultChecked, readOnly, onChange, children }: SwitchProps) => {
-    const uuid = useMemo(() => v4(), []);
+const Switch = ({
+    name,
+    label,
+    description,
+    defaultChecked,
+    readOnly,
+    onChange,
+    children,
+}: SwitchProps) => {
+    const uuid = useMemo(() => v4(), [v4]);
 
     return (
         <div css={tw`flex items-center`}>

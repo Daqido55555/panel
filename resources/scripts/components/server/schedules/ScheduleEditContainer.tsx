@@ -53,9 +53,11 @@ export default () => {
 
     const schedule = ServerContext.useStoreState(
         (st) => st.schedules.data.find((s) => s.id === Number(scheduleId)),
-        isEqual
+        isEqual,
     );
-    const appendSchedule = ServerContext.useStoreActions((actions) => actions.schedules.appendSchedule);
+    const appendSchedule = ServerContext.useStoreActions(
+        (actions) => actions.schedules.appendSchedule,
+    );
 
     useEffect(() => {
         if (schedule?.id === Number(scheduleId)) {
@@ -71,11 +73,27 @@ export default () => {
                 clearAndAddHttpError({ error, key: 'schedules' });
             })
             .then(() => setIsLoading(false));
-    }, [scheduleId]);
+    }, [
+        scheduleId,
+        schedule,
+        id,
+        Number,
+        setIsLoading,
+        clearFlashes,
+        getServerSchedule,
+        uuid,
+        then,
+        appendSchedule,
+        catch,
+        error,
+        console,
+        clearAndAddHttpError,
+        key
+    ]);
 
     const toggleEditModal = useCallback(() => {
         setShowEditModal((s) => !s);
-    }, []);
+    }, [setShowEditModal, s]);
 
     return (
         <PageContentBlock title={'Schedules'}>
@@ -84,7 +102,10 @@ export default () => {
                 <Spinner size={'large'} centered />
             ) : (
                 <>
-                    <ScheduleCronRow cron={schedule.cron} css={tw`sm:hidden bg-neutral-700 rounded mb-4 p-3`} />
+                    <ScheduleCronRow
+                        cron={schedule.cron}
+                        css={tw`sm:hidden bg-neutral-700 rounded mb-4 p-3`}
+                    />
                     <div css={tw`rounded shadow`}>
                         <div
                             css={tw`sm:flex items-center bg-neutral-900 p-3 sm:p-6 border-b-4 border-neutral-600 rounded-t`}
@@ -122,7 +143,10 @@ export default () => {
                             </div>
                             <div css={tw`flex sm:block mt-3 sm:mt-0`}>
                                 <Can action={'schedule.update'}>
-                                    <Button.Text className={'flex-1 mr-4'} onClick={toggleEditModal}>
+                                    <Button.Text
+                                        className={'flex-1 mr-4'}
+                                        onClick={toggleEditModal}
+                                    >
                                         Edit
                                     </Button.Text>
                                     <NewTaskButton schedule={schedule} />
@@ -140,7 +164,11 @@ export default () => {
                             {schedule.tasks.length > 0
                                 ? schedule.tasks
                                       .sort((a, b) =>
-                                          a.sequenceId === b.sequenceId ? 0 : a.sequenceId > b.sequenceId ? 1 : -1
+                                          a.sequenceId === b.sequenceId
+                                              ? 0
+                                              : a.sequenceId > b.sequenceId
+                                              ? 1
+                                              : -1,
                                       )
                                       .map((task) => (
                                           <ScheduleTaskRow
@@ -152,7 +180,11 @@ export default () => {
                                 : null}
                         </div>
                     </div>
-                    <EditScheduleModal visible={showEditModal} schedule={schedule} onModalDismissed={toggleEditModal} />
+                    <EditScheduleModal
+                        visible={showEditModal}
+                        schedule={schedule}
+                        onModalDismissed={toggleEditModal}
+                    />
                     <div css={tw`mt-6 flex sm:justify-end`}>
                         <Can action={'schedule.delete'}>
                             <DeleteScheduleButton

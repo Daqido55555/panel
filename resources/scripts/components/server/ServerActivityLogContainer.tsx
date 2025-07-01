@@ -16,7 +16,10 @@ import useLocationHash from '@/plugins/useLocationHash';
 export default () => {
     const { hash } = useLocationHash();
     const { clearAndAddHttpError } = useFlashKey('server:activity');
-    const [filters, setFilters] = useState<ActivityLogFilters>({ page: 1, sorts: { timestamp: -1 } });
+    const [filters, setFilters] = useState<ActivityLogFilters>({
+        page: 1,
+        sorts: { timestamp: -1 },
+    });
 
     const { data, isValidating, error } = useActivityLogs(filters, {
         revalidateOnMount: true,
@@ -25,11 +28,11 @@ export default () => {
 
     useEffect(() => {
         setFilters((value) => ({ ...value, filters: { ip: hash.ip, event: hash.event } }));
-    }, [hash]);
+    }, [hash, setFilters, value, filters, ip, event]);
 
     useEffect(() => {
         clearAndAddHttpError(error);
-    }, [error]);
+    }, [error, clearAndAddHttpError]);
 
     return (
         <ServerContentBlock title={'Activity Log'}>
@@ -48,7 +51,9 @@ export default () => {
             {!data && isValidating ? (
                 <Spinner centered />
             ) : !data?.items.length ? (
-                <p className={'text-sm text-center text-gray-400'}>No activity logs available for this server.</p>
+                <p className={'text-sm text-center text-gray-400'}>
+                    No activity logs available for this server.
+                </p>
             ) : (
                 <div className={'bg-gray-700'}>
                     {data?.items.map((activity) => (

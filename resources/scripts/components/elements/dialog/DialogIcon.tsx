@@ -1,5 +1,10 @@
 import React, { useContext, useEffect } from 'react';
-import { CheckIcon, ExclamationIcon, InformationCircleIcon, ShieldExclamationIcon } from '@heroicons/react/outline';
+import {
+    CheckIcon,
+    ExclamationIcon,
+    InformationCircleIcon,
+    ShieldExclamationIcon,
+} from '@heroicons/react/outline';
 import classNames from 'classnames';
 import { DialogContext, DialogIconProps, styles } from './';
 
@@ -19,13 +24,23 @@ export default ({ type, position, className }: DialogIconProps) => {
         setIcon(
             <div className={classNames(styles.dialog_icon, styles[type], className)}>
                 <Icon className={'w-6 h-6'} />
-            </div>
+            </div>,
         );
-    }, [type, className]);
+    }, [
+        type,
+        className,
+        Icon,
+        icons,
+        setIcon,
+        div,
+        classNames,
+        styles,
+        dialog_icon
+    ]);
 
     useEffect(() => {
         setIconPosition(position);
-    }, [position]);
+    }, [position, setIconPosition]);
 
     return null;
 };

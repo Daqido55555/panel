@@ -35,7 +35,22 @@ export default () => {
                 console.error(error);
             })
             .then(() => setLoading(false));
-    }, []);
+    }, [
+        clearFlashes,
+        getServerSchedules,
+        uuid,
+        then,
+        schedules,
+        setSchedules,
+        catch,
+        error,
+        addError,
+        message,
+        httpErrorToHuman,
+        key,
+        console,
+        setLoading
+    ]);
 
     return (
         <ServerContentBlock title={'Schedules'}>
@@ -66,7 +81,10 @@ export default () => {
                     )}
                     <Can action={'schedule.create'}>
                         <div css={tw`mt-8 flex justify-end`}>
-                            <EditScheduleModal visible={visible} onModalDismissed={() => setVisible(false)} />
+                            <EditScheduleModal
+                                visible={visible}
+                                onModalDismissed={() => setVisible(false)}
+                            />
                             <Button type={'button'} onClick={() => setVisible(true)}>
                                 Create schedule
                             </Button>

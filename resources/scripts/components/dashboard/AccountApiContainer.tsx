@@ -26,14 +26,25 @@ export default () => {
             .then((keys) => setKeys(keys))
             .then(() => setLoading(false))
             .catch((error) => clearAndAddHttpError(error));
-    }, []);
+    }, [
+        getApiKeys,
+        then,
+        keys,
+        setKeys,
+        setLoading,
+        catch,
+        error,
+        clearAndAddHttpError
+    ]);
 
     const doDeletion = (identifier: string) => {
         setLoading(true);
 
         clearAndAddHttpError();
         deleteApiKey(identifier)
-            .then(() => setKeys((s) => [...(s || []).filter((key) => key.identifier !== identifier)]))
+            .then(() =>
+                setKeys((s) => [...(s || []).filter((key) => key.identifier !== identifier)]),
+            )
             .catch((error) => clearAndAddHttpError(error))
             .then(() => {
                 setLoading(false);
@@ -48,7 +59,10 @@ export default () => {
                 <ContentBox title={'Create API Key'} css={tw`flex-none w-full md:w-1/2`}>
                     <CreateApiKeyForm onKeyCreated={(key) => setKeys((s) => [...s!, key])} />
                 </ContentBox>
-                <ContentBox title={'API Keys'} css={tw`flex-1 overflow-hidden mt-8 md:mt-0 md:ml-8`}>
+                <ContentBox
+                    title={'API Keys'}
+                    css={tw`flex-1 overflow-hidden mt-8 md:mt-0 md:ml-8`}
+                >
                     <SpinnerOverlay visible={loading} />
                     <Dialog.Confirm
                         title={'Delete API Key'}
@@ -57,7 +71,8 @@ export default () => {
                         onClose={() => setDeleteIdentifier('')}
                         onConfirmed={() => doDeletion(deleteIdentifier)}
                     >
-                        All requests using the <Code>{deleteIdentifier}</Code> key will be invalidated.
+                        All requests using the <Code>{deleteIdentifier}</Code> key will be
+                        invalidated.
                     </Dialog.Confirm>
                     {keys.length === 0 ? (
                         <p css={tw`text-center text-sm`}>
@@ -74,13 +89,20 @@ export default () => {
                                     <p css={tw`text-sm break-words`}>{key.description}</p>
                                     <p css={tw`text-2xs text-neutral-300 uppercase`}>
                                         Last used:&nbsp;
-                                        {key.lastUsedAt ? format(key.lastUsedAt, 'MMM do, yyyy HH:mm') : 'Never'}
+                                        {key.lastUsedAt
+                                            ? format(key.lastUsedAt, 'MMM do, yyyy HH:mm')
+                                            : 'Never'}
                                     </p>
                                 </div>
                                 <p css={tw`text-sm ml-4 hidden md:block`}>
-                                    <code css={tw`font-mono py-1 px-2 bg-neutral-900 rounded`}>{key.identifier}</code>
+                                    <code css={tw`font-mono py-1 px-2 bg-neutral-900 rounded`}>
+                                        {key.identifier}
+                                    </code>
                                 </p>
-                                <button css={tw`ml-4 p-2 text-sm`} onClick={() => setDeleteIdentifier(key.identifier)}>
+                                <button
+                                    css={tw`ml-4 p-2 text-sm`}
+                                    onClick={() => setDeleteIdentifier(key.identifier)}
+                                >
                                     <FontAwesomeIcon
                                         icon={faTrashAlt}
                                         css={tw`text-neutral-400 hover:text-red-400 transition-colors duration-150`}

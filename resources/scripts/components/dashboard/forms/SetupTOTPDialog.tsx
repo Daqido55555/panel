@@ -25,7 +25,9 @@ const ConfigureTwoFactorForm = ({ onTokens }: Props) => {
     const [password, setPassword] = useState('');
     const [token, setToken] = useState<TwoFactorTokenData | null>(null);
     const { clearAndAddHttpError } = useFlashKey('account:two-step');
-    const updateUserData = useStoreActions((actions: Actions<ApplicationStore>) => actions.user.updateUserData);
+    const updateUserData = useStoreActions(
+        (actions: Actions<ApplicationStore>) => actions.user.updateUserData,
+    );
 
     const { close, setProps } = useContext(DialogWrapperContext);
 
@@ -33,11 +35,11 @@ const ConfigureTwoFactorForm = ({ onTokens }: Props) => {
         getTwoFactorTokenData()
             .then(setToken)
             .catch((error) => clearAndAddHttpError(error));
-    }, []);
+    }, [getTwoFactorTokenData, then, setToken, catch, error, clearAndAddHttpError]);
 
     useEffect(() => {
         setProps((state) => ({ ...state, preventExternalClose: submitting }));
-    }, [submitting]);
+    }, [submitting, setProps, state, preventExternalClose]);
 
     const submit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -61,11 +63,19 @@ const ConfigureTwoFactorForm = ({ onTokens }: Props) => {
     return (
         <form id={'enable-totp-form'} onSubmit={submit}>
             <FlashMessageRender byKey={'account:two-step'} className={'mt-4'} />
-            <div className={'flex items-center justify-center w-56 h-56 p-2 bg-gray-50 shadow mx-auto mt-6'}>
+            <div
+                className={
+                    'flex items-center justify-center w-56 h-56 p-2 bg-gray-50 shadow mx-auto mt-6'
+                }
+            >
                 {!token ? (
                     <Spinner />
                 ) : (
-                    <QRCode renderAs={'svg'} value={token.image_url_data} css={tw`w-full h-full shadow-none`} />
+                    <QRCode
+                        renderAs={'svg'}
+                        value={token.image_url_data}
+                        css={tw`w-full h-full shadow-none`}
+                    />
                 )}
             </div>
             <CopyOnClick text={token?.secret}>
@@ -74,8 +84,8 @@ const ConfigureTwoFactorForm = ({ onTokens }: Props) => {
                 </p>
             </CopyOnClick>
             <p id={'totp-code-description'} className={'mt-6'}>
-                Scan the QR code above using the two-step authentication app of your choice. Then, enter the 6-digit
-                code generated into the field below.
+                Scan the QR code above using the two-step authentication app of your choice. Then,
+                enter the 6-digit code generated into the field below.
             </p>
             <Input.Text
                 aria-labelledby={'totp-code-description'}

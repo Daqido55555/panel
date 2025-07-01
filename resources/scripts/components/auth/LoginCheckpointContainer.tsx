@@ -16,7 +16,11 @@ interface Values {
     recoveryCode: '';
 }
 
-type OwnProps = RouteComponentProps<Record<string, string | undefined>, StaticContext, { token?: string }>;
+type OwnProps = RouteComponentProps<
+    Record<string, string | undefined>,
+    StaticContext,
+    { token?: string }
+>;
 
 type Props = OwnProps & {
     clearAndAddHttpError: ActionCreator<FlashStore['clearAndAddHttpError']['payload']>;
@@ -44,7 +48,12 @@ const LoginCheckpointContainer = () => {
                 />
             </div>
             <div css={tw`mt-6`}>
-                <Button size={'xlarge'} type={'submit'} disabled={isSubmitting} isLoading={isSubmitting}>
+                <Button
+                    size={'xlarge'}
+                    type={'submit'}
+                    disabled={isSubmitting}
+                    isLoading={isSubmitting}
+                >
                     Continue
                 </Button>
             </div>
@@ -73,7 +82,10 @@ const LoginCheckpointContainer = () => {
 };
 
 const EnhancedForm = withFormik<Props, Values>({
-    handleSubmit: ({ code, recoveryCode }, { setSubmitting, props: { clearAndAddHttpError, location } }) => {
+    handleSubmit: (
+        { code, recoveryCode },
+        { setSubmitting, props: { clearAndAddHttpError, location } },
+    ) => {
         loginCheckpoint(location.state?.token || '', code, recoveryCode)
             .then((response) => {
                 if (response.complete) {
@@ -107,6 +119,11 @@ export default ({ history, location, ...props }: OwnProps) => {
     }
 
     return (
-        <EnhancedForm clearAndAddHttpError={clearAndAddHttpError} history={history} location={location} {...props} />
+        <EnhancedForm
+            clearAndAddHttpError={clearAndAddHttpError}
+            history={history}
+            location={location}
+            {...props}
+        />
     );
 };

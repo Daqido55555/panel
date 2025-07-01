@@ -39,7 +39,23 @@ const GSLTokenModalFeature = () => {
         return () => {
             instance.removeListener(SocketEvent.CONSOLE_OUTPUT, listener);
         };
-    }, [connected, instance, status]);
+    }, [
+        connected,
+        instance,
+        status,
+        errors,
+        listener,
+        line,
+        some,
+        p,
+        toLowerCase,
+        includes,
+        setVisible,
+        addListener,
+        SocketEvent,
+        CONSOLE_OUTPUT,
+        removeListener
+    ]);
 
     const updateGSLToken = (values: Values) => {
         setLoading(true);
@@ -63,7 +79,7 @@ const GSLTokenModalFeature = () => {
 
     useEffect(() => {
         clearFlashes('feature:gslToken');
-    }, []);
+    }, [clearFlashes]);
 
     return (
         <Formik onSubmit={updateGSLToken} initialValues={{ gslToken: '' }}>
@@ -77,17 +93,20 @@ const GSLTokenModalFeature = () => {
                 <Form>
                     <h2 css={tw`text-2xl mb-4 text-neutral-100`}>Invalid GSL token!</h2>
                     <p css={tw`mt-4`}>
-                        It seems like your Gameserver Login Token (GSL token) is invalid or has expired.
+                        It seems like your Gameserver Login Token (GSL token) is invalid or has
+                        expired.
                     </p>
                     <p css={tw`mt-4`}>
-                        You can either generate a new one and enter it below or leave the field blank to remove it
-                        completely.
+                        You can either generate a new one and enter it below or leave the field
+                        blank to remove it completely.
                     </p>
                     <div css={tw`sm:flex items-center mt-4`}>
                         <Field
                             name={'gslToken'}
                             label={'GSL Token'}
-                            description={'Visit https://steamcommunity.com/dev/managegameservers to generate a token.'}
+                            description={
+                                'Visit https://steamcommunity.com/dev/managegameservers to generate a token.'
+                            }
                             autoFocus
                         />
                     </div>

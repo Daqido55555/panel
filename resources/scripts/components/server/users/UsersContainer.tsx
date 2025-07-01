@@ -20,8 +20,12 @@ export default () => {
     const setSubusers = ServerContext.useStoreActions((actions) => actions.subusers.setSubusers);
 
     const permissions = useStoreState((state: ApplicationStore) => state.permissions.data);
-    const getPermissions = useStoreActions((actions: Actions<ApplicationStore>) => actions.permissions.getPermissions);
-    const { addError, clearFlashes } = useStoreActions((actions: Actions<ApplicationStore>) => actions.flashes);
+    const getPermissions = useStoreActions(
+        (actions: Actions<ApplicationStore>) => actions.permissions.getPermissions,
+    );
+    const { addError, clearFlashes } = useStoreActions(
+        (actions: Actions<ApplicationStore>) => actions.flashes,
+    );
 
     useEffect(() => {
         clearFlashes('users');
@@ -34,14 +38,38 @@ export default () => {
                 console.error(error);
                 addError({ key: 'users', message: httpErrorToHuman(error) });
             });
-    }, []);
+    }, [
+        clearFlashes,
+        getServerSubusers,
+        uuid,
+        then,
+        subusers,
+        setSubusers,
+        setLoading,
+        catch,
+        error,
+        console,
+        addError,
+        key,
+        message,
+        httpErrorToHuman
+    ]);
 
     useEffect(() => {
         getPermissions().catch((error) => {
             addError({ key: 'users', message: httpErrorToHuman(error) });
             console.error(error);
         });
-    }, []);
+    }, [
+        getPermissions,
+        catch,
+        error,
+        addError,
+        key,
+        message,
+        httpErrorToHuman,
+        console
+    ]);
 
     if (!subusers.length && (loading || !Object.keys(permissions).length)) {
         return <Spinner size={'large'} centered />;
@@ -51,7 +79,9 @@ export default () => {
         <ServerContentBlock title={'Users'}>
             <FlashMessageRender byKey={'users'} css={tw`mb-4`} />
             {!subusers.length ? (
-                <p css={tw`text-center text-sm text-neutral-300`}>It looks like you don&apos;t have any subusers.</p>
+                <p css={tw`text-center text-sm text-neutral-300`}>
+                    It looks like you don&apos;t have any subusers.
+                </p>
             ) : (
                 subusers.map((subuser) => <UserRow key={subuser.uuid} subuser={subuser} />)
             )}

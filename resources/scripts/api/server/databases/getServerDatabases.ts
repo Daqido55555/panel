@@ -24,7 +24,11 @@ export default (uuid: string, includePassword = true): Promise<ServerDatabase[]>
             params: includePassword ? { include: 'password' } : undefined,
         })
             .then((response) =>
-                resolve((response.data.data || []).map((item: any) => rawDataToServerDatabase(item.attributes)))
+                resolve(
+                    (response.data.data || []).map((item: any) =>
+                        rawDataToServerDatabase(item.attributes),
+                    ),
+                ),
             )
             .catch(reject);
     });

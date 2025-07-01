@@ -143,7 +143,15 @@ const findModeByFilename = (filename: string) => {
     return undefined;
 };
 
-export default ({ style, initialContent, filename, mode, fetchContent, onContentSaved, onModeChanged }: Props) => {
+export default ({
+    style,
+    initialContent,
+    filename,
+    mode,
+    fetchContent,
+    onContentSaved,
+    onModeChanged,
+}: Props) => {
     const [editor, setEditor] = useState<CodeMirror.Editor>();
 
     const ref = useCallback((node) => {
@@ -176,7 +184,35 @@ export default ({ style, initialContent, filename, mode, fetchContent, onContent
         });
 
         setEditor(e);
-    }, []);
+    }, [
+        node,
+        e,
+        CodeMirror,
+        fromTextArea,
+        mode,
+        theme,
+        indentUnit,
+        smartIndent,
+        tabSize,
+        indentWithTabs,
+        lineWrapping,
+        lineNumbers,
+        foldGutter,
+        fixedGutter,
+        scrollbarStyle,
+        coverGutterNextToScrollbar,
+        readOnly,
+        showCursorWhenSelecting,
+        autofocus,
+        spellcheck,
+        autocorrect,
+        autocapitalize,
+        lint,
+        autoCloseBrackets,
+        matchBrackets,
+        gutters,
+        setEditor
+    ]);
 
     useEffect(() => {
         if (filename === undefined) {
@@ -184,15 +220,15 @@ export default ({ style, initialContent, filename, mode, fetchContent, onContent
         }
 
         onModeChanged(findModeByFilename(filename)?.mime || 'text/plain');
-    }, [filename]);
+    }, [filename, onModeChanged, findModeByFilename, mime]);
 
     useEffect(() => {
         editor && editor.setOption('mode', mode);
-    }, [editor, mode]);
+    }, [editor, mode, setOption]);
 
     useEffect(() => {
         editor && editor.setValue(initialContent || '');
-    }, [editor, initialContent]);
+    }, [editor, initialContent, setValue]);
 
     useEffect(() => {
         if (!editor) {
@@ -206,7 +242,17 @@ export default ({ style, initialContent, filename, mode, fetchContent, onContent
         });
 
         fetchContent(() => Promise.resolve(editor.getValue()));
-    }, [editor, fetchContent, onContentSaved]);
+    }, [
+        editor,
+        fetchContent,
+        onContentSaved,
+        Promise,
+        reject,
+        Error,
+        addKeyMap,
+        resolve,
+        getValue
+    ]);
 
     return (
         <EditorContainer style={style}>

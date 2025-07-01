@@ -26,7 +26,10 @@ export default () => {
             .join('&');
     };
 
-    const hash = useMemo((): Record<string, string> => getHashObject(location.hash), [location.hash]);
+    const hash = useMemo(
+        (): Record<string, string> => getHashObject(location.hash),
+        [location.hash, getHashObject, location, hash, Record],
+    );
 
     return { hash, pathTo };
 };

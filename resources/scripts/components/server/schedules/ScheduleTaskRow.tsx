@@ -45,7 +45,9 @@ export default ({ schedule, task }: Props) => {
     const [visible, setVisible] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [isEditing, setIsEditing] = useState(false);
-    const appendSchedule = ServerContext.useStoreActions((actions) => actions.schedules.appendSchedule);
+    const appendSchedule = ServerContext.useStoreActions(
+        (actions) => actions.schedules.appendSchedule,
+    );
 
     const onConfirmDeletion = () => {
         setIsLoading(true);
@@ -55,7 +57,7 @@ export default ({ schedule, task }: Props) => {
                 appendSchedule({
                     ...schedule,
                     tasks: schedule.tasks.filter((t) => t.id !== task.id),
-                })
+                }),
             )
             .catch((error) => {
                 console.error(error);
@@ -90,7 +92,9 @@ export default ({ schedule, task }: Props) => {
                 {task.payload && (
                     <div css={tw`md:ml-6 mt-2`}>
                         {task.action === 'backup' && (
-                            <p css={tw`text-xs uppercase text-neutral-400 mb-1`}>Ignoring files & folders:</p>
+                            <p css={tw`text-xs uppercase text-neutral-400 mb-1`}>
+                                Ignoring files & folders:
+                            </p>
                         )}
                         <div
                             css={tw`font-mono bg-neutral-800 rounded py-1 px-2 text-sm w-auto inline-block whitespace-pre-wrap break-all`}
@@ -103,7 +107,9 @@ export default ({ schedule, task }: Props) => {
             <div css={tw`mt-3 sm:mt-0 flex items-center w-full sm:w-auto`}>
                 {task.continueOnFailure && (
                     <div css={tw`mr-6`}>
-                        <div css={tw`flex items-center px-2 py-1 bg-yellow-500 text-yellow-800 text-sm rounded-full`}>
+                        <div
+                            css={tw`flex items-center px-2 py-1 bg-yellow-500 text-yellow-800 text-sm rounded-full`}
+                        >
                             <Icon icon={faArrowCircleDown} css={tw`w-3 h-3 mr-2`} />
                             Continues on Failure
                         </div>
@@ -111,7 +117,9 @@ export default ({ schedule, task }: Props) => {
                 )}
                 {task.sequenceId > 1 && task.timeOffset > 0 && (
                     <div css={tw`mr-6`}>
-                        <div css={tw`flex items-center px-2 py-1 bg-neutral-500 text-sm rounded-full`}>
+                        <div
+                            css={tw`flex items-center px-2 py-1 bg-neutral-500 text-sm rounded-full`}
+                        >
                             <Icon icon={faClock} css={tw`w-3 h-3 mr-2`} />
                             {task.timeOffset}s later
                         </div>

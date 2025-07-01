@@ -26,7 +26,7 @@ export default () => {
 
     const { data: servers, error } = useSWR<PaginatedResult<Server>>(
         ['/api/client/servers', showOnlyAdmin && rootAdmin, page],
-        () => getServers({ page, type: showOnlyAdmin && rootAdmin ? 'admin' : undefined })
+        () => getServers({ page, type: showOnlyAdmin && rootAdmin ? 'admin' : undefined }),
     );
 
     useEffect(() => {
@@ -34,19 +34,27 @@ export default () => {
         if (servers.pagination.currentPage > 1 && !servers.items.length) {
             setPage(1);
         }
-    }, [servers?.pagination.currentPage]);
+    }, [
+        servers?.pagination.currentPage,
+        servers,
+        pagination,
+        currentPage,
+        items,
+        length,
+        setPage
+    ]);
 
     useEffect(() => {
         // Don't use react-router to handle changing this part of the URL, otherwise it
         // triggers a needless re-render. We just want to track this in the URL incase the
         // user refreshes the page.
         window.history.replaceState(null, document.title, `/${page <= 1 ? '' : `?page=${page}`}`);
-    }, [page]);
+    }, [page, window, history, replaceState, document, title]);
 
     useEffect(() => {
         if (error) clearAndAddHttpError({ key: 'dashboard', error });
         if (!error) clearFlashes('dashboard');
-    }, [error]);
+    }, [error, clearAndAddHttpError, key, clearFlashes]);
 
     return (
         <PageContentBlock title={'Dashboard'} showFlashKey={'dashboard'}>
@@ -69,7 +77,11 @@ export default () => {
                     {({ items }) =>
                         items.length > 0 ? (
                             items.map((server, index) => (
-                                <ServerRow key={server.uuid} server={server} css={index > 0 ? tw`mt-2` : undefined} />
+                                <ServerRow
+                                    key={server.uuid}
+                                    server={server}
+                                    css={index > 0 ? tw`mt-2` : undefined}
+                                />
                             ))
                         ) : (
                             <p css={tw`text-center text-sm text-neutral-400`}>

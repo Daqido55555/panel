@@ -23,7 +23,7 @@ const schema = object().shape({
         .max(48, 'Database name must not exceed 48 characters.')
         .matches(
             /^[\w\-.]{3,48}$/,
-            'Database name should only contain alphanumeric characters, underscores, dashes, and/or periods.'
+            'Database name should only contain alphanumeric characters, underscores, dashes, and/or periods.',
         ),
     connectionsFrom: string().matches(/^[\w\-/.%:]+$/, 'A valid host address must be provided.'),
 });
@@ -33,7 +33,9 @@ export default () => {
     const { addError, clearFlashes } = useFlash();
     const [visible, setVisible] = useState(false);
 
-    const appendDatabase = ServerContext.useStoreActions((actions) => actions.databases.appendDatabase);
+    const appendDatabase = ServerContext.useStoreActions(
+        (actions) => actions.databases.appendDatabase,
+    );
 
     const submit = (values: Values, { setSubmitting }: FormikHelpers<Values>) => {
         clearFlashes('database:create');

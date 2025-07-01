@@ -34,13 +34,14 @@ export default ({ backup, className }: Props) => {
                             : {
                                   ...b,
                                   isSuccessful: parsed.is_successful || true,
-                                  checksum: (parsed.checksum_type || '') + ':' + (parsed.checksum || ''),
+                                  checksum:
+                                      (parsed.checksum_type || '') + ':' + (parsed.checksum || ''),
                                   bytes: parsed.file_size || 0,
                                   completedAt: new Date(),
-                              }
+                              },
                     ),
                 }),
-                false
+                false,
             );
         } catch (e) {
             console.warn(e);
@@ -72,17 +73,27 @@ export default ({ backup, className }: Props) => {
                         )}
                         <p css={tw`break-words truncate`}>{backup.name}</p>
                         {backup.completedAt !== null && backup.isSuccessful && (
-                            <span css={tw`ml-3 text-neutral-300 text-xs font-extralight hidden sm:inline`}>
+                            <span
+                                css={tw`ml-3 text-neutral-300 text-xs font-extralight hidden sm:inline`}
+                            >
                                 {bytesToString(backup.bytes)}
                             </span>
                         )}
                     </div>
-                    <p css={tw`mt-1 md:mt-0 text-xs text-neutral-400 font-mono truncate`}>{backup.checksum}</p>
+                    <p css={tw`mt-1 md:mt-0 text-xs text-neutral-400 font-mono truncate`}>
+                        {backup.checksum}
+                    </p>
                 </div>
             </div>
             <div css={tw`flex-1 md:flex-none md:w-48 mt-4 md:mt-0 md:ml-8 md:text-center`}>
-                <p title={format(backup.createdAt, 'ddd, MMMM do, yyyy HH:mm:ss')} css={tw`text-sm`}>
-                    {formatDistanceToNow(backup.createdAt, { includeSeconds: true, addSuffix: true })}
+                <p
+                    title={format(backup.createdAt, 'ddd, MMMM do, yyyy HH:mm:ss')}
+                    css={tw`text-sm`}
+                >
+                    {formatDistanceToNow(backup.createdAt, {
+                        includeSeconds: true,
+                        addSuffix: true,
+                    })}
                 </p>
                 <p css={tw`text-2xs text-neutral-500 uppercase mt-1`}>Created</p>
             </div>

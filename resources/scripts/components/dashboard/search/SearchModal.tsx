@@ -40,7 +40,7 @@ const SearchWatcher = () => {
         if (values.term.length >= 3) {
             submitForm();
         }
-    }, [values.term]);
+    }, [values.term, values, term, length, submitForm]);
 
     return null;
 };
@@ -50,7 +50,7 @@ export default ({ ...props }: Props) => {
     const isAdmin = useStoreState((state) => state.user.data!.rootAdmin);
     const [servers, setServers] = useState<Server[]>([]);
     const { clearAndAddHttpError, clearFlashes } = useStoreActions(
-        (actions: Actions<ApplicationStore>) => actions.flashes
+        (actions: Actions<ApplicationStore>) => actions.flashes,
     );
 
     const search = debounce(({ term }: Values, { setSubmitting }: FormikHelpers<Values>) => {
@@ -71,7 +71,7 @@ export default ({ ...props }: Props) => {
         if (props.visible) {
             if (ref.current) ref.current.focus();
         }
-    }, [props.visible]);
+    }, [props.visible, props, visible, ref, current, focus]);
 
     // Formik does not support an innerRef on custom components.
     const InputWithRef = (props: any) => <Input autoFocus {...props} ref={ref} />;
@@ -90,7 +90,9 @@ export default ({ ...props }: Props) => {
                         <FormikFieldWrapper
                             name={'term'}
                             label={'Search term'}
-                            description={'Enter a server name, uuid, or allocation to begin searching.'}
+                            description={
+                                'Enter a server name, uuid, or allocation to begin searching.'
+                            }
                         >
                             <SearchWatcher />
                             <InputSpinner visible={isSubmitting}>
@@ -112,14 +114,22 @@ export default ({ ...props }: Props) => {
                                             {server.allocations
                                                 .filter((alloc) => alloc.isDefault)
                                                 .map((allocation) => (
-                                                    <span key={allocation.ip + allocation.port.toString()}>
-                                                        {allocation.alias || ip(allocation.ip)}:{allocation.port}
+                                                    <span
+                                                        key={
+                                                            allocation.ip +
+                                                            allocation.port.toString()
+                                                        }
+                                                    >
+                                                        {allocation.alias || ip(allocation.ip)}:
+                                                        {allocation.port}
                                                     </span>
                                                 ))}
                                         </p>
                                     </div>
                                     <div css={tw`flex-none text-right`}>
-                                        <span css={tw`text-xs py-1 px-2 bg-cyan-800 text-cyan-100 rounded`}>
+                                        <span
+                                            css={tw`text-xs py-1 px-2 bg-cyan-800 text-cyan-100 rounded`}
+                                        >
                                             {server.node}
                                         </span>
                                     </div>

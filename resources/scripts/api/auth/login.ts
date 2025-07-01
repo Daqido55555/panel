@@ -20,11 +20,13 @@ export default ({ username, password, recaptchaData }: LoginData): Promise<Login
                     user: username,
                     password,
                     'g-recaptcha-response': recaptchaData,
-                })
+                }),
             )
             .then((response) => {
                 if (!(response.data instanceof Object)) {
-                    return reject(new Error('An error occurred while processing the login request.'));
+                    return reject(
+                        new Error('An error occurred while processing the login request.'),
+                    );
                 }
 
                 return resolve({

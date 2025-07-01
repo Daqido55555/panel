@@ -30,7 +30,11 @@ const server: ServerDataStore = {
             return false;
         }
 
-        return state.data.status !== null || state.data.isTransferring || state.data.isNodeUnderMaintenance;
+        return (
+            state.data.status !== null ||
+            state.data.isTransferring ||
+            state.data.isNodeUnderMaintenance
+        );
     }),
 
     isInstalling: computed((state) => {
@@ -119,5 +123,5 @@ export const ServerContext = createContextStore<ServerStore>(
             name: 'ServerStore',
             trace: true,
         }),
-    }
+    },
 );

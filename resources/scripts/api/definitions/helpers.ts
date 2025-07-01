@@ -9,23 +9,24 @@ import { Model } from '@definitions/index';
 
 type TransformerFunc<T> = (callback: FractalResponseData) => T;
 
-const isList = (data: FractalResponseList | FractalResponseData): data is FractalResponseList => data.object === 'list';
+const isList = (data: FractalResponseList | FractalResponseData): data is FractalResponseList =>
+    data.object === 'list';
 
 function transform<T, M>(data: null | undefined, transformer: TransformerFunc<T>, missing?: M): M;
 function transform<T, M>(
     data: FractalResponseData | null | undefined,
     transformer: TransformerFunc<T>,
-    missing?: M
+    missing?: M,
 ): T | M;
 function transform<T, M>(
     data: FractalResponseList | FractalPaginatedResponse | null | undefined,
     transformer: TransformerFunc<T>,
-    missing?: M
+    missing?: M,
 ): T[] | M;
 function transform<T>(
     data: FractalResponseData | FractalResponseList | FractalPaginatedResponse | null | undefined,
     transformer: TransformerFunc<T>,
-    missing = undefined
+    missing = undefined,
 ) {
     if (data === undefined || data === null) {
         return missing;
@@ -44,7 +45,7 @@ function transform<T>(
 
 function toPaginatedSet<T extends TransformerFunc<Model>>(
     response: FractalPaginatedResponse,
-    transformer: T
+    transformer: T,
 ): PaginatedResult<ReturnType<T>> {
     return {
         items: transform(response, transformer) as ReturnType<T>[],

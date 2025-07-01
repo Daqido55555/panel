@@ -6,12 +6,18 @@ export interface RequireServerPermissionProps {
     permissions: string | string[];
 }
 
-const RequireServerPermission: React.FC<RequireServerPermissionProps> = ({ children, permissions }) => {
+const RequireServerPermission: React.FC<RequireServerPermissionProps> = ({
+    children,
+    permissions,
+}) => {
     return (
         <Can
             action={permissions}
             renderOnError={
-                <ServerError title={'Access Denied'} message={'You do not have permission to access this page.'} />
+                <ServerError
+                    title={'Access Denied'}
+                    message={'You do not have permission to access this page.'}
+                />
             }
         >
             {children}

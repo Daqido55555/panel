@@ -7,7 +7,9 @@ import { getDirectorySwrKey } from '@/plugins/useFileManagerSwr';
 const InstallListener = () => {
     const uuid = ServerContext.useStoreState((state) => state.server.data!.uuid);
     const getServer = ServerContext.useStoreActions((actions) => actions.server.getServer);
-    const setServerFromState = ServerContext.useStoreActions((actions) => actions.server.setServerFromState);
+    const setServerFromState = ServerContext.useStoreActions(
+        (actions) => actions.server.setServerFromState,
+    );
 
     useWebsocketEvent(SocketEvent.BACKUP_RESTORE_COMPLETED, () => {
         mutate(getDirectorySwrKey(uuid, '/'), undefined);

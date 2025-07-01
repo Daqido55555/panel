@@ -42,11 +42,27 @@ const PIDLimitModalFeature = () => {
         return () => {
             instance.removeListener(SocketEvent.CONSOLE_OUTPUT, listener);
         };
-    }, [connected, instance, status]);
+    }, [
+        connected,
+        instance,
+        status,
+        errors,
+        listener,
+        line,
+        some,
+        p,
+        toLowerCase,
+        includes,
+        setVisible,
+        addListener,
+        SocketEvent,
+        CONSOLE_OUTPUT,
+        removeListener
+    ]);
 
     useEffect(() => {
         clearFlashes('feature:pidLimit');
-    }, []);
+    }, [clearFlashes]);
 
     return (
         <Modal
@@ -59,20 +75,37 @@ const PIDLimitModalFeature = () => {
             {isAdmin ? (
                 <>
                     <div css={tw`mt-4 sm:flex items-center`}>
-                        <FontAwesomeIcon css={tw`pr-4`} icon={faExclamationTriangle} color={'orange'} size={'4x'} />
-                        <h2 css={tw`text-2xl mb-4 text-neutral-100 `}>Memory or process limit reached...</h2>
+                        <FontAwesomeIcon
+                            css={tw`pr-4`}
+                            icon={faExclamationTriangle}
+                            color={'orange'}
+                            size={'4x'}
+                        />
+                        <h2 css={tw`text-2xl mb-4 text-neutral-100 `}>
+                            Memory or process limit reached...
+                        </h2>
                     </div>
-                    <p css={tw`mt-4`}>This server has reached the maximum process or memory limit.</p>
                     <p css={tw`mt-4`}>
-                        Increasing <code css={tw`font-mono bg-neutral-900`}>container_pid_limit</code> in the wings
-                        configuration, <code css={tw`font-mono bg-neutral-900`}>config.yml</code>, might help resolve
-                        this issue.
+                        This server has reached the maximum process or memory limit.
                     </p>
                     <p css={tw`mt-4`}>
-                        <b>Note: Wings must be restarted for the configuration file changes to take effect</b>
+                        Increasing{' '}
+                        <code css={tw`font-mono bg-neutral-900`}>container_pid_limit</code> in the
+                        wings configuration,{' '}
+                        <code css={tw`font-mono bg-neutral-900`}>config.yml</code>, might help
+                        resolve this issue.
+                    </p>
+                    <p css={tw`mt-4`}>
+                        <b>
+                            Note: Wings must be restarted for the configuration file changes to take
+                            effect
+                        </b>
                     </p>
                     <div css={tw`mt-8 sm:flex items-center justify-end`}>
-                        <Button onClick={() => setVisible(false)} css={tw`w-full sm:w-auto border-transparent`}>
+                        <Button
+                            onClick={() => setVisible(false)}
+                            css={tw`w-full sm:w-auto border-transparent`}
+                        >
                             Close
                         </Button>
                     </div>
@@ -80,20 +113,31 @@ const PIDLimitModalFeature = () => {
             ) : (
                 <>
                     <div css={tw`mt-4 sm:flex items-center`}>
-                        <FontAwesomeIcon css={tw`pr-4`} icon={faExclamationTriangle} color={'orange'} size={'4x'} />
-                        <h2 css={tw`text-2xl mb-4 text-neutral-100`}>Possible resource limit reached...</h2>
+                        <FontAwesomeIcon
+                            css={tw`pr-4`}
+                            icon={faExclamationTriangle}
+                            color={'orange'}
+                            size={'4x'}
+                        />
+                        <h2 css={tw`text-2xl mb-4 text-neutral-100`}>
+                            Possible resource limit reached...
+                        </h2>
                     </div>
                     <p css={tw`mt-4`}>
-                        This server is attempting to use more resources than allocated. Please contact the administrator
-                        and give them the error below.
+                        This server is attempting to use more resources than allocated. Please
+                        contact the administrator and give them the error below.
                     </p>
                     <p css={tw`mt-4`}>
                         <code css={tw`font-mono bg-neutral-900`}>
-                            pthread_create failed, Possibly out of memory or process/resource limits reached
+                            pthread_create failed, Possibly out of memory or process/resource limits
+                            reached
                         </code>
                     </p>
                     <div css={tw`mt-8 sm:flex items-center justify-end`}>
-                        <Button onClick={() => setVisible(false)} css={tw`w-full sm:w-auto border-transparent`}>
+                        <Button
+                            onClick={() => setVisible(false)}
+                            css={tw`w-full sm:w-auto border-transparent`}
+                        >
                             Close
                         </Button>
                     </div>

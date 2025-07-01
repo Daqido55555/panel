@@ -64,7 +64,10 @@ const ScreenBlock = ({ title, image, message, onBack, onRetry }: ScreenBlockProp
     </PageContentBlock>
 );
 
-type ServerErrorProps = (Omit<PropsWithBack, 'image' | 'title'> | Omit<PropsWithRetry, 'image' | 'title'>) & {
+type ServerErrorProps = (
+    | Omit<PropsWithBack, 'image' | 'title'>
+    | Omit<PropsWithRetry, 'image' | 'title'>
+) & {
     title?: string;
 };
 
@@ -72,7 +75,11 @@ const ServerError = ({ title, ...props }: ServerErrorProps) => (
     <ScreenBlock title={title || 'Something went wrong'} image={ServerErrorSvg} {...props} />
 );
 
-const NotFound = ({ title, message, onBack }: Partial<Pick<ScreenBlockProps, 'title' | 'message' | 'onBack'>>) => (
+const NotFound = ({
+    title,
+    message,
+    onBack,
+}: Partial<Pick<ScreenBlockProps, 'title' | 'message' | 'onBack'>>) => (
     <ScreenBlock
         title={title || '404'}
         image={NotFoundSvg}

@@ -49,7 +49,8 @@ const schema = object().shape({
 
 const ActionListener = () => {
     const [{ value }, { initialValue: initialAction }] = useField<string>('action');
-    const [, { initialValue: initialPayload }, { setValue, setTouched }] = useField<string>('payload');
+    const [, { initialValue: initialPayload }, { setValue, setTouched }] =
+        useField<string>('payload');
 
     useEffect(() => {
         if (value !== initialAction) {
@@ -59,7 +60,7 @@ const ActionListener = () => {
             setValue(initialPayload || '');
             setTouched(false);
         }
-    }, [value]);
+    }, [value, initialAction, setValue, setTouched, initialPayload]);
 
     return null;
 };
@@ -69,21 +70,26 @@ const TaskDetailsModal = ({ schedule, task }: Props) => {
     const { clearFlashes, addError } = useFlash();
 
     const uuid = ServerContext.useStoreState((state) => state.server.data!.uuid);
-    const appendSchedule = ServerContext.useStoreActions((actions) => actions.schedules.appendSchedule);
-    const backupLimit = ServerContext.useStoreState((state) => state.server.data!.featureLimits.backups);
+    const appendSchedule = ServerContext.useStoreActions(
+        (actions) => actions.schedules.appendSchedule,
+    );
+    const backupLimit = ServerContext.useStoreState(
+        (state) => state.server.data!.featureLimits.backups,
+    );
 
     useEffect(() => {
         return () => {
             clearFlashes('schedule:task');
         };
-    }, []);
+    }, [clearFlashes]);
 
     const submit = (values: Values, { setSubmitting }: FormikHelpers<Values>) => {
         clearFlashes('schedule:task');
         if (backupLimit === 0 && values.action === 'backup') {
             setSubmitting(false);
             addError({
-                message: "A backup task cannot be created when the server's backup limit is set to 0.",
+                message:
+                    "A backup task cannot be created when the server's backup limit is set to 0.",
                 key: 'schedule:task',
             });
         } else {
@@ -176,7 +182,9 @@ const TaskDetailsModal = ({ schedule, task }: Props) => {
                             </div>
                         )}
                     </div>
-                    <div css={tw`mt-6 bg-neutral-700 border border-neutral-800 shadow-inner p-4 rounded`}>
+                    <div
+                        css={tw`mt-6 bg-neutral-700 border border-neutral-800 shadow-inner p-4 rounded`}
+                    >
                         <FormikSwitch
                             name={'continueOnFailure'}
                             description={'Future tasks will be run when this task fails.'}

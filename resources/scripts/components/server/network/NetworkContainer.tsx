@@ -16,20 +16,27 @@ import { useDeepCompareEffect } from '@/plugins/useDeepCompareEffect';
 const NetworkContainer = () => {
     const [loading, setLoading] = useState(false);
     const uuid = ServerContext.useStoreState((state) => state.server.data!.uuid);
-    const allocationLimit = ServerContext.useStoreState((state) => state.server.data!.featureLimits.allocations);
-    const allocations = ServerContext.useStoreState((state) => state.server.data!.allocations, isEqual);
-    const setServerFromState = ServerContext.useStoreActions((actions) => actions.server.setServerFromState);
+    const allocationLimit = ServerContext.useStoreState(
+        (state) => state.server.data!.featureLimits.allocations,
+    );
+    const allocations = ServerContext.useStoreState(
+        (state) => state.server.data!.allocations,
+        isEqual,
+    );
+    const setServerFromState = ServerContext.useStoreActions(
+        (actions) => actions.server.setServerFromState,
+    );
 
     const { clearFlashes, clearAndAddHttpError } = useFlashKey('server:network');
     const { data, error, mutate } = getServerAllocations();
 
     useEffect(() => {
         mutate(allocations);
-    }, []);
+    }, [mutate, allocations]);
 
     useEffect(() => {
         clearAndAddHttpError(error);
-    }, [error]);
+    }, [error, clearAndAddHttpError]);
 
     useDeepCompareEffect(() => {
         if (!data) return;
@@ -43,7 +50,10 @@ const NetworkContainer = () => {
         setLoading(true);
         createServerAllocation(uuid)
             .then((allocation) => {
-                setServerFromState((s) => ({ ...s, allocations: s.allocations.concat(allocation) }));
+                setServerFromState((s) => ({
+                    ...s,
+                    allocations: s.allocations.concat(allocation),
+                }));
                 return mutate(data?.concat(allocation), false);
             })
             .catch((error) => clearAndAddHttpError(error))
@@ -57,18 +67,25 @@ const NetworkContainer = () => {
             ) : (
                 <>
                     {data.map((allocation) => (
-                        <AllocationRow key={`${allocation.ip}:${allocation.port}`} allocation={allocation} />
+                        <AllocationRow
+                            key={`${allocation.ip}:${allocation.port}`}
+                            allocation={allocation}
+                        />
                     ))}
                     {allocationLimit > 0 && (
                         <Can action={'allocation.create'}>
                             <SpinnerOverlay visible={loading} />
                             <div css={tw`mt-6 sm:flex items-center justify-end`}>
                                 <p css={tw`text-sm text-neutral-300 mb-4 sm:mr-6 sm:mb-0`}>
-                                    You are currently using {data.length} of {allocationLimit} allowed allocations for
-                                    this server.
+                                    You are currently using {data.length} of {allocationLimit}{' '}
+                                    allowed allocations for this server.
                                 </p>
                                 {allocationLimit > data.length && (
-                                    <Button css={tw`w-full sm:w-auto`} color={'primary'} onClick={onCreateAllocation}>
+                                    <Button
+                                        css={tw`w-full sm:w-auto`}
+                                        color={'primary'}
+                                        onClick={onCreateAllocation}
+                                    >
                                         Create Allocation
                                     </Button>
                                 )}

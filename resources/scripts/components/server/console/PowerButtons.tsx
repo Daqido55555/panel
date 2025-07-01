@@ -17,7 +17,7 @@ export default ({ className }: PowerButtonProps) => {
     const killable = status === 'stopping';
     const onButtonClick = (
         action: PowerAction | 'kill-confirmed',
-        e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+        e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     ): void => {
         e.preventDefault();
         if (action === 'kill') {
@@ -34,7 +34,7 @@ export default ({ className }: PowerButtonProps) => {
         if (status === 'offline') {
             setOpen(false);
         }
-    }, [status]);
+    }, [status, setOpen]);
 
     return (
         <div className={className}>
@@ -58,7 +58,11 @@ export default ({ className }: PowerButtonProps) => {
                 </Button>
             </Can>
             <Can action={'control.restart'}>
-                <Button.Text className={'flex-1'} disabled={!status} onClick={onButtonClick.bind(this, 'restart')}>
+                <Button.Text
+                    className={'flex-1'}
+                    disabled={!status}
+                    onClick={onButtonClick.bind(this, 'restart')}
+                >
                     Restart
                 </Button.Text>
             </Can>

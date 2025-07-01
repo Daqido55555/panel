@@ -15,8 +15,12 @@ export default ({ subuser }: { subuser: Subuser }) => {
     const [showConfirmation, setShowConfirmation] = useState(false);
 
     const uuid = ServerContext.useStoreState((state) => state.server.data!.uuid);
-    const removeSubuser = ServerContext.useStoreActions((actions) => actions.subusers.removeSubuser);
-    const { addError, clearFlashes } = useStoreActions((actions: Actions<ApplicationStore>) => actions.flashes);
+    const removeSubuser = ServerContext.useStoreActions(
+        (actions) => actions.subusers.removeSubuser,
+    );
+    const { addError, clearFlashes } = useStoreActions(
+        (actions: Actions<ApplicationStore>) => actions.flashes,
+    );
 
     const doDeletion = () => {
         setLoading(true);
@@ -43,8 +47,8 @@ export default ({ subuser }: { subuser: Subuser }) => {
                 onConfirmed={() => doDeletion()}
                 onModalDismissed={() => setShowConfirmation(false)}
             >
-                Are you sure you wish to remove this subuser? They will have all access to this server revoked
-                immediately.
+                Are you sure you wish to remove this subuser? They will have all access to this
+                server revoked immediately.
             </ConfirmationModal>
             <button
                 type={'button'}

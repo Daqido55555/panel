@@ -95,10 +95,14 @@ export default ({
                                                 {iconPosition !== 'container' && icon}
                                                 <div>
                                                     {title && (
-                                                        <HDialog.Title className={styles.title}>{title}</HDialog.Title>
+                                                        <HDialog.Title className={styles.title}>
+                                                            {title}
+                                                        </HDialog.Title>
                                                     )}
                                                     {description && (
-                                                        <HDialog.Description>{description}</HDialog.Description>
+                                                        <HDialog.Description>
+                                                            {description}
+                                                        </HDialog.Description>
                                                     )}
                                                 </div>
                                             </div>

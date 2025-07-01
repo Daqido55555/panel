@@ -46,7 +46,7 @@ export default () => {
         () => () => {
             clearServerState();
         },
-        []
+        [clearServerState],
     );
 
     useEffect(() => {
@@ -60,7 +60,19 @@ export default () => {
         return () => {
             clearServerState();
         };
-    }, [match.params.id]);
+    }, [
+        match.params.id,
+        setError,
+        getServer,
+        match,
+        params,
+        id,
+        catch,
+        error,
+        console,
+        httpErrorToHuman,
+        clearServerState
+    ]);
 
     return (
         <React.Fragment key={'server-router'}>
@@ -80,22 +92,33 @@ export default () => {
                                     .filter((route) => !!route.name)
                                     .map((route) =>
                                         route.permission ? (
-                                            <Can key={route.path} action={route.permission} matchAny>
-                                                <NavLink to={to(route.path, true)} exact={route.exact}>
+                                            <Can
+                                                key={route.path}
+                                                action={route.permission}
+                                                matchAny
+                                            >
+                                                <NavLink
+                                                    to={to(route.path, true)}
+                                                    exact={route.exact}
+                                                >
                                                     {route.name}
                                                 </NavLink>
                                             </Can>
                                         ) : (
-                                            <NavLink key={route.path} to={to(route.path, true)} exact={route.exact}>
+                                            <NavLink
+                                                key={route.path}
+                                                to={to(route.path, true)}
+                                                exact={route.exact}
+                                            >
                                                 {route.name}
                                             </NavLink>
-                                        )
+                                        ),
                                     )}
                                 {rootAdmin && (
                                     // eslint-disable-next-line react/jsx-no-target-blank
-                                    <a href={`/admin/servers/view/${serverId}`} target={'_blank'}>
+                                    (<a href={`/admin/servers/view/${serverId}`} target={'_blank'}>
                                         <FontAwesomeIcon icon={faExternalLinkAlt} />
-                                    </a>
+                                    </a>)
                                 )}
                             </div>
                         </SubNavigation>
@@ -103,19 +126,27 @@ export default () => {
                     <InstallListener />
                     <TransferListener />
                     <WebsocketHandler />
-                    {inConflictState && (!rootAdmin || (rootAdmin && !location.pathname.endsWith(`/server/${id}`))) ? (
+                    {inConflictState &&
+                    (!rootAdmin || (rootAdmin && !location.pathname.endsWith(`/server/${id}`))) ? (
                         <ConflictStateRenderer />
                     ) : (
                         <ErrorBoundary>
                             <TransitionRouter>
                                 <Switch location={location}>
-                                    {routes.server.map(({ path, permission, component: Component }) => (
-                                        <PermissionRoute key={path} permission={permission} path={to(path)} exact>
-                                            <Spinner.Suspense>
-                                                <Component />
-                                            </Spinner.Suspense>
-                                        </PermissionRoute>
-                                    ))}
+                                    {routes.server.map(
+                                        ({ path, permission, component: Component }) => (
+                                            <PermissionRoute
+                                                key={path}
+                                                permission={permission}
+                                                path={to(path)}
+                                                exact
+                                            >
+                                                <Spinner.Suspense>
+                                                    <Component />
+                                                </Spinner.Suspense>
+                                            </PermissionRoute>
+                                        ),
+                                    )}
                                     <Route path={'*'} component={NotFound} />
                                 </Switch>
                             </TransitionRouter>

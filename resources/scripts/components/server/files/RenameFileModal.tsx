@@ -21,7 +21,9 @@ const RenameFileModal = ({ files, useMoveTerminology, ...props }: OwnProps) => {
     const { mutate } = useFileManagerSwr();
     const { clearFlashes, clearAndAddHttpError } = useFlash();
     const directory = ServerContext.useStoreState((state) => state.files.directory);
-    const setSelectedFiles = ServerContext.useStoreActions((actions) => actions.files.setSelectedFiles);
+    const setSelectedFiles = ServerContext.useStoreActions(
+        (actions) => actions.files.setSelectedFiles,
+    );
 
     const submit = ({ name }: FormikValues, { setSubmitting }: FormikHelpers<FormikValues>) => {
         clearFlashes('files');
@@ -30,7 +32,10 @@ const RenameFileModal = ({ files, useMoveTerminology, ...props }: OwnProps) => {
         if (files.length === 1) {
             if (!useMoveTerminology && len === 1) {
                 // Rename the file within this directory.
-                mutate((data) => data.map((f) => (f.name === files[0] ? { ...f, name } : f)), false);
+                mutate(
+                    (data) => data.map((f) => (f.name === files[0] ? { ...f, name } : f)),
+                    false,
+                );
             } else if (useMoveTerminology || len > 1) {
                 // Remove the file from this directory since they moved it elsewhere.
                 mutate((data) => data.filter((f) => f.name !== files[0]), false);
@@ -60,7 +65,12 @@ const RenameFileModal = ({ files, useMoveTerminology, ...props }: OwnProps) => {
             {({ isSubmitting, values }) => (
                 <Modal {...props} dismissable={!isSubmitting} showSpinnerOverlay={isSubmitting}>
                     <Form css={tw`m-0`}>
-                        <div css={[tw`flex flex-wrap`, useMoveTerminology ? tw`items-center` : tw`items-end`]}>
+                        <div
+                            css={[
+                                tw`flex flex-wrap`,
+                                useMoveTerminology ? tw`items-center` : tw`items-end`,
+                            ]}
+                        >
                             <div css={tw`w-full sm:flex-1 sm:mr-4`}>
                                 <Field
                                     type={'string'}
@@ -76,13 +86,16 @@ const RenameFileModal = ({ files, useMoveTerminology, ...props }: OwnProps) => {
                                 />
                             </div>
                             <div css={tw`w-full sm:w-auto mt-4 sm:mt-0`}>
-                                <Button css={tw`w-full`}>{useMoveTerminology ? 'Move' : 'Rename'}</Button>
+                                <Button css={tw`w-full`}>
+                                    {useMoveTerminology ? 'Move' : 'Rename'}
+                                </Button>
                             </div>
                         </div>
                         {useMoveTerminology && (
                             <p css={tw`text-xs mt-2 text-neutral-400`}>
                                 <strong css={tw`text-neutral-200`}>New location:</strong>
-                                &nbsp;/home/container/{join(directory, values.name).replace(/^(\.\.\/|\/)+/, '')}
+                                &nbsp;/home/container/
+                                {join(directory, values.name).replace(/^(\.\.\/|\/)+/, '')}
                             </p>
                         )}
                     </Form>

@@ -31,7 +31,9 @@ const JavaVersionModalFeature = () => {
     const { clearFlashes, clearAndAddHttpError } = useFlash();
     const { instance } = ServerContext.useStoreState((state) => state.socket);
 
-    const { data, isValidating, mutate } = getServerStartup(uuid, null, { revalidateOnMount: false });
+    const { data, isValidating, mutate } = getServerStartup(uuid, null, {
+        revalidateOnMount: false,
+    });
 
     useEffect(() => {
         if (!visible) return;
@@ -39,7 +41,16 @@ const JavaVersionModalFeature = () => {
         mutate().then((value) => {
             setSelectedVersion(Object.values(value?.dockerImages || [])[0] || '');
         });
-    }, [visible]);
+    }, [
+        visible,
+        mutate,
+        then,
+        value,
+        setSelectedVersion,
+        Object,
+        values,
+        dockerImages
+    ]);
 
     useWebsocketEvent(SocketEvent.CONSOLE_OUTPUT, (data) => {
         if (status === 'running') return;
@@ -66,7 +77,7 @@ const JavaVersionModalFeature = () => {
 
     useEffect(() => {
         clearFlashes('feature:javaVersion');
-    }, []);
+    }, [clearFlashes]);
 
     return (
         <Modal
@@ -78,15 +89,20 @@ const JavaVersionModalFeature = () => {
             <FlashMessageRender key={'feature:javaVersion'} css={tw`mb-4`} />
             <h2 css={tw`text-2xl mb-4 text-neutral-100`}>Unsupported Java Version</h2>
             <p css={tw`mt-4`}>
-                This server is currently running an unsupported version of Java and cannot be started.
+                This server is currently running an unsupported version of Java and cannot be
+                started.
                 <Can action={'startup.docker-image'}>
-                    &nbsp;Please select a supported version from the list below to continue starting the server.
+                    &nbsp;Please select a supported version from the list below to continue starting
+                    the server.
                 </Can>
             </p>
             <Can action={'startup.docker-image'}>
                 <div css={tw`mt-4`}>
                     <InputSpinner visible={!data || isValidating}>
-                        <Select disabled={!data} onChange={(e) => setSelectedVersion(e.target.value)}>
+                        <Select
+                            disabled={!data}
+                            onChange={(e) => setSelectedVersion(e.target.value)}
+                        >
                             {!data ? (
                                 <option disabled />
                             ) : (
@@ -100,7 +116,9 @@ const JavaVersionModalFeature = () => {
                     </InputSpinner>
                 </div>
             </Can>
-            <div css={tw`mt-8 flex flex-col sm:flex-row justify-end sm:space-x-4 space-y-4 sm:space-y-0`}>
+            <div
+                css={tw`mt-8 flex flex-col sm:flex-row justify-end sm:space-x-4 space-y-4 sm:space-y-0`}
+            >
                 <Button isSecondary onClick={() => setVisible(false)} css={tw`w-full sm:w-auto`}>
                     Cancel
                 </Button>

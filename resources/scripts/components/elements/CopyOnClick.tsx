@@ -23,7 +23,7 @@ const CopyOnClick = ({ text, showInNotification = true, children }: CopyOnClickP
         return () => {
             clearTimeout(timeout);
         };
-    }, [copied]);
+    }, [copied, timeout, setTimeout, setCopied, clearTimeout]);
 
     if (!React.isValidElement(children)) {
         throw new Error('Component passed to <CopyOnClick/> must be a valid React element.');
@@ -48,7 +48,11 @@ const CopyOnClick = ({ text, showInNotification = true, children }: CopyOnClickP
                 <Portal>
                     <Fade in appear timeout={250} key={copied ? 'visible' : 'invisible'}>
                         <div className={'fixed z-50 bottom-0 right-0 m-4'}>
-                            <div className={'rounded-md py-3 px-4 text-gray-200 bg-neutral-600/95 shadow'}>
+                            <div
+                                className={
+                                    'rounded-md py-3 px-4 text-gray-200 bg-neutral-600/95 shadow'
+                                }
+                            >
                                 <p>
                                     {showInNotification
                                         ? `Copied "${String(text)}" to clipboard.`

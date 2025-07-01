@@ -26,7 +26,7 @@ export default () => {
             timeout.current && clearTimeout(timeout.current);
             interval.current && clearInterval(interval.current);
         };
-    }, []);
+    }, [timeout, current, clearTimeout, interval, clearInterval]);
 
     useEffect(() => {
         setVisible((progress || 0) > 0);
@@ -34,7 +34,7 @@ export default () => {
         if (progress === 100) {
             timeout.current = setTimeout(() => setProgress(undefined), 500);
         }
-    }, [progress]);
+    }, [progress, setVisible, timeout, current, setTimeout, setProgress]);
 
     useEffect(() => {
         if (!continuous) {
@@ -45,7 +45,15 @@ export default () => {
         if (!progress || progress === 0) {
             setProgress(randomInt(20, 30));
         }
-    }, [continuous]);
+    }, [
+        continuous,
+        interval,
+        current,
+        clearInterval,
+        progress,
+        setProgress,
+        randomInt
+    ]);
 
     useEffect(() => {
         if (continuous) {
@@ -53,10 +61,22 @@ export default () => {
             if ((progress || 0) >= 90) {
                 setProgress(90);
             } else {
-                interval.current = setTimeout(() => setProgress((progress || 0) + randomInt(1, 5)), 500);
+                interval.current = setTimeout(
+                    () => setProgress((progress || 0) + randomInt(1, 5)),
+                    500,
+                );
             }
         }
-    }, [progress, continuous]);
+    }, [
+        progress,
+        continuous,
+        interval,
+        current,
+        clearInterval,
+        setProgress,
+        setTimeout,
+        randomInt
+    ]);
 
     return (
         <div css={tw`w-full fixed`} style={{ height: '2px' }}>

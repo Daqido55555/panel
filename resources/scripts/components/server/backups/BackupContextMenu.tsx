@@ -29,7 +29,9 @@ interface Props {
 
 export default ({ backup }: Props) => {
     const uuid = ServerContext.useStoreState((state) => state.server.data!.uuid);
-    const setServerFromState = ServerContext.useStoreActions((actions) => actions.server.setServerFromState);
+    const setServerFromState = ServerContext.useStoreActions(
+        (actions) => actions.server.setServerFromState,
+    );
     const [modal, setModal] = useState('');
     const [loading, setLoading] = useState(false);
     const [truncate, setTruncate] = useState(false);
@@ -62,8 +64,8 @@ export default ({ backup }: Props) => {
                         items: data.items.filter((b) => b.uuid !== backup.uuid),
                         backupCount: data.backupCount - 1,
                     }),
-                    false
-                )
+                    false,
+                ),
             )
             .catch((error) => {
                 console.error(error);
@@ -81,7 +83,7 @@ export default ({ backup }: Props) => {
                 setServerFromState((s) => ({
                     ...s,
                     status: 'restoring_backup',
-                }))
+                })),
             )
             .catch((error) => {
                 console.error(error);
@@ -107,11 +109,11 @@ export default ({ backup }: Props) => {
                                 : {
                                       ...b,
                                       isLocked: !b.isLocked,
-                                  }
+                                  },
                         ),
                     }),
-                    false
-                )
+                    false,
+                ),
             )
             .catch((error) => alert(httpErrorToHuman(error)))
             .then(() => setModal(''));
@@ -135,11 +137,14 @@ export default ({ backup }: Props) => {
                 onConfirmed={() => doRestorationAction()}
             >
                 <p>
-                    Your server will be stopped. You will not be able to control the power state, access the file
-                    manager, or create additional backups until completed.
+                    Your server will be stopped. You will not be able to control the power state,
+                    access the file manager, or create additional backups until completed.
                 </p>
                 <p css={tw`mt-4 -mb-2 bg-gray-700 p-3 rounded`}>
-                    <label htmlFor={'restore_truncate'} css={tw`text-base flex items-center cursor-pointer`}>
+                    <label
+                        htmlFor={'restore_truncate'}
+                        css={tw`text-base flex items-center cursor-pointer`}
+                    >
                         <Input
                             type={'checkbox'}
                             css={tw`text-red-500! w-5! h-5! mr-2`}
@@ -176,7 +181,11 @@ export default ({ backup }: Props) => {
                     <div css={tw`text-sm`}>
                         <Can action={'backup.download'}>
                             <DropdownButtonRow onClick={doDownload}>
-                                <FontAwesomeIcon fixedWidth icon={faCloudDownloadAlt} css={tw`text-xs`} />
+                                <FontAwesomeIcon
+                                    fixedWidth
+                                    icon={faCloudDownloadAlt}
+                                    css={tw`text-xs`}
+                                />
                                 <span css={tw`ml-2`}>Download</span>
                             </DropdownButtonRow>
                         </Can>
@@ -198,7 +207,11 @@ export default ({ backup }: Props) => {
                                 </DropdownButtonRow>
                                 {!backup.isLocked && (
                                     <DropdownButtonRow danger onClick={() => setModal('delete')}>
-                                        <FontAwesomeIcon fixedWidth icon={faTrashAlt} css={tw`text-xs`} />
+                                        <FontAwesomeIcon
+                                            fixedWidth
+                                            icon={faTrashAlt}
+                                            css={tw`text-xs`}
+                                        />
                                         <span css={tw`ml-2`}>Delete</span>
                                     </DropdownButtonRow>
                                 )}

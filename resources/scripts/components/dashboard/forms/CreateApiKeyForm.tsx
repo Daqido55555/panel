@@ -25,7 +25,9 @@ const CustomTextarea = styled(Textarea)`
 
 export default ({ onKeyCreated }: { onKeyCreated: (key: ApiKey) => void }) => {
     const [apiKey, setApiKey] = useState('');
-    const { addError, clearFlashes } = useStoreActions((actions: Actions<ApplicationStore>) => actions.flashes);
+    const { addError, clearFlashes } = useStoreActions(
+        (actions: Actions<ApplicationStore>) => actions.flashes,
+    );
 
     const submit = (values: Values, { setSubmitting, resetForm }: FormikHelpers<Values>) => {
         clearFlashes('account');
@@ -46,7 +48,11 @@ export default ({ onKeyCreated }: { onKeyCreated: (key: ApiKey) => void }) => {
 
     return (
         <>
-            <ApiKeyModal visible={apiKey.length > 0} onModalDismissed={() => setApiKey('')} apiKey={apiKey} />
+            <ApiKeyModal
+                visible={apiKey.length > 0}
+                onModalDismissed={() => setApiKey('')}
+                apiKey={apiKey}
+            />
             <Formik
                 onSubmit={submit}
                 initialValues={{ description: '', allowedIps: '' }}

@@ -18,7 +18,7 @@ export default () => {
         return () => {
             clearAndAddHttpError();
         };
-    }, [visible]);
+    }, [visible, clearAndAddHttpError]);
 
     const onTokens = (tokens: string[]) => {
         setTokens(tokens);
@@ -27,8 +27,16 @@ export default () => {
 
     return (
         <div>
-            <SetupTOTPDialog open={visible === 'enable'} onClose={() => setVisible(null)} onTokens={onTokens} />
-            <RecoveryTokensDialog tokens={tokens} open={tokens.length > 0} onClose={() => setTokens([])} />
+            <SetupTOTPDialog
+                open={visible === 'enable'}
+                onClose={() => setVisible(null)}
+                onTokens={onTokens}
+            />
+            <RecoveryTokensDialog
+                tokens={tokens}
+                open={tokens.length > 0}
+                onClose={() => setTokens([])}
+            />
             <DisableTOTPDialog open={visible === 'disable'} onClose={() => setVisible(null)} />
             <p css={tw`text-sm`}>
                 {isEnabled
@@ -37,7 +45,9 @@ export default () => {
             </p>
             <div css={tw`mt-6`}>
                 {isEnabled ? (
-                    <Button.Danger onClick={() => setVisible('disable')}>Disable Two-Step</Button.Danger>
+                    <Button.Danger onClick={() => setVisible('disable')}>
+                        Disable Two-Step
+                    </Button.Danger>
                 ) : (
                     <Button onClick={() => setVisible('enable')}>Enable Two-Step</Button>
                 )}

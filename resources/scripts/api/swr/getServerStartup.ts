@@ -15,7 +15,9 @@ export default (uuid: string, initialData?: Response | null, config?: ConfigInte
         async (): Promise<Response> => {
             const { data } = await http.get(`/api/client/servers/${uuid}/startup`);
 
-            const variables = ((data as FractalResponseList).data || []).map(rawDataToServerEggVariable);
+            const variables = ((data as FractalResponseList).data || []).map(
+                rawDataToServerEggVariable,
+            );
 
             return {
                 variables,
@@ -23,5 +25,5 @@ export default (uuid: string, initialData?: Response | null, config?: ConfigInte
                 dockerImages: data.meta.docker_images || {},
             };
         },
-        { initialData: initialData || undefined, errorRetryCount: 3, ...(config || {}) }
+        { initialData: initialData || undefined, errorRetryCount: 3, ...(config || {}) },
     );

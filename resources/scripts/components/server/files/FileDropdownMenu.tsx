@@ -38,7 +38,9 @@ type ModalType = 'rename' | 'move' | 'chmod';
 const StyledRow = styled.div<{ $danger?: boolean }>`
     ${tw`p-2 flex items-center rounded`};
     ${(props) =>
-        props.$danger ? tw`hover:bg-red-100 hover:text-red-700` : tw`hover:bg-neutral-100 hover:text-neutral-700`};
+        props.$danger
+            ? tw`hover:bg-red-100 hover:text-red-700`
+            : tw`hover:bg-neutral-100 hover:text-neutral-700`};
 `;
 
 interface RowProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -169,7 +171,11 @@ const FileDropdownMenu = ({ file }: { file: FileObject }) => {
                 <Can action={'file.update'}>
                     <Row onClick={() => setModal('rename')} icon={faPencilAlt} title={'Rename'} />
                     <Row onClick={() => setModal('move')} icon={faLevelUpAlt} title={'Move'} />
-                    <Row onClick={() => setModal('chmod')} icon={faFileCode} title={'Permissions'} />
+                    <Row
+                        onClick={() => setModal('chmod')}
+                        icon={faFileCode}
+                        title={'Permissions'}
+                    />
                 </Can>
                 {file.isFile && (
                     <Can action={'file.create'}>
@@ -185,9 +191,16 @@ const FileDropdownMenu = ({ file }: { file: FileObject }) => {
                         <Row onClick={doArchive} icon={faFileArchive} title={'Archive'} />
                     </Can>
                 )}
-                {file.isFile && <Row onClick={doDownload} icon={faFileDownload} title={'Download'} />}
+                {file.isFile && (
+                    <Row onClick={doDownload} icon={faFileDownload} title={'Download'} />
+                )}
                 <Can action={'file.delete'}>
-                    <Row onClick={() => setShowConfirmation(true)} icon={faTrashAlt} title={'Delete'} $danger />
+                    <Row
+                        onClick={() => setShowConfirmation(true)}
+                        icon={faTrashAlt}
+                        title={'Delete'}
+                        $danger
+                    />
                 </Can>
             </DropdownMenu>
         </>

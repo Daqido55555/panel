@@ -35,12 +35,21 @@ const getBackgroundColor = (value: number, max: number | null): string | undefin
 const Limit = ({ limit, children }: { limit: string | null; children: React.ReactNode }) => (
     <>
         {children}
-        <span className={'ml-1 text-gray-300 text-[70%] select-none'}>/ {limit || <>&infin;</>}</span>
+        <span className={'ml-1 text-gray-300 text-[70%] select-none'}>
+            / {limit || <>&infin;</>}
+        </span>
     </>
 );
 
 const ServerDetailsBlock = ({ className }: { className?: string }) => {
-    const [stats, setStats] = useState<Stats>({ memory: 0, cpu: 0, disk: 0, uptime: 0, tx: 0, rx: 0 });
+    const [stats, setStats] = useState<Stats>({
+        memory: 0,
+        cpu: 0,
+        disk: 0,
+        uptime: 0,
+        tx: 0,
+        rx: 0,
+    });
 
     const status = ServerContext.useStoreState((state) => state.status.value);
     const connected = ServerContext.useStoreState((state) => state.socket.connected);
@@ -53,7 +62,7 @@ const ServerDetailsBlock = ({ className }: { className?: string }) => {
             memory: limits?.memory ? bytesToString(mbToBytes(limits.memory)) : null,
             disk: limits?.disk ? bytesToString(mbToBytes(limits.disk)) : null,
         }),
-        [limits]
+        [limits, cpu, memory, bytesToString, mbToBytes, disk],
     );
 
     const allocation = ServerContext.useStoreState((state) => {
@@ -68,7 +77,7 @@ const ServerDetailsBlock = ({ className }: { className?: string }) => {
         }
 
         instance.send(SocketRequest.SEND_STATS);
-    }, [instance, connected]);
+    }, [instance, connected, send, SocketRequest, SEND_STATS]);
 
     useWebsocketEvent(SocketEvent.STATS, (data) => {
         let stats: any = {};
@@ -96,7 +105,10 @@ const ServerDetailsBlock = ({ className }: { className?: string }) => {
             <StatBlock
                 icon={faClock}
                 title={'Uptime'}
-                color={getBackgroundColor(status === 'running' ? 0 : status !== 'offline' ? 9 : 10, 10)}
+                color={getBackgroundColor(
+                    status === 'running' ? 0 : status !== 'offline' ? 9 : 10,
+                    10,
+                )}
             >
                 {status === null ? (
                     'Offline'
@@ -106,7 +118,11 @@ const ServerDetailsBlock = ({ className }: { className?: string }) => {
                     capitalize(status)
                 )}
             </StatBlock>
-            <StatBlock icon={faMicrochip} title={'CPU Load'} color={getBackgroundColor(stats.cpu, limits.cpu)}>
+            <StatBlock
+                icon={faMicrochip}
+                title={'CPU Load'}
+                color={getBackgroundColor(stats.cpu, limits.cpu)}
+            >
                 {status === 'offline' ? (
                     <span className={'text-gray-400'}>Offline</span>
                 ) : (
@@ -124,14 +140,26 @@ const ServerDetailsBlock = ({ className }: { className?: string }) => {
                     <Limit limit={textLimits.memory}>{bytesToString(stats.memory)}</Limit>
                 )}
             </StatBlock>
-            <StatBlock icon={faHdd} title={'Disk'} color={getBackgroundColor(stats.disk / 1024, limits.disk * 1024)}>
+            <StatBlock
+                icon={faHdd}
+                title={'Disk'}
+                color={getBackgroundColor(stats.disk / 1024, limits.disk * 1024)}
+            >
                 <Limit limit={textLimits.disk}>{bytesToString(stats.disk)}</Limit>
             </StatBlock>
             <StatBlock icon={faCloudDownloadAlt} title={'Network (Inbound)'}>
-                {status === 'offline' ? <span className={'text-gray-400'}>Offline</span> : bytesToString(stats.rx)}
+                {status === 'offline' ? (
+                    <span className={'text-gray-400'}>Offline</span>
+                ) : (
+                    bytesToString(stats.rx)
+                )}
             </StatBlock>
             <StatBlock icon={faCloudUploadAlt} title={'Network (Outbound)'}>
-                {status === 'offline' ? <span className={'text-gray-400'}>Offline</span> : bytesToString(stats.tx)}
+                {status === 'offline' ? (
+                    <span className={'text-gray-400'}>Offline</span>
+                ) : (
+                    bytesToString(stats.tx)
+                )}
             </StatBlock>
         </div>
     );

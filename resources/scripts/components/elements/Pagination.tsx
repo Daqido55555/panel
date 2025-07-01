@@ -64,7 +64,11 @@ function Pagination<T>({ data: { items, pagination }, onPageSelect, children }: 
                         </Block>
                     ))}
                     {pages[4] < pagination.totalPages && !isLastPage && (
-                        <Block isSecondary color={'primary'} onClick={() => onPageSelect(pagination.totalPages)}>
+                        <Block
+                            isSecondary
+                            color={'primary'}
+                            onClick={() => onPageSelect(pagination.totalPages)}
+                        >
                             <FontAwesomeIcon icon={faAngleDoubleRight} />
                         </Block>
                     )}
