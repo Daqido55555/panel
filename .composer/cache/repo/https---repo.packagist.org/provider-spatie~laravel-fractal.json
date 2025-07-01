@@ -1,0 +1,1473 @@
+{
+    "minified": "composer/2.0",
+    "packages": {
+        "spatie/laravel-fractal": [
+            {
+                "name": "spatie/laravel-fractal",
+                "description": "An easy to use Fractal integration for Laravel applications",
+                "keywords": [
+                    "api",
+                    "transform",
+                    "laravel",
+                    "fractal",
+                    "spatie",
+                    "lumen",
+                    "laravel-fractal"
+                ],
+                "homepage": "https://github.com/spatie/laravel-fractal",
+                "version": "6.3.2",
+                "version_normalized": "6.3.2.0",
+                "license": ["MIT"],
+                "authors": [
+                    {
+                        "name": "Freek Van der Herten",
+                        "email": "freek@spatie.be",
+                        "homepage": "https://spatie.be",
+                        "role": "Developer"
+                    }
+                ],
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "d078aa670233100e1309a0a7096c42f5b605ef29"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/d078aa670233100e1309a0a7096c42f5b605ef29",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "d078aa670233100e1309a0a7096c42f5b605ef29"
+                },
+                "type": "library",
+                "support": { "source": "https://github.com/spatie/laravel-fractal/tree/6.3.2" },
+                "funding": [
+                    { "url": "https://spatie.be/open-source/support-us", "type": "custom" }
+                ],
+                "time": "2025-02-14T10:43:50+00:00",
+                "autoload": {
+                    "files": ["src/helpers.php"],
+                    "psr-4": { "Spatie\\Fractal\\": "src" }
+                },
+                "extra": {
+                    "laravel": {
+                        "aliases": { "Fractal": "Spatie\\Fractal\\Facades\\Fractal" },
+                        "providers": ["Spatie\\Fractal\\FractalServiceProvider"]
+                    }
+                },
+                "require": {
+                    "php": "^8.0",
+                    "illuminate/contracts": "^8.0|^9.0|^10.0|^11.0|^12.0",
+                    "illuminate/support": "^8.0|^9.0|^10.0|^11.0|^12.0",
+                    "league/fractal": "^0.20.1|^0.20",
+                    "nesbot/carbon": "^2.63|^3.0",
+                    "spatie/fractalistic": "^2.9.5|^2.9",
+                    "spatie/laravel-package-tools": "^1.11"
+                },
+                "require-dev": {
+                    "ext-json": "*",
+                    "orchestra/testbench": "^7.0|^8.0|^9.0|^10.0",
+                    "pestphp/pest": "^1.22|^2.34|^3.0"
+                }
+            },
+            {
+                "version": "6.3.1",
+                "version_normalized": "6.3.1.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "10571be5e614488d82816be0e23d2a1a26886c05"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/10571be5e614488d82816be0e23d2a1a26886c05",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "10571be5e614488d82816be0e23d2a1a26886c05"
+                },
+                "support": { "source": "https://github.com/spatie/laravel-fractal/tree/6.3.1" },
+                "time": "2024-12-16T12:43:10+00:00",
+                "require": {
+                    "php": "^8.0",
+                    "illuminate/contracts": "^8.0|^9.0|^10.0|^11.0",
+                    "illuminate/support": "^8.0|^9.0|^10.0|^11.0",
+                    "league/fractal": "^0.20.1|^0.20",
+                    "nesbot/carbon": "^2.63|^3.0",
+                    "spatie/fractalistic": "^2.9.5|^2.9",
+                    "spatie/laravel-package-tools": "^1.11"
+                },
+                "require-dev": {
+                    "ext-json": "*",
+                    "orchestra/testbench": "^7.0|^8.0|^9.0",
+                    "pestphp/pest": "^1.22|^2.34"
+                }
+            },
+            {
+                "version": "6.3.0",
+                "version_normalized": "6.3.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "3134ca2ef69d85727777403dcc6030446637e14d"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/3134ca2ef69d85727777403dcc6030446637e14d",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "3134ca2ef69d85727777403dcc6030446637e14d"
+                },
+                "support": { "source": "https://github.com/spatie/laravel-fractal/tree/6.3.0" },
+                "time": "2024-12-09T12:26:16+00:00"
+            },
+            {
+                "version": "6.2.2",
+                "version_normalized": "6.2.2.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "acca5bda3b7064b6f624263fe070d9070e3ca33d"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/acca5bda3b7064b6f624263fe070d9070e3ca33d",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "acca5bda3b7064b6f624263fe070d9070e3ca33d"
+                },
+                "support": { "source": "https://github.com/spatie/laravel-fractal/tree/6.2.2" },
+                "time": "2024-12-09T11:02:33+00:00"
+            },
+            {
+                "version": "6.2.1",
+                "version_normalized": "6.2.1.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "0a30630d2ab49590af118172c03c99c0d838dab1"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/0a30630d2ab49590af118172c03c99c0d838dab1",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "0a30630d2ab49590af118172c03c99c0d838dab1"
+                },
+                "support": { "source": "https://github.com/spatie/laravel-fractal/tree/6.2.1" },
+                "time": "2024-06-04T09:33:08+00:00"
+            },
+            {
+                "version": "6.2.0",
+                "version_normalized": "6.2.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "5b6a17720fc77891e79f505dde8368ea8e71fb13"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/5b6a17720fc77891e79f505dde8368ea8e71fb13",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "5b6a17720fc77891e79f505dde8368ea8e71fb13"
+                },
+                "support": { "source": "https://github.com/spatie/laravel-fractal/tree/6.2.0" },
+                "time": "2024-03-18T12:38:19+00:00"
+            },
+            {
+                "version": "6.1.0",
+                "version_normalized": "6.1.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "254caf0170b48c5b84aa3b42bca53cc58331d814"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/254caf0170b48c5b84aa3b42bca53cc58331d814",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "254caf0170b48c5b84aa3b42bca53cc58331d814"
+                },
+                "support": { "source": "https://github.com/spatie/laravel-fractal/tree/6.1.0" },
+                "time": "2024-03-02T05:48:10+00:00"
+            },
+            {
+                "version": "6.0.3",
+                "version_normalized": "6.0.3.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "28ea9803d2cba7a7144336a2ba62275316c122c8"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/28ea9803d2cba7a7144336a2ba62275316c122c8",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "28ea9803d2cba7a7144336a2ba62275316c122c8"
+                },
+                "support": { "source": "https://github.com/spatie/laravel-fractal/tree/6.0.3" },
+                "time": "2023-01-30T22:11:18+00:00",
+                "require": {
+                    "php": "^8.0",
+                    "illuminate/contracts": "^8.0|^9.0|^10.0",
+                    "illuminate/support": "^8.0|^9.0|^10.0",
+                    "league/fractal": "^0.20.1|^0.20",
+                    "nesbot/carbon": "^2.63",
+                    "spatie/fractalistic": "^2.9.5|^2.9",
+                    "spatie/laravel-package-tools": "^1.11"
+                },
+                "require-dev": {
+                    "ext-json": "*",
+                    "orchestra/testbench": "^7.0|^8.0",
+                    "pestphp/pest": "^1.22"
+                }
+            },
+            {
+                "version": "6.0.2",
+                "version_normalized": "6.0.2.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "1e6b8114389fe8e55eec3a841db02c404458f869"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/1e6b8114389fe8e55eec3a841db02c404458f869",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "1e6b8114389fe8e55eec3a841db02c404458f869"
+                },
+                "support": {
+                    "issues": "https://github.com/spatie/laravel-fractal/issues",
+                    "source": "https://github.com/spatie/laravel-fractal/tree/6.0.2"
+                },
+                "time": "2022-04-04T07:53:13+00:00",
+                "require": {
+                    "php": "^8.0",
+                    "illuminate/contracts": "^8.0|^9.0",
+                    "illuminate/support": "^8.0|^9.0",
+                    "spatie/fractalistic": "^2.5",
+                    "spatie/laravel-package-tools": "^1.11"
+                },
+                "require-dev": { "orchestra/testbench": "^7.0", "ext-json": "*" }
+            },
+            {
+                "version": "6.0.1",
+                "version_normalized": "6.0.1.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "760e8d905c045b46f62df4d4a063e6afd01f2db4"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/760e8d905c045b46f62df4d4a063e6afd01f2db4",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "760e8d905c045b46f62df4d4a063e6afd01f2db4"
+                },
+                "support": {
+                    "issues": "https://github.com/spatie/laravel-fractal/issues",
+                    "source": "https://github.com/spatie/laravel-fractal/tree/6.0.1"
+                },
+                "time": "2022-03-31T11:21:32+00:00"
+            },
+            {
+                "version": "6.0.0",
+                "version_normalized": "6.0.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "926c5c8b7c2d7e3385993d2f56d413197a4b397e"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/926c5c8b7c2d7e3385993d2f56d413197a4b397e",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "926c5c8b7c2d7e3385993d2f56d413197a4b397e"
+                },
+                "support": {
+                    "issues": "https://github.com/spatie/laravel-fractal/issues",
+                    "source": "https://github.com/spatie/laravel-fractal/tree/6.0.0"
+                },
+                "time": "2022-01-13T10:44:56+00:00",
+                "require": {
+                    "php": "^8.0",
+                    "illuminate/contracts": "^9.0",
+                    "illuminate/support": "^9.0",
+                    "spatie/fractalistic": "^2.5",
+                    "spatie/laravel-package-tools": "^1.11"
+                }
+            },
+            {
+                "version": "5.8.1",
+                "version_normalized": "5.8.1.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "be3ccd54e26742cd05b3637fb732fd9addfa28df"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/be3ccd54e26742cd05b3637fb732fd9addfa28df",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "be3ccd54e26742cd05b3637fb732fd9addfa28df"
+                },
+                "support": {
+                    "issues": "https://github.com/spatie/laravel-fractal/issues",
+                    "source": "https://github.com/spatie/laravel-fractal/tree/5.8.1"
+                },
+                "time": "2020-11-12T18:46:53+00:00",
+                "extra": {
+                    "laravel": {
+                        "aliases": { "Fractal": "Spatie\\Fractal\\FractalFacade" },
+                        "providers": ["Spatie\\Fractal\\FractalServiceProvider"]
+                    }
+                },
+                "require": {
+                    "php": "^7.2|^8.0",
+                    "illuminate/contracts": "^7.0|^8.0",
+                    "illuminate/support": "^7.0|^8.0",
+                    "spatie/fractalistic": "^2.5"
+                },
+                "require-dev": { "orchestra/testbench": "^5.0|^6.0", "ext-json": "*" }
+            },
+            {
+                "version": "5.8.0",
+                "version_normalized": "5.8.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "335a8d0e9e966244a552c6970ac690b18c402d90"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/335a8d0e9e966244a552c6970ac690b18c402d90",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "335a8d0e9e966244a552c6970ac690b18c402d90"
+                },
+                "support": {
+                    "issues": "https://github.com/spatie/laravel-fractal/issues",
+                    "source": "https://github.com/spatie/laravel-fractal/tree/5.8.0"
+                },
+                "time": "2020-09-08T20:28:01+00:00",
+                "require": {
+                    "php": "^7.2",
+                    "illuminate/contracts": "~5.8.0|^6.0|^7.0|^8.0",
+                    "illuminate/support": "~5.8.0|^6.0|^7.0|^8.0",
+                    "spatie/fractalistic": "^2.5"
+                },
+                "require-dev": {
+                    "dms/phpunit-arraysubset-asserts": "^0.1.0",
+                    "orchestra/testbench": "~3.8.0|^4.0|^5.0|^6.0"
+                }
+            },
+            {
+                "version": "5.7.0",
+                "version_normalized": "5.7.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "482b73a7942d14087167b32c6681351c81afaeb3"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/482b73a7942d14087167b32c6681351c81afaeb3",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "482b73a7942d14087167b32c6681351c81afaeb3"
+                },
+                "support": {
+                    "issues": "https://github.com/spatie/laravel-fractal/issues",
+                    "source": "https://github.com/spatie/laravel-fractal/tree/master"
+                },
+                "time": "2020-03-02T18:40:49+00:00",
+                "require": {
+                    "php": "^7.2",
+                    "illuminate/contracts": "~5.8.0|^6.0|^7.0",
+                    "illuminate/support": "~5.8.0|^6.0|^7.0",
+                    "spatie/fractalistic": "^2.5"
+                },
+                "require-dev": {
+                    "dms/phpunit-arraysubset-asserts": "^0.1.0",
+                    "orchestra/testbench": "~3.8.0|^4.0|^5.0"
+                }
+            },
+            {
+                "version": "5.6.1",
+                "version_normalized": "5.6.1.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "f8688094e15cea06cc233bc5e2e62d169f656eae"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/f8688094e15cea06cc233bc5e2e62d169f656eae",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "f8688094e15cea06cc233bc5e2e62d169f656eae"
+                },
+                "support": {
+                    "issues": "https://github.com/spatie/laravel-fractal/issues",
+                    "source": "https://github.com/spatie/laravel-fractal/tree/5.6.1"
+                },
+                "time": "2019-11-19T17:21:37+00:00",
+                "require": {
+                    "php": "^7.2",
+                    "illuminate/contracts": "~5.7.0|~5.8.0|^6.0",
+                    "illuminate/support": "~5.7.0|~5.8.0|^6.0",
+                    "spatie/fractalistic": "^2.5"
+                },
+                "require-dev": {
+                    "dms/phpunit-arraysubset-asserts": "^0.1.0",
+                    "orchestra/testbench": "~3.7.0|~3.8.0|^4.0"
+                },
+                "funding": "__unset"
+            },
+            {
+                "version": "5.6.0",
+                "version_normalized": "5.6.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "21704e4a2cf62d9c2b981395fa5b15bd06848ed5"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/21704e4a2cf62d9c2b981395fa5b15bd06848ed5",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "21704e4a2cf62d9c2b981395fa5b15bd06848ed5"
+                },
+                "support": {
+                    "issues": "https://github.com/spatie/laravel-fractal/issues",
+                    "source": "https://github.com/spatie/laravel-fractal/tree/5.6.0"
+                },
+                "time": "2019-09-04T07:02:37+00:00"
+            },
+            {
+                "version": "5.5.1",
+                "version_normalized": "5.5.1.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "d5061c2463379aeda7c83cb3960981b519eb9e3c"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/d5061c2463379aeda7c83cb3960981b519eb9e3c",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "d5061c2463379aeda7c83cb3960981b519eb9e3c"
+                },
+                "support": {
+                    "issues": "https://github.com/spatie/laravel-fractal/issues",
+                    "source": "https://github.com/spatie/laravel-fractal/tree/master"
+                },
+                "time": "2019-03-13T14:18:31+00:00",
+                "require": {
+                    "php": "^7.2",
+                    "illuminate/contracts": "~5.7.0|~5.8.0",
+                    "illuminate/support": "~5.7.0|~5.8.0",
+                    "spatie/fractalistic": "^2.5"
+                },
+                "require-dev": {
+                    "dms/phpunit-arraysubset-asserts": "^0.1.0",
+                    "orchestra/testbench": "~3.7.0|~3.8.0",
+                    "phpunit/phpunit": "^8.0"
+                }
+            },
+            {
+                "version": "5.5.0",
+                "version_normalized": "5.5.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "c79bf1581e9961ed2420b5573b1aaf9f71fd2308"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/c79bf1581e9961ed2420b5573b1aaf9f71fd2308",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "c79bf1581e9961ed2420b5573b1aaf9f71fd2308"
+                },
+                "time": "2019-02-27T10:49:15+00:00"
+            },
+            {
+                "version": "5.4.4",
+                "version_normalized": "5.4.4.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "8ff6e6658806ca5778e3ceaa0e54ccc4c3566ce3"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/8ff6e6658806ca5778e3ceaa0e54ccc4c3566ce3",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "8ff6e6658806ca5778e3ceaa0e54ccc4c3566ce3"
+                },
+                "time": "2019-02-27T00:32:04+00:00",
+                "require": {
+                    "php": "^7.1",
+                    "illuminate/contracts": "~5.5.0|~5.6.0|~5.7.0|~5.8.0",
+                    "illuminate/support": "~5.5.0|~5.6.0|~5.7.0|~5.8.0",
+                    "spatie/fractalistic": "^2.5"
+                },
+                "require-dev": {
+                    "orchestra/testbench": "~3.5.0|~3.6.0|~3.7.0|~3.8.0",
+                    "phpunit/phpunit": "^6.2|^7.0"
+                }
+            },
+            {
+                "version": "5.4.3",
+                "version_normalized": "5.4.3.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "514663b6b331a6c62ab6321cdf68d790a706e082"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/514663b6b331a6c62ab6321cdf68d790a706e082",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "514663b6b331a6c62ab6321cdf68d790a706e082"
+                },
+                "time": "2019-01-16T12:38:34+00:00",
+                "require": {
+                    "php": "^7.0",
+                    "illuminate/contracts": "~5.5.0|~5.6.0|~5.7.0",
+                    "illuminate/support": "~5.5.0|~5.6.0|~5.7.0",
+                    "spatie/fractalistic": "^2.5"
+                },
+                "require-dev": {
+                    "orchestra/testbench": "~3.5.0|~3.6.0|~3.7.0",
+                    "phpunit/phpunit": "^6.2|^7.0",
+                    "scrutinizer/ocular": "^1.5"
+                }
+            },
+            {
+                "version": "5.4.2",
+                "version_normalized": "5.4.2.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "2931881cac3155ceb798f2fd1e55bd152576682b"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/2931881cac3155ceb798f2fd1e55bd152576682b",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "2931881cac3155ceb798f2fd1e55bd152576682b"
+                },
+                "time": "2018-09-28T16:17:34+00:00",
+                "require-dev": {
+                    "orchestra/testbench": "~3.5.0|~3.6.0|~3.7.0",
+                    "phpunit/phpunit": "^6.2|^7.0"
+                }
+            },
+            {
+                "version": "5.4.1",
+                "version_normalized": "5.4.1.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "0f18df001833fc82e6502229565347290cecda85"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/0f18df001833fc82e6502229565347290cecda85",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "0f18df001833fc82e6502229565347290cecda85"
+                },
+                "time": "2018-08-24T09:21:38+00:00",
+                "require": {
+                    "php": "^7.0",
+                    "laravel/framework": "~5.5.0|~5.6.0|~5.7.0",
+                    "spatie/fractalistic": "^2.5"
+                }
+            },
+            {
+                "version": "5.4.0",
+                "version_normalized": "5.4.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "9d1752ec5c48db2e968db10129ee692f4a3ffc81"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/9d1752ec5c48db2e968db10129ee692f4a3ffc81",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "9d1752ec5c48db2e968db10129ee692f4a3ffc81"
+                },
+                "time": "2018-07-19T16:40:01+00:00",
+                "require": {
+                    "php": "^7.0",
+                    "illuminate/contracts": "~5.5.0|~5.6.0",
+                    "illuminate/support": "~5.5.0|~5.6.0",
+                    "spatie/fractalistic": "^2.5"
+                },
+                "require-dev": {
+                    "orchestra/testbench": "~3.5.0|~3.6.0",
+                    "phpunit/phpunit": "^6.2|^7.0"
+                }
+            },
+            {
+                "version": "5.3.2",
+                "version_normalized": "5.3.2.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "a0db87cf01593cc2cfe7aec3f82ce57c83566f3b"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/a0db87cf01593cc2cfe7aec3f82ce57c83566f3b",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "a0db87cf01593cc2cfe7aec3f82ce57c83566f3b"
+                },
+                "time": "2018-06-13T20:45:45+00:00"
+            },
+            {
+                "version": "5.3.1",
+                "version_normalized": "5.3.1.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "e39e0865b66ca541337b45fed4ad6c22200b85d0"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/e39e0865b66ca541337b45fed4ad6c22200b85d0",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "e39e0865b66ca541337b45fed4ad6c22200b85d0"
+                },
+                "time": "2018-02-07T23:06:44+00:00"
+            },
+            {
+                "version": "5.3.0",
+                "version_normalized": "5.3.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "f395eb645cd454b209bc628f974ed137d16e03da"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/f395eb645cd454b209bc628f974ed137d16e03da",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "f395eb645cd454b209bc628f974ed137d16e03da"
+                },
+                "time": "2017-11-28T16:33:26+00:00",
+                "require": {
+                    "php": "^7.0",
+                    "illuminate/contracts": "~5.5.0",
+                    "illuminate/support": "~5.5.0",
+                    "spatie/fractalistic": "^2.5"
+                },
+                "require-dev": { "orchestra/testbench": "~3.5.0", "phpunit/phpunit": "^6.2" }
+            },
+            {
+                "version": "5.2.0",
+                "version_normalized": "5.2.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "4aa3d4a5e5b2956eea437ee1f82201bd8b91a65e"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/4aa3d4a5e5b2956eea437ee1f82201bd8b91a65e",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "4aa3d4a5e5b2956eea437ee1f82201bd8b91a65e"
+                },
+                "time": "2017-09-15T18:57:48+00:00"
+            },
+            {
+                "version": "5.1.0",
+                "version_normalized": "5.1.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "0c9c61ef7f3affdfb609e77d1060493655106676"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/0c9c61ef7f3affdfb609e77d1060493655106676",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "0c9c61ef7f3affdfb609e77d1060493655106676"
+                },
+                "time": "2017-09-08T08:32:16+00:00"
+            },
+            {
+                "version": "5.0.1",
+                "version_normalized": "5.0.1.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "c58f8b4e4b3c8ea3ba9aaca20b1eea239598457d"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/c58f8b4e4b3c8ea3ba9aaca20b1eea239598457d",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "c58f8b4e4b3c8ea3ba9aaca20b1eea239598457d"
+                },
+                "time": "2017-08-30T13:11:03+00:00"
+            },
+            {
+                "version": "5.0.0",
+                "version_normalized": "5.0.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "28589d1be0795c2dca88ff61e79952826b44ca99"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/28589d1be0795c2dca88ff61e79952826b44ca99",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "28589d1be0795c2dca88ff61e79952826b44ca99"
+                },
+                "time": "2017-08-30T12:34:38+00:00",
+                "require": {
+                    "php": "^7.0",
+                    "illuminate/contracts": "5.5.x-dev",
+                    "illuminate/support": "5.5.x-dev",
+                    "spatie/fractalistic": "^2.5"
+                },
+                "require-dev": { "orchestra/testbench": "3.5.x-dev", "phpunit/phpunit": "^6.2" }
+            },
+            {
+                "version": "4.5.0",
+                "version_normalized": "4.5.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "445364122d4e6d6da6f599939962e689668c2b5f"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/445364122d4e6d6da6f599939962e689668c2b5f",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "445364122d4e6d6da6f599939962e689668c2b5f"
+                },
+                "time": "2017-08-22T17:52:05+00:00",
+                "require": {
+                    "php": "^5.6|^7.0",
+                    "illuminate/contracts": "~5.1.0|~5.2.0|~5.3.0|~5.4.0",
+                    "illuminate/support": "~5.1.0|~5.2.0|~5.3.0|~5.4.0",
+                    "spatie/fractalistic": "^2.5"
+                },
+                "require-dev": {
+                    "orchestra/testbench": "~3.2.0|3.3.0|~3.4.0",
+                    "phpunit/phpunit": "^5.7.5"
+                }
+            },
+            {
+                "version": "4.4.0",
+                "version_normalized": "4.4.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "0d44b16662df0c5513564a2a52000dd3de498add"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/0d44b16662df0c5513564a2a52000dd3de498add",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "0d44b16662df0c5513564a2a52000dd3de498add"
+                },
+                "time": "2017-08-20T21:20:01+00:00",
+                "require": {
+                    "php": "^5.6|^7.0",
+                    "illuminate/contracts": "~5.1.0|~5.2.0|~5.3.0|~5.4.0",
+                    "illuminate/support": "~5.1.0|~5.2.0|~5.3.0|~5.4.0",
+                    "spatie/fractalistic": "^2.0"
+                }
+            },
+            {
+                "version": "4.3.0",
+                "version_normalized": "4.3.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "a3598933f15f74edcb44edb3ff3e0afa23663907"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/a3598933f15f74edcb44edb3ff3e0afa23663907",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "a3598933f15f74edcb44edb3ff3e0afa23663907"
+                },
+                "time": "2017-07-26T14:15:40+00:00"
+            },
+            {
+                "version": "4.2.0",
+                "version_normalized": "4.2.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "c28e773d1bd68a0cc1b607e1b65ac276f465880e"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/c28e773d1bd68a0cc1b607e1b65ac276f465880e",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "c28e773d1bd68a0cc1b607e1b65ac276f465880e"
+                },
+                "time": "2017-07-18T07:28:13+00:00"
+            },
+            {
+                "version": "4.01",
+                "version_normalized": "4.01.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "3b95780f5f3ca79e29d445a5df87eac9f7c7c053"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/3b95780f5f3ca79e29d445a5df87eac9f7c7c053",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "3b95780f5f3ca79e29d445a5df87eac9f7c7c053"
+                },
+                "time": "2017-05-05T19:01:43+00:00",
+                "extra": "__unset"
+            },
+            {
+                "version": "4.0.2",
+                "version_normalized": "4.0.2.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "c73e3f63256f425fa3876de454845327db86b786"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/c73e3f63256f425fa3876de454845327db86b786",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "c73e3f63256f425fa3876de454845327db86b786"
+                },
+                "time": "2017-06-13T22:34:07+00:00",
+                "extra": {
+                    "laravel": {
+                        "aliases": { "Fractal": "Spatie\\Fractal\\FractalFacade" },
+                        "providers": ["Spatie\\Fractal\\FractalServiceProvider"]
+                    }
+                }
+            },
+            {
+                "version": "4.0.1",
+                "version_normalized": "4.0.1.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "3b95780f5f3ca79e29d445a5df87eac9f7c7c053"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/3b95780f5f3ca79e29d445a5df87eac9f7c7c053",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "3b95780f5f3ca79e29d445a5df87eac9f7c7c053"
+                },
+                "time": "2017-05-05T19:01:43+00:00",
+                "extra": "__unset"
+            },
+            {
+                "version": "4.0.0",
+                "version_normalized": "4.0.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "7ddbb8131f20dd101a1699f3e622954fd73a97e1"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/7ddbb8131f20dd101a1699f3e622954fd73a97e1",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "7ddbb8131f20dd101a1699f3e622954fd73a97e1"
+                },
+                "time": "2017-04-26T15:13:38+00:00"
+            },
+            {
+                "description": "A Fractal service provider for Laravel and Lumen",
+                "version": "3.5.0",
+                "version_normalized": "3.5.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "16689b0ce340bc139ba767f0bf2904e4eab2b254"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/16689b0ce340bc139ba767f0bf2904e4eab2b254",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "16689b0ce340bc139ba767f0bf2904e4eab2b254"
+                },
+                "time": "2017-02-21T23:17:02+00:00",
+                "require": {
+                    "php": "^5.6|^7.0",
+                    "illuminate/contracts": "~5.1.0|~5.2.0|~5.3.0|~5.4.0",
+                    "illuminate/support": "~5.1.0|~5.2.0|~5.3.0|~5.4.0",
+                    "spatie/fractalistic": "^1.0"
+                }
+            },
+            {
+                "description": "A Fractal service provider for Laravel",
+                "version": "3.4.1",
+                "version_normalized": "3.4.1.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "2b56aab059a7120520973652f446ace64866d2fe"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/2b56aab059a7120520973652f446ace64866d2fe",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "2b56aab059a7120520973652f446ace64866d2fe"
+                },
+                "time": "2017-02-07T19:49:21+00:00"
+            },
+            {
+                "version": "3.4.0",
+                "version_normalized": "3.4.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "4ba5becc2dc1c5be4b253afb7c0da106b2e774b3"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/4ba5becc2dc1c5be4b253afb7c0da106b2e774b3",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "4ba5becc2dc1c5be4b253afb7c0da106b2e774b3"
+                },
+                "time": "2017-02-04T14:10:25+00:00"
+            },
+            {
+                "version": "3.3.1",
+                "version_normalized": "3.3.1.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "b61276ed4a8cb418377ded396d0f933020bae104"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/b61276ed4a8cb418377ded396d0f933020bae104",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "b61276ed4a8cb418377ded396d0f933020bae104"
+                },
+                "time": "2017-01-28T08:37:24+00:00"
+            },
+            {
+                "version": "3.3.0",
+                "version_normalized": "3.3.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "cc09ad9a26f1cf9e769e7906c01b64fb568f1b91"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/cc09ad9a26f1cf9e769e7906c01b64fb568f1b91",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "cc09ad9a26f1cf9e769e7906c01b64fb568f1b91"
+                },
+                "time": "2017-01-23T13:41:40+00:00",
+                "require-dev": {
+                    "orchestra/testbench": "~3.2.0|3.3.0|~3.4.0",
+                    "phpunit/phpunit": "^5.7"
+                }
+            },
+            {
+                "version": "3.2.1",
+                "version_normalized": "3.2.1.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "c3e9ea034333ec87f9f4a24a5fcccd732139c0c6"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/c3e9ea034333ec87f9f4a24a5fcccd732139c0c6",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "c3e9ea034333ec87f9f4a24a5fcccd732139c0c6"
+                },
+                "support": {
+                    "issues": "https://github.com/spatie/laravel-fractal/issues",
+                    "source": "https://github.com/spatie/laravel-fractal/tree/3.2.1"
+                },
+                "time": "2017-01-20T19:17:57+00:00",
+                "require": {
+                    "php": "^5.6|^7.0",
+                    "illuminate/support": "~5.1.0|~5.2.0|~5.3.0",
+                    "spatie/fractalistic": "^1.0"
+                },
+                "require-dev": { "orchestra/testbench": "3.2.*|3.3.*", "phpunit/phpunit": "^5.7" }
+            },
+            {
+                "version": "3.2.0",
+                "version_normalized": "3.2.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "0d6f78ee159dfc8ca3ee71d0a15a223f14c43af9"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/0d6f78ee159dfc8ca3ee71d0a15a223f14c43af9",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "0d6f78ee159dfc8ca3ee71d0a15a223f14c43af9"
+                },
+                "support": {
+                    "issues": "https://github.com/spatie/laravel-fractal/issues",
+                    "source": "https://github.com/spatie/laravel-fractal/tree/master"
+                },
+                "time": "2017-01-14T13:41:46+00:00"
+            },
+            {
+                "version": "3.1.3",
+                "version_normalized": "3.1.3.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "3e53f5f8bda0c0a953dab668aae6189be1865df6"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/3e53f5f8bda0c0a953dab668aae6189be1865df6",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "3e53f5f8bda0c0a953dab668aae6189be1865df6"
+                },
+                "time": "2017-01-11T20:42:46+00:00"
+            },
+            {
+                "version": "3.1.2",
+                "version_normalized": "3.1.2.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "4b5979195910e6ea7ce342e4f9b329aef2b8b320"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/4b5979195910e6ea7ce342e4f9b329aef2b8b320",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "4b5979195910e6ea7ce342e4f9b329aef2b8b320"
+                },
+                "time": "2017-01-11T20:35:12+00:00"
+            },
+            {
+                "version": "3.1.1",
+                "version_normalized": "3.1.1.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "7cb5b6b1094225ecdf498aae764a8727a1ed4c34"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/7cb5b6b1094225ecdf498aae764a8727a1ed4c34",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "7cb5b6b1094225ecdf498aae764a8727a1ed4c34"
+                },
+                "time": "2017-01-08T21:22:21+00:00"
+            },
+            {
+                "version": "3.1.0",
+                "version_normalized": "3.1.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "677957c62dbe2323be62a88fbce23c185f488e55"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/677957c62dbe2323be62a88fbce23c185f488e55",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "677957c62dbe2323be62a88fbce23c185f488e55"
+                },
+                "time": "2017-01-05T22:36:38+00:00"
+            },
+            {
+                "version": "3.0.1",
+                "version_normalized": "3.0.1.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "6c9e7a5c1fb8510cde42038f841a92cd9707a486"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/6c9e7a5c1fb8510cde42038f841a92cd9707a486",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "6c9e7a5c1fb8510cde42038f841a92cd9707a486"
+                },
+                "time": "2016-12-11T07:24:43+00:00"
+            },
+            {
+                "version": "3.0.0",
+                "version_normalized": "3.0.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "3d4e362b2deb66c25e2bd4bebcf5c1130f1231a2"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/3d4e362b2deb66c25e2bd4bebcf5c1130f1231a2",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "3d4e362b2deb66c25e2bd4bebcf5c1130f1231a2"
+                },
+                "time": "2016-12-09T14:56:35+00:00",
+                "require": {
+                    "php": "^5.6|^7.0",
+                    "illuminate/support": "~5.1.0|~5.2.0|~5.3.0",
+                    "spatie/fractalistic": "dev-master"
+                }
+            },
+            {
+                "version": "2.1.0",
+                "version_normalized": "2.1.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "31c9e41aa7e7d878b7268f37917e094ef49ea9f2"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/31c9e41aa7e7d878b7268f37917e094ef49ea9f2",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "31c9e41aa7e7d878b7268f37917e094ef49ea9f2"
+                },
+                "time": "2016-12-02T08:27:53+00:00",
+                "require": {
+                    "php": "^5.6|^7.0",
+                    "illuminate/support": "~5.1.0|~5.2.0|~5.3.0",
+                    "league/fractal": "^0.14.0"
+                },
+                "require-dev": {
+                    "orchestra/testbench": "3.2.*|3.3.*",
+                    "phpunit/phpunit": "^5.5",
+                    "scrutinizer/ocular": "^1.1"
+                }
+            },
+            {
+                "version": "2.0.0",
+                "version_normalized": "2.0.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "9533f0ebabb26922e4bb3a9e9dc097c41162905f"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/9533f0ebabb26922e4bb3a9e9dc097c41162905f",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "9533f0ebabb26922e4bb3a9e9dc097c41162905f"
+                },
+                "time": "2016-09-27T09:18:36+00:00"
+            },
+            {
+                "description": "A Fractal service provider for Laravel 5",
+                "version": "1.9.1",
+                "version_normalized": "1.9.1.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "a7d981c9063916cffc06aea06333127c3296a177"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/a7d981c9063916cffc06aea06333127c3296a177",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "a7d981c9063916cffc06aea06333127c3296a177"
+                },
+                "time": "2016-08-23T16:11:39+00:00",
+                "autoload": { "psr-4": { "Spatie\\Fractal\\": "src" } },
+                "require": {
+                    "php": ">=5.5.0",
+                    "league/fractal": "^0.13.0",
+                    "illuminate/support": "~5.1.0|~5.2.0|~5.3.0"
+                },
+                "require-dev": {
+                    "phpunit/phpunit": "^4.0",
+                    "scrutinizer/ocular": "^1.1",
+                    "orchestra/testbench": "3.3.x-dev",
+                    "orchestra/database": "3.3.x-dev"
+                }
+            },
+            {
+                "version": "1.9.0",
+                "version_normalized": "1.9.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "6d31a188acb1b67b7e22f7849577e77be5e8430d"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/6d31a188acb1b67b7e22f7849577e77be5e8430d",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "6d31a188acb1b67b7e22f7849577e77be5e8430d"
+                },
+                "time": "2016-03-30T20:55:15+00:00",
+                "require": {
+                    "php": ">=5.5.0",
+                    "league/fractal": "^0.13.0",
+                    "illuminate/support": "^5.1"
+                },
+                "require-dev": {
+                    "phpunit/phpunit": "^4.0",
+                    "scrutinizer/ocular": "^1.1",
+                    "orchestra/testbench": "^3.0"
+                }
+            },
+            {
+                "version": "1.8.0",
+                "version_normalized": "1.8.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "43b44118d02f6be7b102e696735efe0096a833c7"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/43b44118d02f6be7b102e696735efe0096a833c7",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "43b44118d02f6be7b102e696735efe0096a833c7"
+                },
+                "time": "2016-02-18T13:57:14+00:00"
+            },
+            {
+                "version": "1.7.4",
+                "version_normalized": "1.7.4.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "964e133e4ffadaeec44a733b3a0c0ee41ad563ec"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/964e133e4ffadaeec44a733b3a0c0ee41ad563ec",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "964e133e4ffadaeec44a733b3a0c0ee41ad563ec"
+                },
+                "time": "2015-12-16T16:05:10+00:00"
+            },
+            {
+                "version": "1.7.3",
+                "version_normalized": "1.7.3.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "0b994ad655a54790cdadc2849f152d4629d4f05b"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/0b994ad655a54790cdadc2849f152d4629d4f05b",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "0b994ad655a54790cdadc2849f152d4629d4f05b"
+                },
+                "time": "2015-11-10T08:11:34+00:00"
+            },
+            {
+                "version": "1.7.2",
+                "version_normalized": "1.7.2.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "7fcae58d9181028cd3c40f91be190a72b3b8e5f3"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/7fcae58d9181028cd3c40f91be190a72b3b8e5f3",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "7fcae58d9181028cd3c40f91be190a72b3b8e5f3"
+                },
+                "time": "2015-11-09T22:27:48+00:00"
+            },
+            {
+                "version": "1.7.1",
+                "version_normalized": "1.7.1.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "9a797139796ea52336f0f1b33ec22d3099acec8b"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/9a797139796ea52336f0f1b33ec22d3099acec8b",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "9a797139796ea52336f0f1b33ec22d3099acec8b"
+                },
+                "time": "2015-10-26T22:41:31+00:00"
+            },
+            {
+                "version": "1.7.0",
+                "version_normalized": "1.7.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "716795c5eaa6ca2d3cbf0a1b5d049b785e7f4443"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/716795c5eaa6ca2d3cbf0a1b5d049b785e7f4443",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "716795c5eaa6ca2d3cbf0a1b5d049b785e7f4443"
+                },
+                "time": "2015-10-26T22:15:19+00:00"
+            },
+            {
+                "version": "1.6.1",
+                "version_normalized": "1.6.1.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "a949b68249f07129a873ab66cc4863270a01e1ec"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/a949b68249f07129a873ab66cc4863270a01e1ec",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "a949b68249f07129a873ab66cc4863270a01e1ec"
+                },
+                "time": "2015-10-21T09:10:48+00:00"
+            },
+            {
+                "version": "1.6.0",
+                "version_normalized": "1.6.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "d442bf4ddd694672480a9522c3913f8df3f00365"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/d442bf4ddd694672480a9522c3913f8df3f00365",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "d442bf4ddd694672480a9522c3913f8df3f00365"
+                },
+                "time": "2015-10-20T21:42:21+00:00",
+                "require": {
+                    "php": ">=5.5.0",
+                    "league/fractal": "^0.13",
+                    "illuminate/support": "^5.1"
+                }
+            },
+            {
+                "version": "1.5.0",
+                "version_normalized": "1.5.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "bfc0e37337355ff07a5fa37ff4ec884778d69344"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/bfc0e37337355ff07a5fa37ff4ec884778d69344",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "bfc0e37337355ff07a5fa37ff4ec884778d69344"
+                },
+                "time": "2015-10-14T12:51:01+00:00",
+                "require": {
+                    "php": ">=5.5.0",
+                    "league/fractal": "^0.12.0",
+                    "illuminate/support": "^5.1"
+                }
+            },
+            {
+                "version": "1.4.0",
+                "version_normalized": "1.4.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "e9d3258a44003542ce6b798c641bda653cf5841f"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/e9d3258a44003542ce6b798c641bda653cf5841f",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "e9d3258a44003542ce6b798c641bda653cf5841f"
+                },
+                "time": "2015-10-13T16:08:24+00:00"
+            },
+            {
+                "version": "1.3.0",
+                "version_normalized": "1.3.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "ceaf6852e11930d32ac636505cd750631ade0ca5"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/ceaf6852e11930d32ac636505cd750631ade0ca5",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "ceaf6852e11930d32ac636505cd750631ade0ca5"
+                },
+                "time": "2015-10-13T12:09:24+00:00"
+            },
+            {
+                "keywords": ["spatie", "laravel-fractal"],
+                "version": "1.2.0",
+                "version_normalized": "1.2.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "edf306647b801dba1b15f9b599c89e18161270f9"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/edf306647b801dba1b15f9b599c89e18161270f9",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "edf306647b801dba1b15f9b599c89e18161270f9"
+                },
+                "time": "2015-10-11T12:33:13+00:00"
+            },
+            {
+                "version": "1.1.0",
+                "version_normalized": "1.1.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "79974cae68f6ac311147c4aa36bdefb90ca9d1d2"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/79974cae68f6ac311147c4aa36bdefb90ca9d1d2",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "79974cae68f6ac311147c4aa36bdefb90ca9d1d2"
+                },
+                "time": "2015-10-08T17:34:52+00:00"
+            },
+            {
+                "version": "1.0.0",
+                "version_normalized": "1.0.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "790151fddcab6b5c8a016bd2aca7e116ffc27605"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/790151fddcab6b5c8a016bd2aca7e116ffc27605",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "790151fddcab6b5c8a016bd2aca7e116ffc27605"
+                },
+                "time": "2015-10-07T07:45:03+00:00"
+            },
+            {
+                "version": "0.0.1",
+                "version_normalized": "0.0.1.0",
+                "source": {
+                    "url": "https://github.com/spatie/laravel-fractal.git",
+                    "type": "git",
+                    "reference": "a2dbf6c037da591783ef621748410069ea96c130"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/a2dbf6c037da591783ef621748410069ea96c130",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "a2dbf6c037da591783ef621748410069ea96c130"
+                },
+                "time": "2015-10-06T16:10:25+00:00"
+            }
+        ]
+    },
+    "security-advisories": [],
+    "last-modified": "Fri, 14 Feb 2025 10:47:41 GMT"
+}

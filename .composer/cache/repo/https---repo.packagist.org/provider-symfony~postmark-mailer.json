@@ -1,0 +1,2021 @@
+{
+    "minified": "composer/2.0",
+    "packages": {
+        "symfony/postmark-mailer": [
+            {
+                "name": "symfony/postmark-mailer",
+                "description": "Symfony Postmark Mailer Bridge",
+                "keywords": [],
+                "homepage": "https://symfony.com",
+                "version": "v7.3.0",
+                "version_normalized": "7.3.0.0",
+                "license": ["MIT"],
+                "authors": [
+                    { "name": "Fabien Potencier", "email": "fabien@symfony.com" },
+                    { "name": "Symfony Community", "homepage": "https://symfony.com/contributors" }
+                ],
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "71ac001f8bc2ac36cc0bbea3fd6f4a4087d0cec0"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/71ac001f8bc2ac36cc0bbea3fd6f4a4087d0cec0",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "71ac001f8bc2ac36cc0bbea3fd6f4a4087d0cec0"
+                },
+                "type": "symfony-mailer-bridge",
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v7.3.0" },
+                "funding": [
+                    { "url": "https://symfony.com/sponsor", "type": "custom" },
+                    { "url": "https://github.com/fabpot", "type": "github" },
+                    {
+                        "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                        "type": "tidelift"
+                    }
+                ],
+                "time": "2025-04-30T07:52:47+00:00",
+                "autoload": {
+                    "psr-4": { "Symfony\\Component\\Mailer\\Bridge\\Postmark\\": "" },
+                    "exclude-from-classmap": ["/Tests/"]
+                },
+                "require": {
+                    "php": ">=8.2",
+                    "psr/event-dispatcher": "^1",
+                    "symfony/mailer": "^7.2"
+                },
+                "require-dev": {
+                    "symfony/http-client": "^6.4|^7.0",
+                    "symfony/webhook": "^6.4|^7.0"
+                },
+                "conflict": { "symfony/http-foundation": "<6.4" }
+            },
+            {
+                "version": "v7.3.0-RC1",
+                "version_normalized": "7.3.0.0-RC1",
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v7.3.0-RC1"
+                }
+            },
+            {
+                "version": "v7.3.0-BETA1",
+                "version_normalized": "7.3.0.0-beta1",
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v7.3.0-BETA1"
+                }
+            },
+            {
+                "version": "v7.2.6",
+                "version_normalized": "7.2.6.0",
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v7.2.6" }
+            },
+            {
+                "version": "v7.2.4",
+                "version_normalized": "7.2.4.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "d11c8ce0ff5974a2ee4a9a3297ba89ecdf6d1952"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/d11c8ce0ff5974a2ee4a9a3297ba89ecdf6d1952",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "d11c8ce0ff5974a2ee4a9a3297ba89ecdf6d1952"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v7.2.4" },
+                "time": "2025-02-26T08:19:39+00:00"
+            },
+            {
+                "version": "v7.2.0",
+                "version_normalized": "7.2.0.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "3a43a9dee2f474ebf7c0328d3cd55d8c17b5df6f"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/3a43a9dee2f474ebf7c0328d3cd55d8c17b5df6f",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "3a43a9dee2f474ebf7c0328d3cd55d8c17b5df6f"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v7.2.0" },
+                "time": "2024-09-28T08:24:38+00:00"
+            },
+            {
+                "version": "v7.2.0-RC1",
+                "version_normalized": "7.2.0.0-RC1",
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v7.2.0-RC1"
+                }
+            },
+            {
+                "version": "v7.2.0-BETA1",
+                "version_normalized": "7.2.0.0-beta1",
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v7.2.0-BETA1"
+                }
+            },
+            {
+                "version": "v7.1.6",
+                "version_normalized": "7.1.6.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "91c86a65dec04bc8313094087671486eac6ed3c1"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/91c86a65dec04bc8313094087671486eac6ed3c1",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "91c86a65dec04bc8313094087671486eac6ed3c1"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v7.1.6" },
+                "time": "2024-09-25T14:20:29+00:00",
+                "require": {
+                    "php": ">=8.2",
+                    "psr/event-dispatcher": "^1",
+                    "symfony/mailer": "^6.4|^7.0"
+                }
+            },
+            {
+                "version": "v7.1.1",
+                "version_normalized": "7.1.1.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "24f37cf11c953473afd7b18a1a59c12182a20939"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/24f37cf11c953473afd7b18a1a59c12182a20939",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "24f37cf11c953473afd7b18a1a59c12182a20939"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v7.1.1" },
+                "time": "2024-05-31T14:57:53+00:00"
+            },
+            {
+                "version": "v7.1.0",
+                "version_normalized": "7.1.0.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "5f86958929646589eb3ceefe7400bdbeb31c9806"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/5f86958929646589eb3ceefe7400bdbeb31c9806",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "5f86958929646589eb3ceefe7400bdbeb31c9806"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v7.1.0" },
+                "time": "2024-04-18T09:32:20+00:00"
+            },
+            {
+                "version": "v7.1.0-RC1",
+                "version_normalized": "7.1.0.0-RC1",
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v7.1.0-RC1"
+                }
+            },
+            {
+                "version": "v7.1.0-BETA1",
+                "version_normalized": "7.1.0.0-beta1",
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v7.1.0-BETA1"
+                }
+            },
+            {
+                "version": "v7.0.8",
+                "version_normalized": "7.0.8.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "affc4f0e8bb118cfd7efb093d7644c2db8895b89"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/affc4f0e8bb118cfd7efb093d7644c2db8895b89",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "affc4f0e8bb118cfd7efb093d7644c2db8895b89"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v7.0.8" },
+                "time": "2024-05-31T14:55:39+00:00"
+            },
+            {
+                "version": "v7.0.7",
+                "version_normalized": "7.0.7.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "c99bb20bf7434ff506f2b22bc7d3c6e7b5ffa5f8"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/c99bb20bf7434ff506f2b22bc7d3c6e7b5ffa5f8",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "c99bb20bf7434ff506f2b22bc7d3c6e7b5ffa5f8"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v7.0.7" },
+                "time": "2024-04-18T09:29:19+00:00"
+            },
+            {
+                "version": "v7.0.4",
+                "version_normalized": "7.0.4.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "04129b7e4e4e6b1eac7e0ea5513e302fa77a5e45"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/04129b7e4e4e6b1eac7e0ea5513e302fa77a5e45",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "04129b7e4e4e6b1eac7e0ea5513e302fa77a5e45"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v7.0.4" },
+                "time": "2024-02-12T11:15:03+00:00"
+            },
+            {
+                "version": "v7.0.3",
+                "version_normalized": "7.0.3.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "214e21c6f9600b7bb319046001651de85bc59d19"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/214e21c6f9600b7bb319046001651de85bc59d19",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "214e21c6f9600b7bb319046001651de85bc59d19"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v7.0.3" },
+                "time": "2024-01-23T15:02:46+00:00"
+            },
+            {
+                "version": "v7.0.2",
+                "version_normalized": "7.0.2.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "4de1e19a62abc17db26ce4257e73a7a8266ac9ac"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/4de1e19a62abc17db26ce4257e73a7a8266ac9ac",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "4de1e19a62abc17db26ce4257e73a7a8266ac9ac"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v7.0.2" },
+                "time": "2023-12-28T19:18:20+00:00"
+            },
+            {
+                "version": "v7.0.0",
+                "version_normalized": "7.0.0.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "4412fc386b308bdbe5bd9979e091a5087adeb200"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/4412fc386b308bdbe5bd9979e091a5087adeb200",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "4412fc386b308bdbe5bd9979e091a5087adeb200"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v7.0.0" },
+                "time": "2023-11-07T15:10:37+00:00"
+            },
+            {
+                "version": "v7.0.0-RC1",
+                "version_normalized": "7.0.0.0-RC1",
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v7.0.0-RC1"
+                }
+            },
+            {
+                "version": "v7.0.0-BETA3",
+                "version_normalized": "7.0.0.0-beta3",
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v7.0.0-BETA3"
+                }
+            },
+            {
+                "version": "v7.0.0-BETA1",
+                "version_normalized": "7.0.0.0-beta1",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "9093683893a4fc91371fcb148f17bb52d3df4ad8"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/9093683893a4fc91371fcb148f17bb52d3df4ad8",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "9093683893a4fc91371fcb148f17bb52d3df4ad8"
+                },
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v7.0.0-BETA1"
+                },
+                "time": "2023-10-17T13:48:31+00:00"
+            },
+            {
+                "version": "v6.4.21",
+                "version_normalized": "6.4.21.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "00bb51693a016d306cd2c5e1b202c1f88f5cfb94"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/00bb51693a016d306cd2c5e1b202c1f88f5cfb94",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "00bb51693a016d306cd2c5e1b202c1f88f5cfb94"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v6.4.21" },
+                "time": "2025-04-29T10:52:51+00:00",
+                "require": {
+                    "php": ">=8.1",
+                    "psr/event-dispatcher": "^1",
+                    "symfony/mailer": "^5.4.21|^6.2.7|^7.0"
+                },
+                "require-dev": {
+                    "symfony/http-client": "^6.3|^7.0",
+                    "symfony/webhook": "^6.3|^7.0"
+                },
+                "conflict": { "symfony/http-foundation": "<6.2" }
+            },
+            {
+                "version": "v6.4.19",
+                "version_normalized": "6.4.19.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "fd78f2e0c597eb493bd7432bd77dab587c9719e9"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/fd78f2e0c597eb493bd7432bd77dab587c9719e9",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "fd78f2e0c597eb493bd7432bd77dab587c9719e9"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v6.4.19" },
+                "time": "2025-02-26T06:56:19+00:00"
+            },
+            {
+                "version": "v6.4.13",
+                "version_normalized": "6.4.13.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "8b364bcd051a201730d940d592183e79b5af5e6c"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/8b364bcd051a201730d940d592183e79b5af5e6c",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "8b364bcd051a201730d940d592183e79b5af5e6c"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v6.4.13" },
+                "time": "2024-09-25T14:18:03+00:00"
+            },
+            {
+                "version": "v6.4.8",
+                "version_normalized": "6.4.8.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "b649835bb8213e41358e6990de72de20161c625f"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/b649835bb8213e41358e6990de72de20161c625f",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "b649835bb8213e41358e6990de72de20161c625f"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v6.4.8" },
+                "time": "2024-05-31T14:49:08+00:00"
+            },
+            {
+                "version": "v6.4.7",
+                "version_normalized": "6.4.7.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "44576c54722d608f37a2dc7884a01e52a524d19b"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/44576c54722d608f37a2dc7884a01e52a524d19b",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "44576c54722d608f37a2dc7884a01e52a524d19b"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v6.4.7" },
+                "time": "2024-04-18T09:22:46+00:00"
+            },
+            {
+                "version": "v6.4.4",
+                "version_normalized": "6.4.4.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "2e73040e6b5ccf35025e86692a2080ef176a0d8d"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/2e73040e6b5ccf35025e86692a2080ef176a0d8d",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "2e73040e6b5ccf35025e86692a2080ef176a0d8d"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v6.4.4" },
+                "time": "2024-02-09T11:00:58+00:00"
+            },
+            {
+                "version": "v6.4.3",
+                "version_normalized": "6.4.3.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "59afae48341cf02fcab049eee368cbb9dc0b4481"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/59afae48341cf02fcab049eee368cbb9dc0b4481",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "59afae48341cf02fcab049eee368cbb9dc0b4481"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v6.4.3" },
+                "time": "2024-01-23T14:51:35+00:00"
+            },
+            {
+                "version": "v6.4.2",
+                "version_normalized": "6.4.2.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "c23bc7a323d9849178c0e579322c2da1192c08c6"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/c23bc7a323d9849178c0e579322c2da1192c08c6",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "c23bc7a323d9849178c0e579322c2da1192c08c6"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v6.4.2" },
+                "time": "2023-12-28T19:16:56+00:00"
+            },
+            {
+                "version": "v6.4.0",
+                "version_normalized": "6.4.0.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "8279e71f363be6b62b332aec5447e4edf4bc5c41"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/8279e71f363be6b62b332aec5447e4edf4bc5c41",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "8279e71f363be6b62b332aec5447e4edf4bc5c41"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v6.4.0" },
+                "time": "2023-11-06T17:20:05+00:00"
+            },
+            {
+                "version": "v6.4.0-RC1",
+                "version_normalized": "6.4.0.0-RC1",
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v6.4.0-RC1"
+                }
+            },
+            {
+                "version": "v6.4.0-BETA3",
+                "version_normalized": "6.4.0.0-beta3",
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v6.4.0-BETA3"
+                }
+            },
+            {
+                "version": "v6.4.0-BETA1",
+                "version_normalized": "6.4.0.0-beta1",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "c85c15e1877a2febdced2d435572ae1b1f6a3660"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/c85c15e1877a2febdced2d435572ae1b1f6a3660",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "c85c15e1877a2febdced2d435572ae1b1f6a3660"
+                },
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v6.4.0-BETA1"
+                },
+                "time": "2023-10-17T11:40:51+00:00"
+            },
+            {
+                "version": "v6.3.12",
+                "version_normalized": "6.3.12.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "9a536190bd3669243456129115e7eb972daba414"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/9a536190bd3669243456129115e7eb972daba414",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "9a536190bd3669243456129115e7eb972daba414"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v6.3.12" },
+                "time": "2024-01-23T14:35:58+00:00",
+                "require": {
+                    "php": ">=8.1",
+                    "psr/event-dispatcher": "^1",
+                    "symfony/mailer": "^5.4.21|^6.2.7"
+                },
+                "require-dev": { "symfony/http-client": "^5.4|^6.0", "symfony/webhook": "^6.3" }
+            },
+            {
+                "version": "v6.3.11",
+                "version_normalized": "6.3.11.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "4bf46f73b97531a991dfd295e9f78514221cc9ca"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/4bf46f73b97531a991dfd295e9f78514221cc9ca",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "4bf46f73b97531a991dfd295e9f78514221cc9ca"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v6.3.11" },
+                "time": "2023-12-27T20:56:00+00:00"
+            },
+            {
+                "version": "v6.3.0",
+                "version_normalized": "6.3.0.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "3294c1b98fbc53fdd149f947c209b4503de77797"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/3294c1b98fbc53fdd149f947c209b4503de77797",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "3294c1b98fbc53fdd149f947c209b4503de77797"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v6.3.0" },
+                "time": "2023-04-21T14:42:22+00:00"
+            },
+            {
+                "version": "v6.3.0-RC1",
+                "version_normalized": "6.3.0.0-RC1",
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v6.3.0-RC1"
+                }
+            },
+            {
+                "version": "v6.3.0-BETA1",
+                "version_normalized": "6.3.0.0-beta1",
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v6.3.0-BETA1"
+                }
+            },
+            {
+                "version": "v6.2.10",
+                "version_normalized": "6.2.10.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "34a5aad8ad77074067e06b19edc8605410c73906"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/34a5aad8ad77074067e06b19edc8605410c73906",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "34a5aad8ad77074067e06b19edc8605410c73906"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v6.2.10" },
+                "time": "2023-04-14T16:23:31+00:00",
+                "require-dev": { "symfony/http-client": "^5.4|^6.0" },
+                "conflict": "__unset"
+            },
+            {
+                "version": "v6.2.7",
+                "version_normalized": "6.2.7.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "c486fb0a4d503c7af58e2aee516aeee43d91e7fc"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/c486fb0a4d503c7af58e2aee516aeee43d91e7fc",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "c486fb0a4d503c7af58e2aee516aeee43d91e7fc"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v6.2.7" },
+                "time": "2023-02-21T10:35:38+00:00"
+            },
+            {
+                "version": "v6.2.5",
+                "version_normalized": "6.2.5.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "b6630e287f94fbc1f0f0a20a3a147a69ac8f862b"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/b6630e287f94fbc1f0f0a20a3a147a69ac8f862b",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "b6630e287f94fbc1f0f0a20a3a147a69ac8f862b"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v6.2.5" },
+                "time": "2023-01-01T08:36:55+00:00",
+                "require": { "php": ">=8.1", "symfony/mailer": "^5.4|^6.0" }
+            },
+            {
+                "version": "v6.2.0",
+                "version_normalized": "6.2.0.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "5f38d688df43bea507bf0dfe0d0ca6f99221b708"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/5f38d688df43bea507bf0dfe0d0ca6f99221b708",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "5f38d688df43bea507bf0dfe0d0ca6f99221b708"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v6.2.0" },
+                "time": "2022-04-01T07:15:35+00:00"
+            },
+            {
+                "version": "v6.2.0-RC1",
+                "version_normalized": "6.2.0.0-RC1",
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v6.2.0-RC1"
+                }
+            },
+            {
+                "version": "v6.2.0-BETA1",
+                "version_normalized": "6.2.0.0-beta1",
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v6.2.0-BETA1"
+                }
+            },
+            {
+                "version": "v6.1.11",
+                "version_normalized": "6.1.11.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "b6630e287f94fbc1f0f0a20a3a147a69ac8f862b"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/b6630e287f94fbc1f0f0a20a3a147a69ac8f862b",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "b6630e287f94fbc1f0f0a20a3a147a69ac8f862b"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v6.1.11" },
+                "time": "2023-01-01T08:36:55+00:00"
+            },
+            {
+                "version": "v6.1.0",
+                "version_normalized": "6.1.0.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "5f38d688df43bea507bf0dfe0d0ca6f99221b708"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/5f38d688df43bea507bf0dfe0d0ca6f99221b708",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "5f38d688df43bea507bf0dfe0d0ca6f99221b708"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v6.1.0" },
+                "time": "2022-04-01T07:15:35+00:00"
+            },
+            {
+                "version": "v6.1.0-RC1",
+                "version_normalized": "6.1.0.0-RC1",
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v6.1.0-RC1"
+                }
+            },
+            {
+                "version": "v6.1.0-BETA1",
+                "version_normalized": "6.1.0.0-beta1",
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v6.1.0-BETA1"
+                }
+            },
+            {
+                "version": "v6.0.19",
+                "version_normalized": "6.0.19.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "88298ee876ca5b9ab79d297f147c096a25d9d06a"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/88298ee876ca5b9ab79d297f147c096a25d9d06a",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "88298ee876ca5b9ab79d297f147c096a25d9d06a"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v6.0.19" },
+                "time": "2023-01-01T08:36:10+00:00",
+                "require": { "php": ">=8.0.2", "symfony/mailer": "^5.4|^6.0" }
+            },
+            {
+                "version": "v6.0.7",
+                "version_normalized": "6.0.7.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "8405569233efb0140e55eb6236c9e55693f058ff"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/8405569233efb0140e55eb6236c9e55693f058ff",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "8405569233efb0140e55eb6236c9e55693f058ff"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v6.0.7" },
+                "time": "2022-03-24T17:11:42+00:00"
+            },
+            {
+                "version": "v6.0.5",
+                "version_normalized": "6.0.5.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "e0f75108c59ab671325e2f524455eeeb02593ac1"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/e0f75108c59ab671325e2f524455eeeb02593ac1",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "e0f75108c59ab671325e2f524455eeeb02593ac1"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v6.0.5" },
+                "time": "2022-02-04T19:03:38+00:00"
+            },
+            {
+                "version": "v6.0.3",
+                "version_normalized": "6.0.3.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "823c1fa6c833c14d7b13101af264f277eb8658a1"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/823c1fa6c833c14d7b13101af264f277eb8658a1",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "823c1fa6c833c14d7b13101af264f277eb8658a1"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v6.0.3" },
+                "time": "2022-01-02T09:55:41+00:00"
+            },
+            {
+                "version": "v6.0.0",
+                "version_normalized": "6.0.0.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "f2d35282cc9178d57d42601e416f093d7253181b"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/f2d35282cc9178d57d42601e416f093d7253181b",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "f2d35282cc9178d57d42601e416f093d7253181b"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v6.0.0" },
+                "time": "2021-11-12T11:44:21+00:00"
+            },
+            {
+                "version": "v6.0.0-RC1",
+                "version_normalized": "6.0.0.0-RC1",
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v6.0.0-RC1"
+                }
+            },
+            {
+                "version": "v6.0.0-BETA2",
+                "version_normalized": "6.0.0.0-beta2",
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v6.0.0-BETA2"
+                }
+            },
+            {
+                "version": "v6.0.0-BETA1",
+                "version_normalized": "6.0.0.0-beta1",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "f34a2c4c1fd0b004e5813dfdc60055c0e6aad566"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/f34a2c4c1fd0b004e5813dfdc60055c0e6aad566",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "f34a2c4c1fd0b004e5813dfdc60055c0e6aad566"
+                },
+                "type": "symfony-bridge",
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v6.0.0-BETA1"
+                },
+                "time": "2021-09-10T07:58:49+00:00"
+            },
+            {
+                "version": "v5.4.45",
+                "version_normalized": "5.4.45.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "8210543c21dd2d40d6f8d7c09531ec1bc17efc23"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/8210543c21dd2d40d6f8d7c09531ec1bc17efc23",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "8210543c21dd2d40d6f8d7c09531ec1bc17efc23"
+                },
+                "type": "symfony-mailer-bridge",
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.4.45" },
+                "time": "2024-09-25T14:11:13+00:00",
+                "require": {
+                    "php": ">=7.2.5",
+                    "psr/event-dispatcher": "^1",
+                    "symfony/mailer": "^5.4.21|^6.2.7"
+                },
+                "require-dev": { "symfony/http-client": "^4.4|^5.0|^6.0" }
+            },
+            {
+                "version": "v5.4.40",
+                "version_normalized": "5.4.40.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "0261433f286be49c38c9c0b89e024e437da636a8"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/0261433f286be49c38c9c0b89e024e437da636a8",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "0261433f286be49c38c9c0b89e024e437da636a8"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.4.40" },
+                "time": "2024-05-31T14:33:22+00:00"
+            },
+            {
+                "version": "v5.4.39",
+                "version_normalized": "5.4.39.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "235500532e812836d3aa02398eae859491fc08d0"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/235500532e812836d3aa02398eae859491fc08d0",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "235500532e812836d3aa02398eae859491fc08d0"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.4.39" },
+                "time": "2024-04-18T08:26:06+00:00"
+            },
+            {
+                "version": "v5.4.35",
+                "version_normalized": "5.4.35.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "05de09f635cac0c434f8aa102c2ae8c919d8b7c5"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/05de09f635cac0c434f8aa102c2ae8c919d8b7c5",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "05de09f635cac0c434f8aa102c2ae8c919d8b7c5"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.4.35" },
+                "time": "2024-01-23T13:51:25+00:00"
+            },
+            {
+                "version": "v5.4.23",
+                "version_normalized": "5.4.23.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "3af7b7893fb2faebad3aee0b2a50d21bc3b3a13b"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/3af7b7893fb2faebad3aee0b2a50d21bc3b3a13b",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "3af7b7893fb2faebad3aee0b2a50d21bc3b3a13b"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.4.23" },
+                "time": "2023-04-10T16:27:27+00:00"
+            },
+            {
+                "version": "v5.4.21",
+                "version_normalized": "5.4.21.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "15455b63de1f65a604dbd0216359c5d32b5a1ad4"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/15455b63de1f65a604dbd0216359c5d32b5a1ad4",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "15455b63de1f65a604dbd0216359c5d32b5a1ad4"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.4.21" },
+                "time": "2023-02-21T10:48:16+00:00"
+            },
+            {
+                "version": "v5.4.19",
+                "version_normalized": "5.4.19.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "aecf86257d87f1993cf0120ef5ca308da64d5ec5"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/aecf86257d87f1993cf0120ef5ca308da64d5ec5",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "aecf86257d87f1993cf0120ef5ca308da64d5ec5"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.4.19" },
+                "time": "2023-01-01T08:32:19+00:00",
+                "require": {
+                    "php": ">=7.2.5",
+                    "psr/event-dispatcher": "^1",
+                    "symfony/mailer": "^5.2.6|^6.0"
+                }
+            },
+            {
+                "version": "v5.4.7",
+                "version_normalized": "5.4.7.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "dbc83bac6fa0fe0badbf8b0f354fc65be2509545"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/dbc83bac6fa0fe0badbf8b0f354fc65be2509545",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "dbc83bac6fa0fe0badbf8b0f354fc65be2509545"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.4.7" },
+                "time": "2022-03-24T17:11:08+00:00"
+            },
+            {
+                "version": "v5.4.5",
+                "version_normalized": "5.4.5.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "50522495182f4e94d91b0264ff712436cafe30f2"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/50522495182f4e94d91b0264ff712436cafe30f2",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "50522495182f4e94d91b0264ff712436cafe30f2"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.4.5" },
+                "time": "2022-02-01T21:57:20+00:00"
+            },
+            {
+                "version": "v5.4.3",
+                "version_normalized": "5.4.3.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "6c0a282d2a58e2bab89f984629eaa37bc5827611"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/6c0a282d2a58e2bab89f984629eaa37bc5827611",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "6c0a282d2a58e2bab89f984629eaa37bc5827611"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.4.3" },
+                "time": "2022-01-02T09:53:40+00:00"
+            },
+            {
+                "version": "v5.4.0",
+                "version_normalized": "5.4.0.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "b35cc42fbe5f39e6dee652cd8f813c1a036a498f"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/b35cc42fbe5f39e6dee652cd8f813c1a036a498f",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "b35cc42fbe5f39e6dee652cd8f813c1a036a498f"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.4.0" },
+                "time": "2021-11-09T11:03:34+00:00"
+            },
+            {
+                "version": "v5.4.0-RC1",
+                "version_normalized": "5.4.0.0-RC1",
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v5.4.0-RC1"
+                }
+            },
+            {
+                "version": "v5.4.0-BETA2",
+                "version_normalized": "5.4.0.0-beta2",
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v5.4.0-BETA2"
+                }
+            },
+            {
+                "version": "v5.4.0-BETA1",
+                "version_normalized": "5.4.0.0-beta1",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "ce04966a3935c2c0d925feca5d0a0cda8567f31a"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/ce04966a3935c2c0d925feca5d0a0cda8567f31a",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "ce04966a3935c2c0d925feca5d0a0cda8567f31a"
+                },
+                "type": "symfony-bridge",
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v5.4.0-BETA1"
+                },
+                "time": "2021-09-10T07:26:31+00:00"
+            },
+            {
+                "version": "v5.3.14",
+                "version_normalized": "5.3.14.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "149b9861e280f7d5f32e01191614e6889ab0bbb6"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/149b9861e280f7d5f32e01191614e6889ab0bbb6",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "149b9861e280f7d5f32e01191614e6889ab0bbb6"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.3.14" },
+                "time": "2022-01-02T09:51:59+00:00",
+                "require": { "php": ">=7.2.5", "symfony/mailer": "^5.2.6" },
+                "require-dev": { "symfony/http-client": "^4.4|^5.0" }
+            },
+            {
+                "version": "v5.3.4",
+                "version_normalized": "5.3.4.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "bd270db549b314e60da8991485137d68dbbd68de"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/bd270db549b314e60da8991485137d68dbbd68de",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "bd270db549b314e60da8991485137d68dbbd68de"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.3.4" },
+                "time": "2021-07-21T09:14:20+00:00"
+            },
+            {
+                "version": "v5.3.0",
+                "version_normalized": "5.3.0.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "1500a78cd96b771e0b1bd1cbf6a2fc6922eb9826"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/1500a78cd96b771e0b1bd1cbf6a2fc6922eb9826",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "1500a78cd96b771e0b1bd1cbf6a2fc6922eb9826"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.3.0" },
+                "time": "2021-05-26T17:33:56+00:00"
+            },
+            {
+                "version": "v5.3.0-RC1",
+                "version_normalized": "5.3.0.0-RC1",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "e8c17e5f91ce2421dcc85ed72665558d5b91e47e"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/e8c17e5f91ce2421dcc85ed72665558d5b91e47e",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "e8c17e5f91ce2421dcc85ed72665558d5b91e47e"
+                },
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v5.3.0-RC1"
+                },
+                "time": "2021-03-12T13:18:39+00:00"
+            },
+            {
+                "version": "v5.3.0-BETA1",
+                "version_normalized": "5.3.0.0-beta1",
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v5.3.0-BETA1"
+                }
+            },
+            {
+                "version": "v5.2.12",
+                "version_normalized": "5.2.12.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "bd270db549b314e60da8991485137d68dbbd68de"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/bd270db549b314e60da8991485137d68dbbd68de",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "bd270db549b314e60da8991485137d68dbbd68de"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.2.12" },
+                "time": "2021-07-21T09:14:20+00:00"
+            },
+            {
+                "version": "v5.2.10",
+                "version_normalized": "5.2.10.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "1500a78cd96b771e0b1bd1cbf6a2fc6922eb9826"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/1500a78cd96b771e0b1bd1cbf6a2fc6922eb9826",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "1500a78cd96b771e0b1bd1cbf6a2fc6922eb9826"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.3.0" },
+                "time": "2021-05-26T17:33:56+00:00"
+            },
+            {
+                "version": "v5.2.6",
+                "version_normalized": "5.2.6.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "e8c17e5f91ce2421dcc85ed72665558d5b91e47e"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/e8c17e5f91ce2421dcc85ed72665558d5b91e47e",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "e8c17e5f91ce2421dcc85ed72665558d5b91e47e"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.2.6" },
+                "time": "2021-03-12T13:18:39+00:00"
+            },
+            {
+                "version": "v5.2.4",
+                "version_normalized": "5.2.4.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "5d792443ab81c28edfb15819f4724974dea216b9"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/5d792443ab81c28edfb15819f4724974dea216b9",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "5d792443ab81c28edfb15819f4724974dea216b9"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.2.4" },
+                "time": "2021-01-01T09:25:51+00:00",
+                "require": { "php": ">=7.2.5", "symfony/mailer": "^5.1" }
+            },
+            {
+                "version": "v5.2.3",
+                "version_normalized": "5.2.3.0",
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.2.3" }
+            },
+            {
+                "version": "v5.2.2",
+                "version_normalized": "5.2.2.0",
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.2.2" }
+            },
+            {
+                "version": "v5.2.1",
+                "version_normalized": "5.2.1.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "d6fa84114fdaa8759ce3374af358cda1d32601ce"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/d6fa84114fdaa8759ce3374af358cda1d32601ce",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "d6fa84114fdaa8759ce3374af358cda1d32601ce"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.2.1" },
+                "time": "2020-10-24T12:01:57+00:00"
+            },
+            {
+                "version": "v5.2.0",
+                "version_normalized": "5.2.0.0",
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.2.0" }
+            },
+            {
+                "version": "v5.2.0-RC2",
+                "version_normalized": "5.2.0.0-RC2",
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v5.2.0-RC2"
+                }
+            },
+            {
+                "version": "v5.2.0-RC1",
+                "version_normalized": "5.2.0.0-RC1",
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v5.2.0-RC1"
+                }
+            },
+            {
+                "version": "v5.2.0-BETA3",
+                "version_normalized": "5.2.0.0-beta3",
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v5.2.0-BETA3"
+                }
+            },
+            {
+                "version": "v5.2.0-BETA2",
+                "version_normalized": "5.2.0.0-beta2",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "58202ae6989e1b900b792d0df646af984e8d69a7"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/58202ae6989e1b900b792d0df646af984e8d69a7",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "58202ae6989e1b900b792d0df646af984e8d69a7"
+                },
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v5.2.0-BETA2"
+                },
+                "time": "2020-10-13T13:22:54+00:00",
+                "extra": { "branch-version": "5.2" }
+            },
+            {
+                "version": "v5.2.0-BETA1",
+                "version_normalized": "5.2.0.0-beta1",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "f2e390a9dc56af2ef6228dae234a935f0781c24c"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/f2e390a9dc56af2ef6228dae234a935f0781c24c",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "f2e390a9dc56af2ef6228dae234a935f0781c24c"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/master" },
+                "time": "2020-05-30T20:38:10+00:00",
+                "extra": { "branch-alias": { "dev-master": "5.2-dev" } }
+            },
+            {
+                "version": "v5.1.11",
+                "version_normalized": "5.1.11.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "5d792443ab81c28edfb15819f4724974dea216b9"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/5d792443ab81c28edfb15819f4724974dea216b9",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "5d792443ab81c28edfb15819f4724974dea216b9"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.1.11" },
+                "time": "2021-01-01T09:25:51+00:00",
+                "extra": "__unset"
+            },
+            {
+                "version": "v5.1.10",
+                "version_normalized": "5.1.10.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "d6fa84114fdaa8759ce3374af358cda1d32601ce"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/d6fa84114fdaa8759ce3374af358cda1d32601ce",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "d6fa84114fdaa8759ce3374af358cda1d32601ce"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.2.0" },
+                "time": "2020-10-24T12:01:57+00:00"
+            },
+            {
+                "version": "v5.1.9",
+                "version_normalized": "5.1.9.0",
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v5.2.0-RC2"
+                }
+            },
+            {
+                "version": "v5.1.8",
+                "version_normalized": "5.1.8.0",
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.1.8" }
+            },
+            {
+                "version": "v5.1.7",
+                "version_normalized": "5.1.7.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "dffd066d0dccfe84d40a6560de3af3161effb6b7"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/dffd066d0dccfe84d40a6560de3af3161effb6b7",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "dffd066d0dccfe84d40a6560de3af3161effb6b7"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.1.4" },
+                "time": "2020-05-30T20:35:19+00:00",
+                "extra": { "branch-alias": { "dev-master": "5.1-dev" } }
+            },
+            {
+                "version": "v5.1.6",
+                "version_normalized": "5.1.6.0",
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.1.5" }
+            },
+            { "version": "v5.1.5", "version_normalized": "5.1.5.0" },
+            {
+                "version": "v5.1.4",
+                "version_normalized": "5.1.4.0",
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.1.4" }
+            },
+            {
+                "version": "v5.1.3",
+                "version_normalized": "5.1.3.0",
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.1.1" }
+            },
+            { "version": "v5.1.2", "version_normalized": "5.1.2.0" },
+            { "version": "v5.1.1", "version_normalized": "5.1.1.0" },
+            {
+                "version": "v5.1.0",
+                "version_normalized": "5.1.0.0",
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/5.1" }
+            },
+            {
+                "version": "v5.1.0-RC2",
+                "version_normalized": "5.1.0.0-RC2",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "ea55b1a616935edaf24e971c85942dae9b9009e1"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/ea55b1a616935edaf24e971c85942dae9b9009e1",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "ea55b1a616935edaf24e971c85942dae9b9009e1"
+                },
+                "time": "2020-05-20T17:43:50+00:00"
+            },
+            {
+                "version": "v5.1.0-RC1",
+                "version_normalized": "5.1.0.0-RC1",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "9c0bc5be57db1ded047b009e324f07b3c3bdb876"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/9c0bc5be57db1ded047b009e324f07b3c3bdb876",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "9c0bc5be57db1ded047b009e324f07b3c3bdb876"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/master" },
+                "time": "2020-04-12T16:48:26+00:00",
+                "require": { "php": "^7.2.5", "symfony/mailer": "^5.1" }
+            },
+            {
+                "version": "v5.1.0-BETA1",
+                "version_normalized": "5.1.0.0-beta1",
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v5.1.0-BETA1"
+                }
+            },
+            {
+                "version": "v5.0.11",
+                "version_normalized": "5.0.11.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "38ddc8a47f8eaca522af833215421aef5e0d6a77"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/38ddc8a47f8eaca522af833215421aef5e0d6a77",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "38ddc8a47f8eaca522af833215421aef5e0d6a77"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/5.0" },
+                "time": "2020-05-30T20:12:43+00:00",
+                "extra": { "branch-alias": { "dev-master": "5.0-dev" } },
+                "require": { "php": ">=7.2.5", "symfony/mailer": "^4.4|^5.0" }
+            },
+            { "version": "v5.0.10", "version_normalized": "5.0.10.0" },
+            {
+                "version": "v5.0.9",
+                "version_normalized": "5.0.9.0",
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.0.9" }
+            },
+            {
+                "version": "v5.0.8",
+                "version_normalized": "5.0.8.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "27ccfdec499094755d89bab2ebf3473475e4c86c"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/27ccfdec499094755d89bab2ebf3473475e4c86c",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "27ccfdec499094755d89bab2ebf3473475e4c86c"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/5.0" },
+                "time": "2020-04-12T16:45:47+00:00",
+                "require": { "php": "^7.2.5", "symfony/mailer": "^4.4|^5.0" }
+            },
+            {
+                "version": "v5.0.7",
+                "version_normalized": "5.0.7.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "4673c50070664fb0203b968d8047f55e09cc3a7e"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/4673c50070664fb0203b968d8047f55e09cc3a7e",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "4673c50070664fb0203b968d8047f55e09cc3a7e"
+                },
+                "time": "2020-03-27T16:56:45+00:00"
+            },
+            {
+                "version": "v5.0.6",
+                "version_normalized": "5.0.6.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "fa89c2d8827f9d8da6768c9e2262952f4000010f"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/fa89c2d8827f9d8da6768c9e2262952f4000010f",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "fa89c2d8827f9d8da6768c9e2262952f4000010f"
+                },
+                "time": "2020-03-23T12:42:46+00:00"
+            },
+            {
+                "version": "v5.0.5",
+                "version_normalized": "5.0.5.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "c75bc8c98bf779ed00dfa50c3396cc4c07417698"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/c75bc8c98bf779ed00dfa50c3396cc4c07417698",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "c75bc8c98bf779ed00dfa50c3396cc4c07417698"
+                },
+                "funding": [],
+                "time": "2020-01-31T09:13:47+00:00"
+            },
+            { "version": "v5.0.4", "version_normalized": "5.0.4.0", "funding": "__unset" },
+            {
+                "version": "v5.0.3",
+                "version_normalized": "5.0.3.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "a5d8e6e5f9154f7f29aacf9032f2ce7e9cfb973d"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/a5d8e6e5f9154f7f29aacf9032f2ce7e9cfb973d",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "a5d8e6e5f9154f7f29aacf9032f2ce7e9cfb973d"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.0.3" },
+                "time": "2020-01-04T14:08:26+00:00"
+            },
+            {
+                "version": "v5.0.2",
+                "version_normalized": "5.0.2.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "788b60b2ab6b10e54b2de1b5a9b03f8b7acebdf7"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/788b60b2ab6b10e54b2de1b5a9b03f8b7acebdf7",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "788b60b2ab6b10e54b2de1b5a9b03f8b7acebdf7"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.0.0" },
+                "time": "2019-11-18T17:27:11+00:00"
+            },
+            {
+                "version": "v5.0.1",
+                "version_normalized": "5.0.1.0",
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/5.0" }
+            },
+            {
+                "version": "v5.0.0",
+                "version_normalized": "5.0.0.0",
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v5.0.0" }
+            },
+            {
+                "version": "v5.0.0-RC1",
+                "version_normalized": "5.0.0.0-RC1",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "7644a674ecbf9daac6f65b231e4726499e866557"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/7644a674ecbf9daac6f65b231e4726499e866557",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "7644a674ecbf9daac6f65b231e4726499e866557"
+                },
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v5.0.0-RC1"
+                },
+                "time": "2019-10-22T17:21:12+00:00",
+                "require": { "php": "^7.2.9", "symfony/mailer": "^4.4|^5.0" }
+            },
+            {
+                "version": "v5.0.0-BETA2",
+                "version_normalized": "5.0.0.0-beta2",
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/master" }
+            },
+            { "version": "v5.0.0-BETA1", "version_normalized": "5.0.0.0-beta1" },
+            {
+                "version": "v4.4.40",
+                "version_normalized": "4.4.40.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "30a5a8538696fa59d6280ecaeab0e0a401244e15"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/30a5a8538696fa59d6280ecaeab0e0a401244e15",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "30a5a8538696fa59d6280ecaeab0e0a401244e15"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v4.4.40" },
+                "funding": [
+                    { "url": "https://symfony.com/sponsor", "type": "custom" },
+                    { "url": "https://github.com/fabpot", "type": "github" },
+                    {
+                        "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                        "type": "tidelift"
+                    }
+                ],
+                "time": "2022-03-22T15:24:15+00:00",
+                "require": { "php": ">=7.1.3", "symfony/mailer": "^4.4.21|^5.2.6" },
+                "require-dev": { "symfony/http-client": "^4.3|^5.0" },
+                "extra": "__unset"
+            },
+            {
+                "version": "v4.4.37",
+                "version_normalized": "4.4.37.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "8bada37e67d595b970aa086a202cc999d50a1c3c"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/8bada37e67d595b970aa086a202cc999d50a1c3c",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "8bada37e67d595b970aa086a202cc999d50a1c3c"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v4.4.37" },
+                "time": "2022-01-02T09:41:36+00:00"
+            },
+            {
+                "version": "v4.4.27",
+                "version_normalized": "4.4.27.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "c97057b7427d94ce85c7dadc3d0cf9d3b9b3b9b9"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/c97057b7427d94ce85c7dadc3d0cf9d3b9b3b9b9",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "c97057b7427d94ce85c7dadc3d0cf9d3b9b3b9b9"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v4.4.27" },
+                "time": "2021-07-21T08:56:39+00:00"
+            },
+            {
+                "version": "v4.4.25",
+                "version_normalized": "4.4.25.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "aa96d54d19bfe3a39342321efe90c45d264b55b9"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/aa96d54d19bfe3a39342321efe90c45d264b55b9",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "aa96d54d19bfe3a39342321efe90c45d264b55b9"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v4.4.25" },
+                "time": "2021-05-26T17:39:37+00:00"
+            },
+            {
+                "version": "v4.4.21",
+                "version_normalized": "4.4.21.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "a98204fd59ceeb202de48fe40a4f0437669f21d6"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/a98204fd59ceeb202de48fe40a4f0437669f21d6",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "a98204fd59ceeb202de48fe40a4f0437669f21d6"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v4.4.21" },
+                "time": "2021-03-12T11:23:44+00:00"
+            },
+            {
+                "version": "v4.4.20",
+                "version_normalized": "4.4.20.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "df0350a2ce68aec84d2c260cd4d427b01e2bc139"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/df0350a2ce68aec84d2c260cd4d427b01e2bc139",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "df0350a2ce68aec84d2c260cd4d427b01e2bc139"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v4.4.20" },
+                "time": "2021-01-01T09:24:35+00:00",
+                "require": { "php": ">=7.1.3", "symfony/mailer": "^4.4|^5.0" }
+            },
+            {
+                "version": "v4.4.19",
+                "version_normalized": "4.4.19.0",
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v4.4.19" }
+            },
+            {
+                "version": "v4.4.18",
+                "version_normalized": "4.4.18.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "4f67957782bdd80af789fd98461f88acf98a8121"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/4f67957782bdd80af789fd98461f88acf98a8121",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "4f67957782bdd80af789fd98461f88acf98a8121"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v4.4.18" },
+                "time": "2020-10-24T11:50:19+00:00"
+            },
+            {
+                "version": "v4.4.17",
+                "version_normalized": "4.4.17.0",
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v4.4.17" }
+            },
+            {
+                "version": "v4.4.16",
+                "version_normalized": "4.4.16.0",
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v4.4.16" }
+            },
+            {
+                "version": "v4.4.15",
+                "version_normalized": "4.4.15.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "84cde3b33948fe2d41a5250e239b07692c09d4c0"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/84cde3b33948fe2d41a5250e239b07692c09d4c0",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "84cde3b33948fe2d41a5250e239b07692c09d4c0"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v4.4.13" },
+                "time": "2020-05-30T20:06:45+00:00",
+                "extra": { "branch-alias": { "dev-master": "4.4-dev" } }
+            },
+            { "version": "v4.4.14", "version_normalized": "4.4.14.0" },
+            { "version": "v4.4.13", "version_normalized": "4.4.13.0" },
+            {
+                "version": "v4.4.12",
+                "version_normalized": "4.4.12.0",
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v4.4.12" }
+            },
+            {
+                "version": "v4.4.11",
+                "version_normalized": "4.4.11.0",
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/4.4" }
+            },
+            {
+                "version": "v4.4.10",
+                "version_normalized": "4.4.10.0",
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v4.4.9" }
+            },
+            { "version": "v4.4.9", "version_normalized": "4.4.9.0" },
+            {
+                "version": "v4.4.8",
+                "version_normalized": "4.4.8.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "f904f16a07dd0620252f11e51694e1e13e53b6f2"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/f904f16a07dd0620252f11e51694e1e13e53b6f2",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "f904f16a07dd0620252f11e51694e1e13e53b6f2"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/4.4" },
+                "time": "2020-04-12T16:14:02+00:00",
+                "require": { "php": "^7.1.3", "symfony/mailer": "^4.4|^5.0" }
+            },
+            {
+                "version": "v4.4.7",
+                "version_normalized": "4.4.7.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "8238aab3973427af95ed71d607f383986ab9098b"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/8238aab3973427af95ed71d607f383986ab9098b",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "8238aab3973427af95ed71d607f383986ab9098b"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v4.4.7" },
+                "time": "2020-03-27T16:54:36+00:00"
+            },
+            {
+                "version": "v4.4.6",
+                "version_normalized": "4.4.6.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "86f56aef9629ea62124db24bd0c95d343f95332a"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/86f56aef9629ea62124db24bd0c95d343f95332a",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "86f56aef9629ea62124db24bd0c95d343f95332a"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/4.4" },
+                "time": "2020-03-23T08:19:50+00:00"
+            },
+            {
+                "version": "v4.4.5",
+                "version_normalized": "4.4.5.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "afaaca6f9652ca82086392b9955ed94ca6fc0a9e"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/afaaca6f9652ca82086392b9955ed94ca6fc0a9e",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "afaaca6f9652ca82086392b9955ed94ca6fc0a9e"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v4.4.5" },
+                "time": "2020-01-30T10:46:32+00:00"
+            },
+            {
+                "version": "v4.4.4",
+                "version_normalized": "4.4.4.0",
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/4.4" },
+                "funding": "__unset"
+            },
+            {
+                "version": "v4.4.3",
+                "version_normalized": "4.4.3.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "d8e9a51a33d02c9c9713db83ad2f0e51392d7be3"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/d8e9a51a33d02c9c9713db83ad2f0e51392d7be3",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "d8e9a51a33d02c9c9713db83ad2f0e51392d7be3"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v4.4.3" },
+                "time": "2020-01-04T13:10:16+00:00"
+            },
+            {
+                "version": "v4.4.2",
+                "version_normalized": "4.4.2.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "d4fe71fc0e6364caaa134aadbe4c7ebe2849c080"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/d4fe71fc0e6364caaa134aadbe4c7ebe2849c080",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "d4fe71fc0e6364caaa134aadbe4c7ebe2849c080"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/4.4" },
+                "time": "2019-10-22T15:44:54+00:00"
+            },
+            {
+                "version": "v4.4.1",
+                "version_normalized": "4.4.1.0",
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v4.4.0" }
+            },
+            { "version": "v4.4.0", "version_normalized": "4.4.0.0" },
+            {
+                "version": "v4.4.0-RC1",
+                "version_normalized": "4.4.0.0-RC1",
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/4.4" }
+            },
+            { "version": "v4.4.0-BETA2", "version_normalized": "4.4.0.0-beta2" },
+            { "version": "v4.4.0-BETA1", "version_normalized": "4.4.0.0-beta1" },
+            {
+                "version": "v4.3.11",
+                "version_normalized": "4.3.11.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "9936a3bd8f23c617f535a5cf996c7da8f9b3846e"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/9936a3bd8f23c617f535a5cf996c7da8f9b3846e",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "9936a3bd8f23c617f535a5cf996c7da8f9b3846e"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/4.3" },
+                "time": "2020-01-01T11:51:43+00:00",
+                "extra": { "branch-alias": { "dev-master": "4.3-dev" } },
+                "require": { "php": "^7.1.3", "symfony/mailer": "^4.3.3" },
+                "require-dev": { "symfony/http-client": "^4.3" }
+            },
+            { "version": "v4.3.10", "version_normalized": "4.3.10.0" },
+            {
+                "version": "v4.3.9",
+                "version_normalized": "4.3.9.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "c8f36d113a97f4337417d88082ec10837a4262b5"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/c8f36d113a97f4337417d88082ec10837a4262b5",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "c8f36d113a97f4337417d88082ec10837a4262b5"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v4.3.5" },
+                "time": "2019-09-17T09:54:03+00:00"
+            },
+            { "version": "v4.3.8", "version_normalized": "4.3.8.0" },
+            { "version": "v4.3.7", "version_normalized": "4.3.7.0" },
+            { "version": "v4.3.6", "version_normalized": "4.3.6.0" },
+            { "version": "v4.3.5", "version_normalized": "4.3.5.0" },
+            {
+                "version": "v4.3.4",
+                "version_normalized": "4.3.4.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "033ca3ca1995bb82cafbe02f710329fc3e940ded"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/033ca3ca1995bb82cafbe02f710329fc3e940ded",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "033ca3ca1995bb82cafbe02f710329fc3e940ded"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/4.3" },
+                "time": "2019-07-18T18:01:20+00:00"
+            },
+            {
+                "version": "v4.3.3",
+                "version_normalized": "4.3.3.0",
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/v4.3.3" }
+            },
+            {
+                "version": "v4.3.2",
+                "version_normalized": "4.3.2.0",
+                "source": {
+                    "url": "https://github.com/symfony/postmark-mailer.git",
+                    "type": "git",
+                    "reference": "bad2a0ae809e0e540ddfc087ce289cdae9274422"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/symfony/postmark-mailer/zipball/bad2a0ae809e0e540ddfc087ce289cdae9274422",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "bad2a0ae809e0e540ddfc087ce289cdae9274422"
+                },
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/master" },
+                "time": "2019-03-30T12:09:36+00:00",
+                "require": { "php": "^7.1.3", "symfony/mailer": "^4.3" }
+            },
+            {
+                "version": "v4.3.1",
+                "version_normalized": "4.3.1.0",
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v4.3.0-BETA1"
+                }
+            },
+            {
+                "version": "v4.3.0",
+                "version_normalized": "4.3.0.0",
+                "support": { "source": "https://github.com/symfony/postmark-mailer/tree/master" }
+            },
+            { "version": "v4.3.0-RC1", "version_normalized": "4.3.0.0-RC1" },
+            {
+                "version": "v4.3.0-BETA2",
+                "version_normalized": "4.3.0.0-beta2",
+                "support": {
+                    "source": "https://github.com/symfony/postmark-mailer/tree/v4.3.0-BETA1"
+                }
+            },
+            { "version": "v4.3.0-BETA1", "version_normalized": "4.3.0.0-beta1" }
+        ]
+    },
+    "security-advisories": [],
+    "last-modified": "Thu, 29 May 2025 07:49:44 GMT"
+}

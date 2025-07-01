@@ -1,0 +1,537 @@
+{
+    "minified": "composer/2.0",
+    "packages": {
+        "spatie/fractalistic": [
+            {
+                "name": "spatie/fractalistic",
+                "description": "A developer friendly wrapper around Fractal",
+                "keywords": ["api", "transform", "fractal", "spatie", "fractalistic"],
+                "homepage": "https://github.com/spatie/fractalistic",
+                "version": "2.11.0",
+                "version_normalized": "2.11.0.0",
+                "license": ["MIT"],
+                "authors": [
+                    {
+                        "name": "Freek Van der Herten",
+                        "email": "freek@spatie.be",
+                        "homepage": "https://spatie.be",
+                        "role": "Developer"
+                    }
+                ],
+                "source": {
+                    "url": "https://github.com/spatie/fractalistic.git",
+                    "type": "git",
+                    "reference": "046c535f30b31a9356fc034ce75e8ee74614ed4f"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/fractalistic/zipball/046c535f30b31a9356fc034ce75e8ee74614ed4f",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "046c535f30b31a9356fc034ce75e8ee74614ed4f"
+                },
+                "type": "library",
+                "support": {
+                    "issues": "https://github.com/spatie/fractalistic/issues",
+                    "source": "https://github.com/spatie/fractalistic/tree/2.11.0"
+                },
+                "funding": [{ "url": "https://github.com/spatie", "type": "github" }],
+                "time": "2025-01-27T09:52:33+00:00",
+                "autoload": { "psr-4": { "Spatie\\Fractalistic\\": "src" } },
+                "require": { "php": "^7.4|^8.0", "league/fractal": "^0.20.1" },
+                "require-dev": {
+                    "illuminate/pagination": "~5.3.0|~5.4.0|^9.0",
+                    "pestphp/pest": "^1.22",
+                    "phpunit/phpunit": "^9.0"
+                }
+            },
+            {
+                "version": "2.10.1",
+                "version_normalized": "2.10.1.0",
+                "source": {
+                    "url": "https://github.com/spatie/fractalistic.git",
+                    "type": "git",
+                    "reference": "effae650467c6ba88b8705fa0b9c8e503367528b"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/fractalistic/zipball/effae650467c6ba88b8705fa0b9c8e503367528b",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "effae650467c6ba88b8705fa0b9c8e503367528b"
+                },
+                "support": {
+                    "issues": "https://github.com/spatie/fractalistic/issues",
+                    "source": "https://github.com/spatie/fractalistic/tree/2.10.1"
+                },
+                "time": "2025-01-20T09:13:47+00:00"
+            },
+            {
+                "version": "2.10.0",
+                "version_normalized": "2.10.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/fractalistic.git",
+                    "type": "git",
+                    "reference": "992549566873c10c9de13644ed12eb963b907256"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/fractalistic/zipball/992549566873c10c9de13644ed12eb963b907256",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "992549566873c10c9de13644ed12eb963b907256"
+                },
+                "support": {
+                    "issues": "https://github.com/spatie/fractalistic/issues",
+                    "source": "https://github.com/spatie/fractalistic/tree/2.10.0"
+                },
+                "time": "2024-12-17T09:35:48+00:00"
+            },
+            {
+                "version": "2.9.5",
+                "version_normalized": "2.9.5.0",
+                "source": {
+                    "url": "https://github.com/spatie/fractalistic.git",
+                    "type": "git",
+                    "reference": "6f12686a03d035f4558d166989c62aa93bde2151"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/fractalistic/zipball/6f12686a03d035f4558d166989c62aa93bde2151",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "6f12686a03d035f4558d166989c62aa93bde2151"
+                },
+                "support": {
+                    "issues": "https://github.com/spatie/fractalistic/issues",
+                    "source": "https://github.com/spatie/fractalistic/tree/2.9.5"
+                },
+                "time": "2022-04-21T12:26:22+00:00",
+                "require-dev": {
+                    "illuminate/pagination": "~5.3.0|~5.4.0",
+                    "phpunit/phpunit": "^9.0"
+                }
+            },
+            {
+                "version": "2.9.4",
+                "version_normalized": "2.9.4.0",
+                "source": {
+                    "url": "https://github.com/spatie/fractalistic.git",
+                    "type": "git",
+                    "reference": "15cf14220cf3f84096154242a1bc1416b99e4e1a"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/fractalistic/zipball/15cf14220cf3f84096154242a1bc1416b99e4e1a",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "15cf14220cf3f84096154242a1bc1416b99e4e1a"
+                },
+                "support": {
+                    "issues": "https://github.com/spatie/fractalistic/issues",
+                    "source": "https://github.com/spatie/fractalistic/tree/2.9.4"
+                },
+                "time": "2022-04-12T08:42:59+00:00"
+            },
+            {
+                "version": "2.9.3",
+                "version_normalized": "2.9.3.0",
+                "source": {
+                    "url": "https://github.com/spatie/fractalistic.git",
+                    "type": "git",
+                    "reference": "d9f256c6db8e153871c413828cf63cc3908f323c"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/fractalistic/zipball/d9f256c6db8e153871c413828cf63cc3908f323c",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "d9f256c6db8e153871c413828cf63cc3908f323c"
+                },
+                "support": {
+                    "issues": "https://github.com/spatie/fractalistic/issues",
+                    "source": "https://github.com/spatie/fractalistic/tree/2.9.3"
+                },
+                "time": "2022-03-20T20:10:50+00:00",
+                "require": { "php": "^7.4|^8.0", "league/fractal": "^0.20.0" }
+            },
+            {
+                "version": "2.9.2",
+                "version_normalized": "2.9.2.0",
+                "source": {
+                    "url": "https://github.com/spatie/fractalistic.git",
+                    "type": "git",
+                    "reference": "43746e4918c74645898eb9f0d5e7bf1587cc06ad"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/fractalistic/zipball/43746e4918c74645898eb9f0d5e7bf1587cc06ad",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "43746e4918c74645898eb9f0d5e7bf1587cc06ad"
+                },
+                "support": {
+                    "issues": "https://github.com/spatie/fractalistic/issues",
+                    "source": "https://github.com/spatie/fractalistic/tree/2.9.2"
+                },
+                "time": "2022-03-18T08:03:19+00:00"
+            },
+            {
+                "version": "2.9.1",
+                "version_normalized": "2.9.1.0",
+                "source": {
+                    "url": "https://github.com/spatie/fractalistic.git",
+                    "type": "git",
+                    "reference": "c4fc2b223a8f7321ece449abc2c59cc5baf470fd"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/fractalistic/zipball/c4fc2b223a8f7321ece449abc2c59cc5baf470fd",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "c4fc2b223a8f7321ece449abc2c59cc5baf470fd"
+                },
+                "support": {
+                    "issues": "https://github.com/spatie/fractalistic/issues",
+                    "source": "https://github.com/spatie/fractalistic/tree/2.9.1"
+                },
+                "time": "2020-11-12T18:19:10+00:00",
+                "require": { "php": "^7.3|^8.0", "league/fractal": "^0.19.0" }
+            },
+            {
+                "version": "2.9.0",
+                "version_normalized": "2.9.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/fractalistic.git",
+                    "type": "git",
+                    "reference": "9d7594c4e9ed2657eb017db93ab6dbb58f56e049"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/fractalistic/zipball/9d7594c4e9ed2657eb017db93ab6dbb58f56e049",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "9d7594c4e9ed2657eb017db93ab6dbb58f56e049"
+                },
+                "support": {
+                    "issues": "https://github.com/spatie/fractalistic/issues",
+                    "source": "https://github.com/spatie/fractalistic/tree/master"
+                },
+                "time": "2020-01-31T11:54:45+00:00",
+                "require": { "php": "^7.0", "league/fractal": "^0.19.0" },
+                "require-dev": {
+                    "illuminate/pagination": "~5.3.0|~5.4.0",
+                    "phpunit/phpunit": "^5.7.21"
+                },
+                "funding": "__unset"
+            },
+            {
+                "version": "2.8.0",
+                "version_normalized": "2.8.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/fractalistic.git",
+                    "type": "git",
+                    "reference": "9d29952f4552d6fc117e1f44f89d8dfdd36c393d"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/fractalistic/zipball/9d29952f4552d6fc117e1f44f89d8dfdd36c393d",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "9d29952f4552d6fc117e1f44f89d8dfdd36c393d"
+                },
+                "support": {
+                    "issues": "https://github.com/spatie/fractalistic/issues",
+                    "source": "https://github.com/spatie/fractalistic/tree/2.8.0"
+                },
+                "time": "2019-05-13T07:08:06+00:00",
+                "require": { "php": "^7.0", "league/fractal": "^0.18.0" }
+            },
+            {
+                "version": "2.7.2",
+                "version_normalized": "2.7.2.0",
+                "source": {
+                    "url": "https://github.com/spatie/fractalistic.git",
+                    "type": "git",
+                    "reference": "5b5710b748beb2c1d5c272f4d3598d44b5b59fc9"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/fractalistic/zipball/5b5710b748beb2c1d5c272f4d3598d44b5b59fc9",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "5b5710b748beb2c1d5c272f4d3598d44b5b59fc9"
+                },
+                "support": {
+                    "issues": "https://github.com/spatie/fractalistic/issues",
+                    "source": "https://github.com/spatie/fractalistic/tree/master"
+                },
+                "time": "2018-10-08T09:18:33+00:00",
+                "require": { "php": "^7.0", "league/fractal": "^0.17.0" }
+            },
+            {
+                "version": "2.7.1",
+                "version_normalized": "2.7.1.0",
+                "source": {
+                    "url": "https://github.com/spatie/fractalistic.git",
+                    "type": "git",
+                    "reference": "83e208ce1e6061aa75d22c4efdab05ccfb99a849"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/fractalistic/zipball/83e208ce1e6061aa75d22c4efdab05ccfb99a849",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "83e208ce1e6061aa75d22c4efdab05ccfb99a849"
+                },
+                "time": "2018-01-15T09:17:52+00:00"
+            },
+            {
+                "version": "2.7.0",
+                "version_normalized": "2.7.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/fractalistic.git",
+                    "type": "git",
+                    "reference": "f9e7fc7a5bbd3ef3dcc611612d656e0aad8b961e"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/fractalistic/zipball/f9e7fc7a5bbd3ef3dcc611612d656e0aad8b961e",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "f9e7fc7a5bbd3ef3dcc611612d656e0aad8b961e"
+                },
+                "time": "2017-09-08T08:26:54+00:00",
+                "require": { "php": "^5.6|^7.0", "league/fractal": "^0.17.0" }
+            },
+            {
+                "version": "2.6.0",
+                "version_normalized": "2.6.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/fractalistic.git",
+                    "type": "git",
+                    "reference": "14c0025bf42c4710a9eac1f4edb20f949b90208f"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/fractalistic/zipball/14c0025bf42c4710a9eac1f4edb20f949b90208f",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "14c0025bf42c4710a9eac1f4edb20f949b90208f"
+                },
+                "time": "2017-09-06T11:54:34+00:00"
+            },
+            {
+                "version": "2.5.0",
+                "version_normalized": "2.5.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/fractalistic.git",
+                    "type": "git",
+                    "reference": "fdd536f8c1b172edfc3a742f6074680b80db2606"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/fractalistic/zipball/fdd536f8c1b172edfc3a742f6074680b80db2606",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "fdd536f8c1b172edfc3a742f6074680b80db2606"
+                },
+                "time": "2017-08-18T23:58:17+00:00",
+                "require-dev": {
+                    "illuminate/pagination": "~5.3.0|~5.4.0",
+                    "phpunit/phpunit": "^5.7"
+                }
+            },
+            {
+                "version": "2.4.0",
+                "version_normalized": "2.4.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/fractalistic.git",
+                    "type": "git",
+                    "reference": "c215e3f79bd2c55fd4ab749e779a8913236a9758"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/fractalistic/zipball/c215e3f79bd2c55fd4ab749e779a8913236a9758",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "c215e3f79bd2c55fd4ab749e779a8913236a9758"
+                },
+                "time": "2017-08-18T23:45:50+00:00",
+                "require": { "php": "^5.6|^7.0", "league/fractal": "^0.16.0" }
+            },
+            {
+                "version": "2.3.2",
+                "version_normalized": "2.3.2.0",
+                "source": {
+                    "url": "https://github.com/spatie/fractalistic.git",
+                    "type": "git",
+                    "reference": "012c4182203ba9127bb0a31cec3c211ce68227d9"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/fractalistic/zipball/012c4182203ba9127bb0a31cec3c211ce68227d9",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "012c4182203ba9127bb0a31cec3c211ce68227d9"
+                },
+                "time": "2017-07-24T08:06:12+00:00"
+            },
+            {
+                "version": "2.3.1",
+                "version_normalized": "2.3.1.0",
+                "source": {
+                    "url": "https://github.com/spatie/fractalistic.git",
+                    "type": "git",
+                    "reference": "2bba98fd266d4691395904be6d981bd09150802f"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/fractalistic/zipball/2bba98fd266d4691395904be6d981bd09150802f",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "2bba98fd266d4691395904be6d981bd09150802f"
+                },
+                "time": "2017-07-21T23:08:30+00:00"
+            },
+            {
+                "version": "2.3.0",
+                "version_normalized": "2.3.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/fractalistic.git",
+                    "type": "git",
+                    "reference": "79a48d949bc053a1c60c934f727f5901bf35fa74"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/fractalistic/zipball/79a48d949bc053a1c60c934f727f5901bf35fa74",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "79a48d949bc053a1c60c934f727f5901bf35fa74"
+                },
+                "time": "2017-07-03T08:20:31+00:00"
+            },
+            {
+                "version": "2.2.0",
+                "version_normalized": "2.2.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/fractalistic.git",
+                    "type": "git",
+                    "reference": "8f00c666a8b8dfb06f79286f97255e6ab1c89639"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/fractalistic/zipball/8f00c666a8b8dfb06f79286f97255e6ab1c89639",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "8f00c666a8b8dfb06f79286f97255e6ab1c89639"
+                },
+                "time": "2017-05-29T14:16:20+00:00"
+            },
+            {
+                "version": "2.1.1",
+                "version_normalized": "2.1.1.0",
+                "source": {
+                    "url": "https://github.com/spatie/fractalistic.git",
+                    "type": "git",
+                    "reference": "2be0733adf87cb2b4f49ea477c4032fd369e4f2e"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/fractalistic/zipball/2be0733adf87cb2b4f49ea477c4032fd369e4f2e",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "2be0733adf87cb2b4f49ea477c4032fd369e4f2e"
+                },
+                "time": "2017-05-10T19:13:37+00:00"
+            },
+            {
+                "version": "2.1.0",
+                "version_normalized": "2.1.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/fractalistic.git",
+                    "type": "git",
+                    "reference": "1fa9dacc1d5fc8e51951eb2bb419afa7e5bf5452"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/fractalistic/zipball/1fa9dacc1d5fc8e51951eb2bb419afa7e5bf5452",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "1fa9dacc1d5fc8e51951eb2bb419afa7e5bf5452"
+                },
+                "time": "2017-05-04T06:25:39+00:00"
+            },
+            {
+                "version": "2.0.0",
+                "version_normalized": "2.0.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/fractalistic.git",
+                    "type": "git",
+                    "reference": "313faddbbe415d720fdfa0849484726e5c6bb31e"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/fractalistic/zipball/313faddbbe415d720fdfa0849484726e5c6bb31e",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "313faddbbe415d720fdfa0849484726e5c6bb31e"
+                },
+                "time": "2017-04-26T15:03:58+00:00"
+            },
+            {
+                "version": "1.0.2",
+                "version_normalized": "1.0.2.0",
+                "source": {
+                    "url": "https://github.com/spatie/fractalistic.git",
+                    "type": "git",
+                    "reference": "59a2e7dfbd49e58b7de7d5621c1e7365786809f9"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/fractalistic/zipball/59a2e7dfbd49e58b7de7d5621c1e7365786809f9",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "59a2e7dfbd49e58b7de7d5621c1e7365786809f9"
+                },
+                "time": "2017-01-19T20:51:03+00:00",
+                "require": { "php": "^5.6|^7.0", "league/fractal": "^0.14.0|^0.15.0" },
+                "require-dev": { "illuminate/pagination": "^5.3", "phpunit/phpunit": "^5.7" }
+            },
+            {
+                "version": "1.0.1",
+                "version_normalized": "1.0.1.0",
+                "source": {
+                    "url": "https://github.com/spatie/fractalistic.git",
+                    "type": "git",
+                    "reference": "07ed3346f2429d8b84408653088a2f428328093a"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/fractalistic/zipball/07ed3346f2429d8b84408653088a2f428328093a",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "07ed3346f2429d8b84408653088a2f428328093a"
+                },
+                "time": "2017-01-02T20:11:15+00:00",
+                "require": { "php": "^5.6|^7.0", "league/fractal": "^0.14.0" }
+            },
+            {
+                "version": "1.0.0",
+                "version_normalized": "1.0.0.0",
+                "source": {
+                    "url": "https://github.com/spatie/fractalistic.git",
+                    "type": "git",
+                    "reference": "7e38d628a24e55df5e546bafb96fe47eb0cb9e2c"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/fractalistic/zipball/7e38d628a24e55df5e546bafb96fe47eb0cb9e2c",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "7e38d628a24e55df5e546bafb96fe47eb0cb9e2c"
+                },
+                "time": "2016-12-09T14:50:06+00:00"
+            },
+            {
+                "description": "Making working with Fractal a breeze",
+                "version": "0.0.1",
+                "version_normalized": "0.0.1.0",
+                "source": {
+                    "url": "https://github.com/spatie/fractalistic.git",
+                    "type": "git",
+                    "reference": "0b5641d334542130fd88e7f27fa839788466d1ec"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/spatie/fractalistic/zipball/0b5641d334542130fd88e7f27fa839788466d1ec",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "0b5641d334542130fd88e7f27fa839788466d1ec"
+                },
+                "time": "2016-12-09T11:24:03+00:00",
+                "autoload": {
+                    "files": ["src/helpers.php"],
+                    "psr-4": { "Spatie\\Fractalistic\\": "src" }
+                },
+                "require": { "php": "^7.0", "league/fractal": "^0.14.0" },
+                "require-dev": { "phpunit/phpunit": "^5.7" }
+            }
+        ]
+    },
+    "security-advisories": [],
+    "last-modified": "Mon, 27 Jan 2025 09:52:56 GMT"
+}

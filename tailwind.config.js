@@ -14,9 +14,7 @@ const gray = {
 };
 
 module.exports = {
-    content: [
-        './resources/scripts/**/*.{js,ts,tsx}',
-    ],
+    content: ['./resources/scripts/**/*.{js,ts,tsx}'],
     theme: {
         extend: {
             fontFamily: {
@@ -37,7 +35,7 @@ module.exports = {
             transitionDuration: {
                 250: '250ms',
             },
-            borderColor: theme => ({
+            borderColor: (theme) => ({
                 default: theme('colors.neutral.400', 'currentColor'),
             }),
         },
@@ -47,5 +45,5 @@ module.exports = {
         require('@tailwindcss/forms')({
             strategy: 'class',
         }),
-    ]
+    ],
 };

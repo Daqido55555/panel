@@ -11,7 +11,7 @@ module.exports = {
     cache: true,
     target: 'web',
     mode: process.env.NODE_ENV,
-    devtool: isProduction ? false : (process.env.DEVTOOL || 'eval-source-map'),
+    devtool: isProduction ? false : process.env.DEVTOOL || 'eval-source-map',
     performance: {
         hints: false,
     },
@@ -20,7 +20,7 @@ module.exports = {
         path: path.join(__dirname, '/public/assets'),
         filename: isProduction ? 'bundle.[chunkhash:8].js' : 'bundle.[hash:8].js',
         chunkFilename: isProduction ? '[name].[chunkhash:8].js' : '[name].[hash:8].js',
-        publicPath: (process.env.WEBPACK_PUBLIC_PATH || '/assets/'),
+        publicPath: process.env.WEBPACK_PUBLIC_PATH || '/assets/',
         crossOriginLoading: 'anonymous',
     },
     module: {
@@ -44,8 +44,13 @@ module.exports = {
                         options: {
                             modules: {
                                 auto: true,
-                                localIdentName: isProduction ? '[name]_[hash:base64:8]' : '[path][name]__[local]',
-                                localIdentContext: path.join(__dirname, 'resources/scripts/components'),
+                                localIdentName: isProduction
+                                    ? '[name]_[hash:base64:8]'
+                                    : '[path][name]__[local]',
+                                localIdentContext: path.join(
+                                    __dirname,
+                                    'resources/scripts/components',
+                                ),
                             },
                             sourceMap: !isProduction,
                             importLoaders: 1,
@@ -72,7 +77,7 @@ module.exports = {
                 test: /\.js$/,
                 enforce: 'pre',
                 loader: 'source-map-loader',
-            }
+            },
         ],
     },
     stats: {
@@ -100,7 +105,12 @@ module.exports = {
             DEBUG: process.env.NODE_ENV !== 'production',
             WEBPACK_BUILD_HASH: Date.now().toString(16),
         }),
-        new AssetsManifestPlugin({ writeToDisk: true, publicPath: true, integrity: true, integrityHashes: ['sha384'] }),
+        new AssetsManifestPlugin({
+            writeToDisk: true,
+            publicPath: true,
+            integrity: true,
+            integrityHashes: ['sha384'],
+        }),
         new ForkTsCheckerWebpackPlugin({
             typescript: {
                 mode: 'write-references',
@@ -109,15 +119,19 @@ module.exports = {
                     syntactic: true,
                 },
             },
-            eslint: isProduction ? undefined : {
-                files: `${path.join(__dirname, '/resources/scripts')}/**/*.{ts,tsx}`,
-            }
+            eslint: isProduction
+                ? undefined
+                : {
+                      files: `${path.join(__dirname, '/resources/scripts')}/**/*.{ts,tsx}`,
+                  },
         }),
-        process.env.ANALYZE_BUNDLE ? new BundleAnalyzerPlugin({
-            analyzerHost: '0.0.0.0',
-            analyzerPort: 8081,
-        }) : null
-    ].filter(p => p),
+        process.env.ANALYZE_BUNDLE
+            ? new BundleAnalyzerPlugin({
+                  analyzerHost: '0.0.0.0',
+                  analyzerPort: 8081,
+              })
+            : null,
+    ].filter((p) => p),
     optimization: {
         usedExports: true,
         sideEffects: false,
@@ -146,9 +160,7 @@ module.exports = {
         compress: true,
         contentBase: path.join(__dirname, '/public'),
         publicPath: process.env.WEBPACK_PUBLIC_PATH || '/assets/',
-        allowedHosts: [
-            '.pterodactyl.test',
-        ],
+        allowedHosts: ['.pterodactyl.test'],
         headers: {
             'Access-Control-Allow-Origin': '*',
         },

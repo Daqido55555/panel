@@ -17,10 +17,12 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-$(document).ready(function() {
-    $('#pNestId').select2({
-        placeholder: 'Select a Nest',
-    }).change();
+$(document).ready(function () {
+    $('#pNestId')
+        .select2({
+            placeholder: 'Select a Nest',
+        })
+        .change();
 
     $('#pEggId').select2({
         placeholder: 'Select a Nest Egg',
@@ -30,9 +32,11 @@ $(document).ready(function() {
         placeholder: 'Select a Service Pack',
     });
 
-    $('#pNodeId').select2({
-        placeholder: 'Select a Node',
-    }).change();
+    $('#pNodeId')
+        .select2({
+            placeholder: 'Select a Node',
+        })
+        .change();
 
     $('#pAllocation').select2({
         placeholder: 'Select a Default Allocation',
@@ -68,27 +72,30 @@ $('#pNodeId').on('change', function () {
 });
 
 $('#pNestId').on('change', function (event) {
-    $('#pEggId').html('').select2({
-        data: $.map(_.get(Pterodactyl.nests, $(this).val() + '.eggs', []), function (item) {
-            return {
-                id: item.id,
-                text: item.name,
-            };
-        }),
-    }).change();
+    $('#pEggId')
+        .html('')
+        .select2({
+            data: $.map(_.get(Pterodactyl.nests, $(this).val() + '.eggs', []), function (item) {
+                return {
+                    id: item.id,
+                    text: item.name,
+                };
+            }),
+        })
+        .change();
 });
 
 $('#pEggId').on('change', function (event) {
     let parentChain = _.get(Pterodactyl.nests, $('#pNestId').val(), null);
     let objectChain = _.get(parentChain, 'eggs.' + $(this).val(), null);
 
-    const images = _.get(objectChain, 'docker_images', {})
+    const images = _.get(objectChain, 'docker_images', {});
     $('#pDefaultContainer').html('');
     const keys = Object.keys(images);
     for (let i = 0; i < keys.length; i++) {
         let opt = document.createElement('option');
         opt.value = images[keys[i]];
-        opt.innerText = keys[i] + " (" + images[keys[i]] + ")";
+        opt.innerText = keys[i] + ' (' + images[keys[i]] + ')';
         $('#pDefaultContainer').append(opt);
     }
 
@@ -98,16 +105,18 @@ $('#pEggId').on('change', function (event) {
         $('#pStartup').val(_.get(objectChain, 'startup'));
     }
 
-    $('#pPackId').html('').select2({
-        data: [{ id: 0, text: 'No Service Pack' }].concat(
-            $.map(_.get(objectChain, 'packs', []), function (item, i) {
-                return {
-                    id: item.id,
-                    text: item.name + ' (' + item.version + ')',
-                };
-            })
-        ),
-    });
+    $('#pPackId')
+        .html('')
+        .select2({
+            data: [{ id: 0, text: 'No Service Pack' }].concat(
+                $.map(_.get(objectChain, 'packs', []), function (item, i) {
+                    return {
+                        id: item.id,
+                        text: item.name + ' (' + item.version + ')',
+                    };
+                })
+            ),
+        });
 
     function escapeHtml(str) {
         var div = document.createElement('div');
@@ -120,14 +129,32 @@ $('#pEggId').on('change', function (event) {
     $.each(_.get(objectChain, 'variables', []), function (i, item) {
         variableIds[item.env_variable] = 'var_ref_' + item.id;
 
-        let isRequired = (item.required === 1) ? '<span class="label label-danger">Required</span> ' : '';
-        let dataAppend = ' \
+        let isRequired = item.required === 1 ? '<span class="label label-danger">Required</span> ' : '';
+        let dataAppend =
+            ' \
             <div class="form-group col-sm-6"> \
-                <label for="var_ref_' + escapeHtml(item.id) + '" class="control-label">' + isRequired + escapeHtml(item.name) + '</label> \
-                <input type="text" id="var_ref_' + escapeHtml(item.id) + '" autocomplete="off" name="environment[' + escapeHtml(item.env_variable) + ']" class="form-control" value="' + escapeHtml(item.default_value) + '" /> \
-                <p class="text-muted small">' + escapeHtml(item.description) + '<br /> \
-                <strong>Access in Startup:</strong> <code>{{' + escapeHtml(item.env_variable) + '}}</code><br /> \
-                <strong>Validation Rules:</strong> <code>' + escapeHtml(item.rules) + '</code></small></p> \
+                <label for="var_ref_' +
+            escapeHtml(item.id) +
+            '" class="control-label">' +
+            isRequired +
+            escapeHtml(item.name) +
+            '</label> \
+                <input type="text" id="var_ref_' +
+            escapeHtml(item.id) +
+            '" autocomplete="off" name="environment[' +
+            escapeHtml(item.env_variable) +
+            ']" class="form-control" value="' +
+            escapeHtml(item.default_value) +
+            '" /> \
+                <p class="text-muted small">' +
+            escapeHtml(item.description) +
+            '<br /> \
+                <strong>Access in Startup:</strong> <code>{{' +
+            escapeHtml(item.env_variable) +
+            '}}</code><br /> \
+                <strong>Validation Rules:</strong> <code>' +
+            escapeHtml(item.rules) +
+            '</code></small></p> \
             </div> \
         ';
         $('#appendVariablesTo').append(dataAppend);
@@ -194,29 +221,52 @@ function initUserIdSelect(data) {
         },
 
         data: data,
-        escapeMarkup: function (markup) { return markup; },
+        escapeMarkup: function (markup) {
+            return markup;
+        },
         minimumInputLength: 2,
         templateResult: function (data) {
             if (data.loading) return escapeHtml(data.text);
 
-            return '<div class="user-block"> \
-                <img class="img-circle img-bordered-xs" src="https://www.gravatar.com/avatar/' + escapeHtml(data.md5) + '?s=120" alt="User Image"> \
+            return (
+                '<div class="user-block"> \
+                <img class="img-circle img-bordered-xs" src="https://www.gravatar.com/avatar/' +
+                escapeHtml(data.md5) +
+                '?s=120" alt="User Image"> \
                 <span class="username"> \
-                    <a href="#">' + escapeHtml(data.name_first) + ' ' + escapeHtml(data.name_last) +'</a> \
+                    <a href="#">' +
+                escapeHtml(data.name_first) +
+                ' ' +
+                escapeHtml(data.name_last) +
+                '</a> \
                 </span> \
-                <span class="description"><strong>' + escapeHtml(data.email) + '</strong> - ' + escapeHtml(data.username) + '</span> \
-            </div>';
+                <span class="description"><strong>' +
+                escapeHtml(data.email) +
+                '</strong> - ' +
+                escapeHtml(data.username) +
+                '</span> \
+            </div>'
+            );
         },
         templateSelection: function (data) {
-            return '<div> \
+            return (
+                '<div> \
                 <span> \
-                    <img class="img-rounded img-bordered-xs" src="https://www.gravatar.com/avatar/' + escapeHtml(data.md5) + '?s=120" style="height:28px;margin-top:-4px;" alt="User Image"> \
+                    <img class="img-rounded img-bordered-xs" src="https://www.gravatar.com/avatar/' +
+                escapeHtml(data.md5) +
+                '?s=120" style="height:28px;margin-top:-4px;" alt="User Image"> \
                 </span> \
                 <span style="padding-left:5px;"> \
-                    ' + escapeHtml(data.name_first) + ' ' + escapeHtml(data.name_last) + ' (<strong>' + escapeHtml(data.email) + '</strong>) \
+                    ' +
+                escapeHtml(data.name_first) +
+                ' ' +
+                escapeHtml(data.name_last) +
+                ' (<strong>' +
+                escapeHtml(data.email) +
+                '</strong>) \
                 </span> \
-            </div>';
-        }
-
+            </div>'
+            );
+        },
     });
 }

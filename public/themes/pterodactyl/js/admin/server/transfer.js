@@ -1,7 +1,9 @@
 $(document).ready(function () {
-    $('#pNodeId').select2({
-        placeholder: 'Select a Node',
-    }).change();
+    $('#pNodeId')
+        .select2({
+            placeholder: 'Select a Node',
+        })
+        .change();
 
     $('#pAllocation').select2({
         placeholder: 'Select a Default Allocation',

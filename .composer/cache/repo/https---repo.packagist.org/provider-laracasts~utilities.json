@@ -1,0 +1,310 @@
+{
+    "minified": "composer/2.0",
+    "packages": {
+        "laracasts/utilities": [
+            {
+                "name": "laracasts/utilities",
+                "description": "Transform your PHP to JavaScript",
+                "keywords": ["javascript", "laravel"],
+                "homepage": "",
+                "version": "3.2.4",
+                "version_normalized": "3.2.4.0",
+                "license": ["MIT"],
+                "authors": [{ "name": "Jeffrey Way", "email": "jeffrey@laracasts.com" }],
+                "source": {
+                    "url": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer.git",
+                    "type": "git",
+                    "reference": "6bbd3a4c9602c2e44ee6e08d7f3fee62b6aa4146"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/laracasts/PHP-Vars-To-Js-Transformer/zipball/6bbd3a4c9602c2e44ee6e08d7f3fee62b6aa4146",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "6bbd3a4c9602c2e44ee6e08d7f3fee62b6aa4146"
+                },
+                "type": "library",
+                "support": {
+                    "issues": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer/issues",
+                    "source": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer/tree/3.2.4"
+                },
+                "funding": [],
+                "time": "2025-02-27T15:16:31+00:00",
+                "autoload": {
+                    "files": ["src/helpers.php"],
+                    "psr-4": { "Laracasts\\Utilities\\JavaScript\\": "src/" }
+                },
+                "extra": {
+                    "laravel": {
+                        "aliases": {
+                            "JavaScript": "Laracasts\\Utilities\\JavaScript\\JavaScriptFacade"
+                        },
+                        "providers": ["Laracasts\\Utilities\\JavaScript\\JavaScriptServiceProvider"]
+                    }
+                },
+                "require": {
+                    "php": ">=5.5.0|>=7.2.5|>=8.0.0",
+                    "illuminate/support": "^5.0|^6.0|^7.0|^8.0|^9.0|^10.0|^11.0|^12.0"
+                },
+                "require-dev": { "phpspec/phpspec": ">=2.0" }
+            },
+            {
+                "version": "3.2.3",
+                "version_normalized": "3.2.3.0",
+                "source": {
+                    "url": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer.git",
+                    "type": "git",
+                    "reference": "4826fe062f58d07b13e72460141b21c8c07b736d"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/laracasts/PHP-Vars-To-Js-Transformer/zipball/4826fe062f58d07b13e72460141b21c8c07b736d",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "4826fe062f58d07b13e72460141b21c8c07b736d"
+                },
+                "support": {
+                    "issues": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer/issues",
+                    "source": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer/tree/3.2.3"
+                },
+                "time": "2024-03-03T16:53:37+00:00",
+                "require": {
+                    "php": ">=5.5.0|>=7.2.5|>=8.0.0",
+                    "illuminate/support": "^5.0|^6.0|^7.0|^8.0|^9.0|^10.0|^11.0"
+                }
+            },
+            {
+                "version": "3.2.2",
+                "version_normalized": "3.2.2.0",
+                "source": {
+                    "url": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer.git",
+                    "type": "git",
+                    "reference": "1cc5d5b9670e5be392df38e0b648fa4842c5a1f8"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/laracasts/PHP-Vars-To-Js-Transformer/zipball/1cc5d5b9670e5be392df38e0b648fa4842c5a1f8",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "1cc5d5b9670e5be392df38e0b648fa4842c5a1f8"
+                },
+                "support": {
+                    "issues": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer/issues",
+                    "source": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer/tree/3.2.2"
+                },
+                "time": "2023-02-03T13:22:09+00:00",
+                "require": {
+                    "php": ">=5.5.0|>=7.2.5|>=8.0.0",
+                    "illuminate/support": "^5.0|^6.0|^7.0|^8.0|^9.0|^10.0"
+                }
+            },
+            {
+                "version": "3.2.1",
+                "version_normalized": "3.2.1.0",
+                "source": {
+                    "url": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer.git",
+                    "type": "git",
+                    "reference": "cfcda21b2425652e869af253d385d78e2129e3a2"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/laracasts/PHP-Vars-To-Js-Transformer/zipball/cfcda21b2425652e869af253d385d78e2129e3a2",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "cfcda21b2425652e869af253d385d78e2129e3a2"
+                },
+                "support": {
+                    "issues": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer/issues",
+                    "source": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer/tree/3.2.1"
+                },
+                "time": "2022-02-09T14:09:45+00:00",
+                "require": {
+                    "php": ">=5.5.0|>=7.2.5|>=8.0.0",
+                    "illuminate/support": "^5.0|^6.0|^7.0|^8.0|^9.0"
+                }
+            },
+            {
+                "version": "3.2",
+                "version_normalized": "3.2.0.0",
+                "source": {
+                    "url": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer.git",
+                    "type": "git",
+                    "reference": "26b1712166a366e3f8a1fd1452d0c3b76cad612a"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/laracasts/PHP-Vars-To-Js-Transformer/zipball/26b1712166a366e3f8a1fd1452d0c3b76cad612a",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "26b1712166a366e3f8a1fd1452d0c3b76cad612a"
+                },
+                "support": {
+                    "issues": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer/issues",
+                    "source": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer/tree/3.2"
+                },
+                "time": "2020-09-07T13:29:37+00:00",
+                "require": {
+                    "php": ">=5.5.0|>=7.2.5",
+                    "illuminate/support": "^5.0|^6.0|^7.0|^8.0"
+                },
+                "require-dev": { "phpspec/phpspec": "~2.0" }
+            },
+            {
+                "version": "3.1",
+                "version_normalized": "3.1.0.0",
+                "source": {
+                    "url": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer.git",
+                    "type": "git",
+                    "reference": "7c5eb11221de608eef8c70c2d3540c8cd80466e3"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/laracasts/PHP-Vars-To-Js-Transformer/zipball/7c5eb11221de608eef8c70c2d3540c8cd80466e3",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "7c5eb11221de608eef8c70c2d3540c8cd80466e3"
+                },
+                "support": {
+                    "issues": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer/issues",
+                    "source": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer/tree/master"
+                },
+                "time": "2020-03-03T16:07:08+00:00",
+                "require": { "php": ">=5.5.0|>=7.2.5", "illuminate/support": "^5.0|^6.0|^7.0" }
+            },
+            {
+                "version": "3.0.1",
+                "version_normalized": "3.0.1.0",
+                "source": {
+                    "url": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer.git",
+                    "type": "git",
+                    "reference": "490c6cf4d23c26c94e01867265c84921863a5f19"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/laracasts/PHP-Vars-To-Js-Transformer/zipball/490c6cf4d23c26c94e01867265c84921863a5f19",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "490c6cf4d23c26c94e01867265c84921863a5f19"
+                },
+                "time": "2019-09-04T12:55:27+00:00",
+                "require": { "php": ">=5.5.0", "illuminate/support": "^5.0|^6.0" },
+                "funding": "__unset"
+            },
+            {
+                "version": "3.0",
+                "version_normalized": "3.0.0.0",
+                "source": {
+                    "url": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer.git",
+                    "type": "git",
+                    "reference": "298fb3c6f29901a4550c4f98b57c05f368341d04"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/laracasts/PHP-Vars-To-Js-Transformer/zipball/298fb3c6f29901a4550c4f98b57c05f368341d04",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "298fb3c6f29901a4550c4f98b57c05f368341d04"
+                },
+                "time": "2017-09-01T17:25:57+00:00",
+                "require": { "php": ">=5.4.0", "illuminate/support": "~5.0" }
+            },
+            {
+                "version": "2.1",
+                "version_normalized": "2.1.0.0",
+                "source": {
+                    "url": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer.git",
+                    "type": "git",
+                    "reference": "4402a0ed774f8eb36ea7ba169341d9d5b6049378"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/laracasts/PHP-Vars-To-Js-Transformer/zipball/4402a0ed774f8eb36ea7ba169341d9d5b6049378",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "4402a0ed774f8eb36ea7ba169341d9d5b6049378"
+                },
+                "time": "2015-10-01T05:16:28+00:00",
+                "autoload": { "psr-4": { "Laracasts\\Utilities\\JavaScript\\": "src/" } },
+                "extra": "__unset"
+            },
+            {
+                "version": "2.0.1",
+                "version_normalized": "2.0.1.0",
+                "source": {
+                    "url": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer.git",
+                    "type": "git",
+                    "reference": "07795d305eb0c5c759fa1d1f7221570207505be1"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/laracasts/PHP-Vars-To-Js-Transformer/zipball/07795d305eb0c5c759fa1d1f7221570207505be1",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "07795d305eb0c5c759fa1d1f7221570207505be1"
+                },
+                "time": "2015-09-30T14:42:17+00:00"
+            },
+            {
+                "version": "2.0",
+                "version_normalized": "2.0.0.0",
+                "source": {
+                    "url": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer.git",
+                    "type": "git",
+                    "reference": "fb96d2de843086af87b175c890d75561da66d393"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/laracasts/PHP-Vars-To-Js-Transformer/zipball/fb96d2de843086af87b175c890d75561da66d393",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "fb96d2de843086af87b175c890d75561da66d393"
+                },
+                "time": "2015-02-06T17:35:14+00:00"
+            },
+            {
+                "version": "1.0.1",
+                "version_normalized": "1.0.1.0",
+                "source": {
+                    "url": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer.git",
+                    "type": "git",
+                    "reference": "cdcee80cdbe5673f61f59df30979546e4f7fadd6"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/laracasts/PHP-Vars-To-Js-Transformer/zipball/cdcee80cdbe5673f61f59df30979546e4f7fadd6",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "cdcee80cdbe5673f61f59df30979546e4f7fadd6"
+                },
+                "time": "2014-04-24T21:43:55+00:00",
+                "autoload": { "psr-0": { "Laracasts\\Utilities": "src/" } },
+                "require": { "php": ">=5.4.0", "illuminate/support": "~4.0" }
+            },
+            {
+                "version": "1.0",
+                "version_normalized": "1.0.0.0",
+                "source": {
+                    "url": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer.git",
+                    "type": "git",
+                    "reference": "8bc8e8a3d2bfb7d9cd35c7bf50cdbe20c58ba190"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/laracasts/PHP-Vars-To-Js-Transformer/zipball/8bc8e8a3d2bfb7d9cd35c7bf50cdbe20c58ba190",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "8bc8e8a3d2bfb7d9cd35c7bf50cdbe20c58ba190"
+                },
+                "time": "2014-03-13T21:22:41+00:00",
+                "require": { "php": ">=5.4.0", "illuminate/support": "4.1.*" },
+                "require-dev": { "phpspec/phpspec": "2.0.*@dev" }
+            },
+            {
+                "version": "0.5",
+                "version_normalized": "0.5.0.0",
+                "license": [],
+                "source": {
+                    "url": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer.git",
+                    "type": "git",
+                    "reference": "c466df9939a16438c6a917851acf661b9ecfb620"
+                },
+                "dist": {
+                    "url": "https://api.github.com/repos/laracasts/PHP-Vars-To-Js-Transformer/zipball/c466df9939a16438c6a917851acf661b9ecfb620",
+                    "type": "zip",
+                    "shasum": "",
+                    "reference": "c466df9939a16438c6a917851acf661b9ecfb620"
+                },
+                "time": "2014-02-25T19:07:35+00:00"
+            }
+        ]
+    },
+    "security-advisories": [],
+    "last-modified": "Thu, 27 Feb 2025 15:16:53 GMT"
+}
